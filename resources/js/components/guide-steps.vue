@@ -1,16 +1,15 @@
 <template>
-<div class="videos">
-  <h3>Videók</h3>
-        <ul v-if="videos">
-            <li v-for="{ id, caption, youtube_id } in videos">
-            <a :href="'https://youtube.com/watch?v=' + youtube_id ">
-                <img :src="'https://img.youtube.com/vi/' + youtube_id + '/mqdefault.jpg'" alt="">
+<div class="guide-steps">
+  <h3>Steps</h3>
+        <ol v-if="steps">
+            <li v-for="{ id, headline, description, picture } in steps">
+                <img :src="'/storage/' + picture" alt="">
+                <h3>{{ headline }}</h3>
                 <p>
-                    {{ caption }}
+                    {{ description }}
                 </p>
-            </a>
             </li>
-        </ul>
+        </ol>
 </div>
 </template>
 
@@ -18,10 +17,10 @@
 <script>
 import axios from 'axios';
 
-const getVideos = (callback) => {
+const getSteps = (callback) => {
 
     axios
-        .get('http://localhost:8000/api/video', {  })
+        .get('http://localhost:8000/api/guide-steps', {  })
         .then(response => {
             callback(null, response.data);
         }).catch(error => {
@@ -32,23 +31,23 @@ const getVideos = (callback) => {
 export default {
     data() {
         return {
-            videos: null,
+            steps: null,
             meta: null,
             error: null,
         };
     },
     mounted () {
-        this.users = null
-        getVideos((err, data) => {
+        this.steps = null
+        getSteps((err, data) => {
             this.setData(err, data);
         });
     },
     methods: {
-        setData(err, videos) {
+        setData(err, steps) {
             if (err) {
                 this.error = err.toString();
             } else {
-                this.videos = videos;
+                this.steps = steps;
             }
         },
     }
