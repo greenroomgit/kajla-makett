@@ -27,12 +27,11 @@ class PhotoUploadsController extends AdminController
         $grid = new Grid(new PhotoUploads());
 
         $grid->column('id', __('Id'));
+        $grid->column('picture', __('Picture'))->image();
         $grid->column('firstname', __('Firstname'));
         $grid->column('lastname', __('Lastname'));
-        $grid->column('address', __('Address'));
         $grid->column('email', __('Email'));
         $grid->column('published', __('Published'));
-        $grid->column('telephone', __('Telephone'));
         $grid->column('created_at', __('Created at'));
         $grid->column('updated_at', __('Updated at'));
 

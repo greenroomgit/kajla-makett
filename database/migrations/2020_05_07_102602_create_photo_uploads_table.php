@@ -21,6 +21,7 @@ class CreatePhotoUploadsTable extends Migration
             $table->string('email');
             $table->boolean('published');
             $table->string('telephone');
+            $table->string('picture');
             $table->timestamps();
         });
     }

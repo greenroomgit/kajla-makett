@@ -24,3 +24,5 @@ Route::resource('/video', 'VideoController', [
   ]);
 Route::get('/guide-steps', 'HomeController@steps', [
 ]);
+Route::post('/upload-photo', 'PhotoUploadsController@upload', [
+]);
