@@ -10,10 +10,10 @@ import MakettekLetoltese from './components/pages/makettek-letoltese'
 import MakettFeltoltes from './components/pages/makett-feltoltes'
 
 //footer
+import FelhasznalasiFeltetelek from './components/pages/felhasznalasi-feltetelek'
+import AdatkezelesiNyilatkozat from './components/pages/adatkezelesi-nyilatkozat'
+import SutiKezeles from './components/pages/suti-kezeles'
 import Impressum from './components/pages/impresszum'
-import Aszf from './components/pages/aszf'
-
-
 
 const routes = [
     {
@@ -42,14 +42,24 @@ const routes = [
         component: MakettFeltoltes
     },
     {   
+        path: '/felhasznalasi-feltetelek',
+        name: 'felhasznalasi-feltetelek',
+        component: FelhasznalasiFeltetelek
+    },
+    {
+        path: '/adatkezelesi-nyilatkozat',
+        name: 'adatkezelesi-nyilatkozat',
+        component: AdatkezelesiNyilatkozat
+    },
+    {
+        path: '/suti-kezeles',
+        name: 'suti-kezeles',
+        component: SutiKezeles
+    },
+    {   
         path: '/impresszum',
         name: 'impresszum',
         component: Impressum
-    },
-    {
-        path: '/aszf',
-        name: 'aszf',
-        component: Aszf
     }
 ]
 

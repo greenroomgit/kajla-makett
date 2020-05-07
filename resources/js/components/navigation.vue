@@ -8,7 +8,10 @@
             </div>
 
             <div class="navbar-brand">
-                <router-link class="navbar-item" to="/">Brand</router-link>
+
+                <router-link class="navbar-item" to="/">
+                    <img src="assets/images/kajla-logo.png">
+                </router-link>
                 <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
                 <span aria-hidden="true"></span>
                 <span aria-hidden="true"></span>

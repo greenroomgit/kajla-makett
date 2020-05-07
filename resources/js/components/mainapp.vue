@@ -25,16 +25,19 @@
                 </div>
             </div>
         </section>
+        <Footer></Footer>
     </div> 
 </template>
 
 <script>
     import Navigation from './navigation'
+    import Footer from './footer'
     import Videos from './videos'
     export default {
         name: 'app',
         components: {
             'Navigation': Navigation,
+            'Footer': Footer,
             'Videos': Videos
         }
     }

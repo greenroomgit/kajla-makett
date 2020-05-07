@@ -1,6 +1,6 @@
 <template>
-    <div id="impresszum" class="">
-        <h1>Impresszum</h1>
+    <div id="suti-kezeles" class="">
+        <h1>Suti kezeles</h1>
     </div>
 </template>
 
