@@ -20,7 +20,7 @@
                         <router-view></router-view>
                     </div>
                     <div class="column">
-                        Sidebar
+                        <Videos />
                     </div>
                 </div>
             </div>
@@ -29,11 +29,13 @@
 </template>
 
 <script>
-import Navigation from './navigation'
-export default {
-    name: 'app',
-    components: {
-        'Navigation': Navigation
+    import Navigation from './navigation'
+    import Videos from './videos'
+    export default {
+        name: 'app',
+        components: {
+            'Navigation': Navigation,
+            'Videos': Videos
+        }
     }
-}
 </script>
