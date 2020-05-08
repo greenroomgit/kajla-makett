@@ -5,9 +5,8 @@ Vue.use(Router)
 //nav
 import Home from './components/pages/home'
 import Jatek from './components/pages/jatek'
-import MakettFotok from './components/pages/makett-fotok'
+import BekuldottKepek from './components/pages/bekuldott-kepek'
 import MakettekLetoltese from './components/pages/makettek-letoltese'
-import MakettFeltoltes from './components/pages/makett-feltoltes'
 
 //footer
 import FelhasznalasiFeltetelek from './components/pages/felhasznalasi-feltetelek'
@@ -27,19 +26,14 @@ const routes = [
         component: Jatek
     },
     {
-        path: '/makett-fotok',
-        name: 'makett-fotok',
-        component: MakettFotok
+        path: '/bekuldott-kepek',
+        name: 'bekuldott-kepek',
+        component: BekuldottKepek
     },
     {
         path: '/makettek-letoltese',
         name: 'makettek-letoltese',
         component: MakettekLetoltese
-    },
-    {
-        path: '/makett-feltoltes',
-        name: 'makett-feltoltes',
-        component: MakettFeltoltes
     },
     {   
         path: '/felhasznalasi-feltetelek',

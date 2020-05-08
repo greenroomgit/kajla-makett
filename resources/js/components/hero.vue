@@ -1,27 +1,24 @@
 <template>
     <section class="section section-hero">
-        
         <div class="container">
-            <div class="columns">
-                <div class="column is-four-fifths">
-                    <div class="hero-body">
-                        <h1 class="title">
-                            Építsd fel kajlával<br>
-                            Magyarország<br>
-                            nevezettségeit és nyerj!
-                        </h1>
-                    </div>
-                </div>
-                <div class="column">
-                    <img src="assets/images/kajla.png">
-                </div>
+            <Navigation></Navigation>
+            <div class="hero-body">
+                <h1>
+                    Építsd fel kajlával Magyarország<br>
+                    nevezettességeit és nyerj!
+                </h1>
+                <a href="" class="button is-primary">button is-primary</a>
             </div>
         </div>
     </section>
 </template>
 
 <script>
+import Navigation from './navigation'
     export default {
-        
+        name: 'app',
+        components: {
+            'Navigation': Navigation,
+        }  
     }
 </script>

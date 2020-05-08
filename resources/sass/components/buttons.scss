@@ -1,1 +1,10 @@
 //
+.button {
+    min-height: 4em;
+    &.is-primary {
+        background-image: url('/assets/images/button-bg.png');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+    }
+}

@@ -1,6 +1,12 @@
 <template>
     <nav class="navbar" role="navigation" aria-label="main navigation">
-      <div class="container">
+      <div id="navbarBasicExample" class="navbar-menu">
+
+        <div class="navbar-start navbar-left">
+            <router-link class="navbar-item" to="/jatek">Játek</router-link>
+            <router-link class="navbar-item" to="/bekuldott-kepek">Beküldött képek</router-link>     
+        </div>
+
         <div class="navbar-brand">
           <router-link class="navbar-item" to="/">
               <img src="assets/images/kajla-logo.png">
@@ -14,23 +20,11 @@
           
           </div>
         </div>
-        <div id="navbarBasicExample" class="navbar-menu">
-          <div class="navbar-start">
-              <router-link class="navbar-item" to="/jatek">Jatek</router-link>
-              <router-link class="navbar-item" to="/makett-fotok">Makett fotok</router-link>     
-              <router-link class="navbar-item" to="/makettek-letoltese">Makettek letoltese</router-link>
-          </div>
-          <div class="navbar-end">
-            <router-link class="navbar-item" to="/makett-feltoltes">Makett igenyles es feltoltes</router-link>
-            <div class="navbar-item">
-              <div class="buttons">
-                <a class="button is-primary">
-                  <strong>Sign up / Log in</strong>
-                </a>
-              </div>
-            </div>
-          </div>
+
+        <div class="navbar-start navbar-right">
+          <router-link class="navbar-item" to="/makettek-letoltese">Makettek letoltese</router-link>
         </div>
+
       </div>
     </nav>
 </template>

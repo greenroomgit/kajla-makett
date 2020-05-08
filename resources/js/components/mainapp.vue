@@ -1,6 +1,5 @@
 <template>
-    <div>
-        <Navigation></Navigation>
+    <div class="kajla-wrapper">
         <Hero />
         <section class="section">
             <div class="container">
@@ -21,7 +20,7 @@
 <script>
     import Hero from './hero'
     import Footer from './footer'
-    import Navigation from './navigation'
+    
     import Videos from './videos'
 
     export default {
@@ -29,7 +28,6 @@
         components: {
             'Hero': Hero,
             'Footer': Footer,
-            'Navigation': Navigation,
             'Videos': Videos
         }
     }

@@ -12006,6 +12006,22 @@ label.panel-block:hover {
   padding: 3rem 1.5rem 6rem;
 }
 
+h1 {
+  font-size: 3.25em;
+  font-weight: normal;
+}
+
+.button {
+  min-height: 4em;
+}
+
+.button.is-primary {
+  background-image: url("/assets/images/button-bg.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
 .container {
   max-width: 1266px;
 }
@@ -12014,47 +12030,55 @@ label.panel-block:hover {
   padding-top: 0;
 }
 
-.navbar {
+.kajla-wrapper {
+  background: #1bd2c9;
+  background: linear-gradient(112.01deg, #1bd2c9 6.38%, #3ab0d1 85.43%);
+}
+
+.container .navbar {
   background-color: transparent;
-  position: absolute;
-  top: 0;
   width: 100%;
 }
 
-.navbar .container .navbar-brand {
-  position: absolute;
-  left: 50%;
-  margin: auto;
-  margin-left: -111px;
+.container .navbar .navbar-brand {
+  margin-top: 0.5em;
 }
 
-.navbar .container .navbar-brand img {
-  width: 100%;
-  max-height: auto;
+.container .navbar .navbar-brand img {
+  width: 195px;
+  max-height: 100%;
 }
 
-.navbar .container .navbar-brand .navbar-item {
-  padding: 0;
-  height: auto;
-  margin: 0;
+.container .navbar .navbar-menu {
+  display: flex;
+  justify-content: space-evenly;
 }
 
 .navbar-link {
   padding: 0;
 }
 
-.navbar-item {
-  padding: 0 1em;
-  height: 3.75em;
-  margin: 0 1em;
-}
-
-.navbar-item img {
-  max-height: 100%;
-}
-
 .navbar-start {
+  align-items: flex-start;
+  margin-right: -6em;
+}
+
+.navbar-start.navbar-right {
   margin-right: 0;
+  margin-left: -6em;
+}
+
+.navbar-start .navbar-item {
+  font-size: 1.375em;
+  color: white;
+  height: auto;
+  text-shadow: 0px 2px 0px #2CC0CD;
+  padding: 0.625em;
+  margin: 0.5em;
+}
+
+.navbar-start .navbar-item img {
+  max-height: 100%;
 }
 
 .navbar-menu {
@@ -12063,26 +12087,17 @@ label.panel-block:hover {
 }
 
 .section-hero {
-  height: 40em;
+  height: 778px;
   padding-bottom: 0;
   background-image: url("/assets/images/hero.png");
   background-position: top center;
-  position: relative;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
-.section-hero .container {
-  margin-top: 20em;
+.section-hero h1 {
+  color: white;
+  text-align: center;
+  line-height: 60px;
 }
-
-/*
-.hero-bottom {
-    position: absolute;
-    top: 40em - 6.625em;
-    left: 0;
-    width: 100%;
-    height: 6.625em;
-    z-index: -1;
-    background-image: url("/assets/images/hero-bottom.png");
-}
-*/
 
