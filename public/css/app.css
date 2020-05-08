@@ -12006,9 +12006,47 @@ label.panel-block:hover {
   padding: 3rem 1.5rem 6rem;
 }
 
-.navbar-brand img {
+.container {
+  max-width: 1266px;
+}
+
+.section {
+  padding-top: 0;
+}
+
+.navbar {
+  background-color: transparent;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.navbar .container .navbar-brand {
+  position: absolute;
+  left: 50%;
+  margin: auto;
+  margin-left: -111px;
+}
+
+.navbar .container .navbar-brand img {
   width: 100%;
   max-height: auto;
+}
+
+.navbar .container .navbar-brand .navbar-item {
+  padding: 0;
+  height: auto;
+  margin: 0;
+}
+
+.navbar-link {
+  padding: 0;
+}
+
+.navbar-item {
+  padding: 0 1em;
+  height: 3.75em;
+  margin: 0 1em;
 }
 
 .navbar-item img {
@@ -12018,4 +12056,33 @@ label.panel-block:hover {
 .navbar-start {
   margin-right: 0;
 }
+
+.navbar-menu {
+  position: relative;
+  margin-top: 0.625em;
+}
+
+.section-hero {
+  height: 40em;
+  padding-bottom: 0;
+  background-image: url("/assets/images/hero.png");
+  background-position: top center;
+  position: relative;
+}
+
+.section-hero .container {
+  margin-top: 20em;
+}
+
+/*
+.hero-bottom {
+    position: absolute;
+    top: 40em - 6.625em;
+    left: 0;
+    width: 100%;
+    height: 6.625em;
+    z-index: -1;
+    background-image: url("/assets/images/hero-bottom.png");
+}
+*/
 

@@ -1,6 +1,7 @@
 //ide csak import
 @import "~bulma/bulma.sass";
+@import "components/base/spaces.scss";
 @import "components/buttons.scss";
 @import "components/layout.scss";
-
-@import "components/header.scss"
+@import "components/navigation.scss";
+@import "components/header.scss";

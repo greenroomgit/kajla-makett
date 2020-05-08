@@ -3,7 +3,6 @@
         Home
 
         <GuideSteps />
-        <PhotoUpload />
     </div>
 </template>
 

@@ -4,20 +4,16 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>Kajla Makett</title>
 
         <!-- Styles -->
         <link rel="stylesheet" href="{{mix('/css/app.css')}}"></link>
 
     </head>
     <body>
-
-        <section id="app" class="section">
-            <div class="container is-fluid">
-                <mainapp></mainapp>
-            </div>
-        </section>
-
+        <div id="app">
+            <mainapp></mainapp>
+        </div>
     </body>
     <script src="{{mix('/js/app.js')}}"></script>
 </html>

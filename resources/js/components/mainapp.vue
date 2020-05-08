@@ -1,18 +1,7 @@
 <template>
     <div>
         <Navigation></Navigation>
-        <section class="hero">
-            <div class="hero-body">
-                <div class="container">
-                <h1 class="title">
-                    Hero title
-                </h1>
-                <h2 class="subtitle">
-                    Hero subtitle
-                </h2>
-                </div>
-            </div>
-        </section>
+        <Hero />
         <section class="section">
             <div class="container">
                 <div class="columns">
@@ -25,19 +14,22 @@
                 </div>
             </div>
         </section>
-        <Footer></Footer>
+        <Footer />
     </div> 
 </template>
 
 <script>
-    import Navigation from './navigation'
+    import Hero from './hero'
     import Footer from './footer'
+    import Navigation from './navigation'
     import Videos from './videos'
+
     export default {
         name: 'app',
         components: {
-            'Navigation': Navigation,
+            'Hero': Hero,
             'Footer': Footer,
+            'Navigation': Navigation,
             'Videos': Videos
         }
     }
