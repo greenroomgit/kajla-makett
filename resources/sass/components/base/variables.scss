@@ -1,17 +1,29 @@
+//COLORS
+$white: white;
+$brand-color: blue;
+
+$bg-gradient-first: rgb(27,210,201);
+$bg-gradient-second: rgba(58,176,209,1);
+
+$blue-light: #2CC0CD;
+$blue-body: #187A7D;
+$orange-dark: #B26513;
+
 //SIZES
 $font-size: 16px;
 $logo-width: 195px;
-
 $nav-size: 1.375em;
-
-$nav-line: 1.5em;
-$button-line: 1.875em;
-$title-line: 3.75em;
+$button-size: 1.625em;
 
 //H
 $h1-size: 3.25em;
 $h2-size: 3em;
 $h3-size: 2.625em;
+
+//LINES
+$nav-line: 1.5em;
+$button-line: 1.875em;
+$title-line: 3.75em;
 
 //WIDTH/HEIGHT
 $container-width: 1266px;
@@ -33,3 +45,12 @@ $asset-base-path: '/assets';
 @function font($file) {
     @return asset('fonts', $file);
 }
+
+@function svg($file) {
+    @return asset('svg', $file);
+}
+
+@function shadow($color, $size) {
+    @return 0px $size 0px $color;
+}
+

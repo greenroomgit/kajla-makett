@@ -34,17 +34,25 @@
     }
 
     .navbar-item {
+        font-family: $font-header;
         font-size: $nav-size;
         color: $white;
         height: auto;
     
-        text-shadow: 0px 2px 0px $blue-light;
+        text-shadow: shadow($blue-light, 2px);
     
         padding: 0.625em;
         margin: 0.5em;
     
         img {
             max-height: 100%;
+        }
+
+        &:hover {
+            color: $white;
+            background-color: transparent;
+            
+            text-shadow: shadow($orange-dark, 2px);
         }
     }
 

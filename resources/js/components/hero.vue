@@ -1,7 +1,7 @@
 <template>
     <section class="section section-hero">
         <div class="container">
-            <Navigation></Navigation>
+            <Navigation />
             <div class="hero-body">
                 <h1>
                     Építsd fel kajlával Magyarország<br>

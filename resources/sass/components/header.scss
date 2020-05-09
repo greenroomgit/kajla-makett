@@ -7,8 +7,8 @@
     background-repeat: no-repeat;
 
     h1 {
-        color: $white;
         text-align: center;
         line-height: 60px;
+        text-shadow: shadow($blue-light, 4px)
     }
 }

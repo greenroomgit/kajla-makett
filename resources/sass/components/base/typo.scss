@@ -59,11 +59,20 @@ $font-header: 'marujoregular', sans-serif;
 $font-body: 'apokabold', sans-serif;
 $font-footer: 'apokaregular' sans-serif;
 
+body {
+    color: $blue-body;
+}
+
 h1, h2, h3 {
     font-family: $font-header;
     font-weight: normal;
 }
 
 h1 {
+    color: $white;
     font-size: $h1-size;
+}
+
+.card p {
+    font-family: $font-body;
 }

@@ -12055,6 +12055,10 @@ label.panel-block:hover {
   font-style: normal;
 }
 
+body {
+  color: #187A7D;
+}
+
 h1,
 h2,
 h3 {
@@ -12063,18 +12067,32 @@ h3 {
 }
 
 h1 {
+  color: white;
   font-size: 3.25em;
+}
+
+.card p {
+  font-family: "apokabold", sans-serif;
 }
 
 .button {
   min-height: 4em;
+  font-size: 1.625em;
+  color: white;
+  font-family: "marujoregular", sans-serif;
+  text-shadow: 0px 2px 0px #B26513;
 }
 
 .button.is-primary {
-  background-image: url("/assets/images/button-bg.png");
+  background-image: url("/assets/svg/button-primary-bg.svg");
+  background-color: transparent;
   background-repeat: no-repeat;
   background-position: center;
-  background-size: cover;
+  background-size: contain;
+}
+
+.button.is-primary:hover {
+  background-color: transparent;
 }
 
 .container {
@@ -12124,6 +12142,7 @@ h1 {
 }
 
 .navbar-start .navbar-item {
+  font-family: "marujoregular", sans-serif;
   font-size: 1.375em;
   color: white;
   height: auto;
@@ -12134,6 +12153,12 @@ h1 {
 
 .navbar-start .navbar-item img {
   max-height: 100%;
+}
+
+.navbar-start .navbar-item:hover {
+  color: white;
+  background-color: transparent;
+  text-shadow: 0px 2px 0px #B26513;
 }
 
 .navbar-menu {
@@ -12151,8 +12176,8 @@ h1 {
 }
 
 .section-hero h1 {
-  color: white;
   text-align: center;
   line-height: 60px;
+  text-shadow: 0px 4px 0px #2CC0CD;
 }
 

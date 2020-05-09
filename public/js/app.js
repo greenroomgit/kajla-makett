@@ -3035,7 +3035,7 @@ var render = function() {
               _c(
                 "router-link",
                 { staticClass: "navbar-item", attrs: { to: "/jatek" } },
-                [_vm._v("Játek")]
+                [_vm._v("Játék")]
               ),
               _vm._v(" "),
               _c(
@@ -3080,7 +3080,7 @@ var render = function() {
                   staticClass: "navbar-item",
                   attrs: { to: "/makettek-letoltese" }
                 },
-                [_vm._v("Makettek letoltese")]
+                [_vm._v("Makettek letöltése")]
               )
             ],
             1

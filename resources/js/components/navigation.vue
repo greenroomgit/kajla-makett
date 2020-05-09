@@ -3,7 +3,7 @@
       <div id="navbarBasicExample" class="navbar-menu">
 
         <div class="navbar-start navbar-left">
-            <router-link class="navbar-item" to="/jatek">Játek</router-link>
+            <router-link class="navbar-item" to="/jatek">Játék</router-link>
             <router-link class="navbar-item" to="/bekuldott-kepek">Beküldött képek</router-link>     
         </div>
 
@@ -22,7 +22,7 @@
         </div>
 
         <div class="navbar-start navbar-right">
-          <router-link class="navbar-item" to="/makettek-letoltese">Makettek letoltese</router-link>
+          <router-link class="navbar-item" to="/makettek-letoltese">Makettek letöltése</router-link>
         </div>
 
       </div>
