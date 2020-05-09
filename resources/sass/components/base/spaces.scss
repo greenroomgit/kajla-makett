@@ -18,3 +18,18 @@ $container-width: 1266px;
 
 //SPACE
 $shift-1: 0.625em;
+
+//ASSETS
+$asset-base-path: '/assets';
+
+@function asset($type, $file) {
+    @return url($asset-base-path + '/' + $type + '/' + $file);
+}
+
+@function image($file) {
+    @return asset('images', $file);
+}
+
+@function font($file) {
+    @return asset('fonts', $file);
+}

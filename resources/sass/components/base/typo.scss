@@ -1,8 +1,69 @@
 // @import fonts
+@font-face {
+    font-family: 'apokabold';
+    src: font('the_northern_block_ltd_-_apoka_bold-webfont.woff2') format('woff2'),
+         font('the_northern_block_ltd_-_apoka_bold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
 
-//$font-body: 'Open Sans', sans-serif;
+@font-face {
+    font-family: 'apokalight';
+    src: font('the_northern_block_ltd_-_apoka_light-webfont.woff2') format('woff2'),
+         font('the_northern_block_ltd_-_apoka_light-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'apokamedium';
+    src: font('the_northern_block_ltd_-_apoka_medium-webfont.woff2') format('woff2'),
+         font('the_northern_block_ltd_-_apoka_medium-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'apokaregular';
+    src: font('the_northern_block_ltd_-_apoka_regular-webfont.woff2') format('woff2'),
+         font('the_northern_block_ltd_-_apoka_regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'apokablack';
+    src: font('the_northern_block_ltd_-_apoka_black-webfont.woff2') format('woff2'),
+         font('the_northern_block_ltd_-_apoka_black-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'apokathin';
+    src: font('the_northern_block_ltd_-_apoka_thin-webfont.woff2') format('woff2'),
+         font('the_northern_block_ltd_-_apoka_thin-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'marujoregular';
+    src: font('marujo-webfont.woff2') format('woff2'),
+         font('marujo-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+$font-header: 'marujoregular', sans-serif;
+$font-body: 'apokabold', sans-serif;
+$font-footer: 'apokaregular' sans-serif;
+
+h1, h2, h3 {
+    font-family: $font-header;
+    font-weight: normal;
+}
 
 h1 {
     font-size: $h1-size;
-    font-weight: normal;
 }

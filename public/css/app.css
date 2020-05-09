@@ -12006,9 +12006,64 @@ label.panel-block:hover {
   padding: 3rem 1.5rem 6rem;
 }
 
+@font-face {
+  font-family: "apokabold";
+  src: url("/assets/fonts/the_northern_block_ltd_-_apoka_bold-webfont.woff2") format("woff2"), url("/assets/fonts/the_northern_block_ltd_-_apoka_bold-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "apokalight";
+  src: url("/assets/fonts/the_northern_block_ltd_-_apoka_light-webfont.woff2") format("woff2"), url("/assets/fonts/the_northern_block_ltd_-_apoka_light-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "apokamedium";
+  src: url("/assets/fonts/the_northern_block_ltd_-_apoka_medium-webfont.woff2") format("woff2"), url("/assets/fonts/the_northern_block_ltd_-_apoka_medium-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "apokaregular";
+  src: url("/assets/fonts/the_northern_block_ltd_-_apoka_regular-webfont.woff2") format("woff2"), url("/assets/fonts/the_northern_block_ltd_-_apoka_regular-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "apokablack";
+  src: url("/assets/fonts/the_northern_block_ltd_-_apoka_black-webfont.woff2") format("woff2"), url("/assets/fonts/the_northern_block_ltd_-_apoka_black-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "apokathin";
+  src: url("/assets/fonts/the_northern_block_ltd_-_apoka_thin-webfont.woff2") format("woff2"), url("/assets/fonts/the_northern_block_ltd_-_apoka_thin-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "marujoregular";
+  src: url("/assets/fonts/marujo-webfont.woff2") format("woff2"), url("/assets/fonts/marujo-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "marujoregular", sans-serif;
+  font-weight: normal;
+}
+
 h1 {
   font-size: 3.25em;
-  font-weight: normal;
 }
 
 .button {
