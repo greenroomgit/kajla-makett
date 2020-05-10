@@ -1,0 +1,12 @@
+.yellow-box {
+  border-image: svg('yellow-box-bg.svg') 40 / 30px / 0 stretch;
+  min-width: 300px;
+  min-width: 300px;
+  padding: 20px;
+
+  &__inner {
+    background: #FCC627;
+      padding: 30px;
+
+  }
+}

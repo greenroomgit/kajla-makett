@@ -1,7 +1,7 @@
 <template>
     <div class="container guide-steps">
         <div class="columns" v-if="steps">
-            <div class="column" v-for="{ id, headline, description, picture } in steps">
+            <div class="column" v-for="{ id, title, description, picture } in steps">
                 <div class="box">
                     <article class="media">
                         <div class="media-center">
@@ -11,9 +11,9 @@
                         </div>
                         <div class="media-content">
                             <div class="content">
-                                <h3 class="title is-3">teszt szoveg {{ headline }}</h3>
+                                <h3 class="title is-3"> {{ title }}</h3>
                                 <p>
-                                    Lorem ipsum dolor sit amet hosszabb szoveg {{ description }}
+                                     {{ description }}
                                 </p>
                             </div>
                         </div>

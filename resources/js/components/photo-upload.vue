@@ -1,13 +1,8 @@
 <template>
-  <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-md-8">
-        <div class="card">
-          <div class="card-header">Register</div>
 
-          <div class="card-body">
-
-            <!-- THIS SECTION IS FOR ERRORS THAT WOULD COME FROM API -->
+<div class="modal is-active">
+  <div class="modal-background"></div>
+  <div class="modal-content">
             <div v-if="errors">
               <div v-for="error in errors" class="alert alert-danger">{{ error }}</div>
             </div>
@@ -86,12 +81,12 @@
               </div>
               <div>Name : {{ upload.lastname }} {{ upload.firstname }} </div>
               <div>Email : {{ upload.email }}</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+            </div>  </div>
+  <button class="modal-close is-large" aria-label="close"></button>
+</div>
+
+
+
 </template>
 
 <script>
