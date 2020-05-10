@@ -13,8 +13,26 @@
     background: linear-gradient(112.01deg, $bg-gradient-first 6.38%, $bg-gradient-second 85.43%);
 }
 
-//ARTICLE
-
-//SIDEBAR
-
-//FOOTER
+.guide-steps {
+    .title {
+        color: $white;
+        text-shadow: shadow(#3CA1A1, 4px);
+        margin: 14px 0;
+    }
+    .media {
+        flex-direction: column;
+        justify-content: center;
+    }
+    .media-content {
+        text-align: center;
+    }
+    .box {
+        /* fehér átmenet */
+        background: linear-gradient(104.15deg, rgba(255, 255, 255, 0.45) -4.57%, rgba(255, 255, 255, 0.072) 104.02%);
+    }
+    .content {
+        p {
+            color: $blue-body;
+        }
+    }
+}

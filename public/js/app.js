@@ -1926,10 +1926,21 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 var getSteps = function getSteps(callback) {
-  axios__WEBPACK_IMPORTED_MODULE_0___default.a.get('http://localhost:8000/api/guide-steps', {}).then(function (response) {
+  axios__WEBPACK_IMPORTED_MODULE_0___default.a.get('./api/guide-steps', {}).then(function (response) {
     callback(null, response.data);
   })["catch"](function (error) {
     callback(error, error.response.data);
@@ -2819,32 +2830,36 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("footer", { staticClass: "footer" }, [
-    _c("div", { staticClass: "container" }, [
-      _c(
-        "div",
-        { staticClass: "content has-text-centered" },
-        [
-          _c("p", [_vm._v("Hol vagy kajla © 2019. Minden jog fenntartva")]),
-          _vm._v(" "),
-          _c("router-link", { attrs: { to: "/felhasznalasi-feltetelek" } }, [
-            _vm._v("Felhasználási feltételek")
-          ]),
-          _vm._v(" "),
-          _c("router-link", { attrs: { to: "/adatkezelesi-nyilatkozat" } }, [
-            _vm._v("Adatkezelési nyilatkozat ")
-          ]),
-          _vm._v(" "),
-          _c("router-link", { attrs: { to: "/suti-kezeles" } }, [
-            _vm._v("Süti kezelés")
-          ]),
-          _vm._v(" "),
-          _c("router-link", { attrs: { to: "/impresszum" } }, [
-            _vm._v("Impresszum")
-          ])
-        ],
-        1
-      )
-    ])
+    _c(
+      "div",
+      { staticClass: "container" },
+      [
+        _c("p", [_vm._v("Hol vagy kajla © 2019. Minden jog fenntartva")]),
+        _vm._v(" "),
+        _c("router-link", { attrs: { to: "/felhasznalasi-feltetelek" } }, [
+          _vm._v("Felhasználási feltételek")
+        ]),
+        _vm._v(" "),
+        _c("span"),
+        _vm._v(" "),
+        _c("router-link", { attrs: { to: "/adatkezelesi-nyilatkozat" } }, [
+          _vm._v("Adatkezelési nyilatkozat ")
+        ]),
+        _vm._v(" "),
+        _c("span"),
+        _vm._v(" "),
+        _c("router-link", { attrs: { to: "/suti-kezeles" } }, [
+          _vm._v("Süti kezelés")
+        ]),
+        _vm._v(" "),
+        _c("span"),
+        _vm._v(" "),
+        _c("router-link", { attrs: { to: "/impresszum" } }, [
+          _vm._v("Impresszum")
+        ])
+      ],
+      1
+    )
   ])
 }
 var staticRenderFns = []
@@ -2869,28 +2884,43 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "guide-steps" }, [
-    _c("h3", [_vm._v("Steps")]),
-    _vm._v(" "),
+  return _c("div", { staticClass: "container guide-steps" }, [
     _vm.steps
       ? _c(
-          "ol",
+          "div",
+          { staticClass: "columns" },
           _vm._l(_vm.steps, function(ref) {
             var id = ref.id
             var headline = ref.headline
             var description = ref.description
             var picture = ref.picture
-            return _c("li", [
-              _c("img", { attrs: { src: "/storage/" + picture, alt: "" } }),
-              _vm._v(" "),
-              _c("h3", [_vm._v(_vm._s(headline))]),
-              _vm._v(" "),
-              _c("p", [
-                _vm._v(
-                  "\n                    " +
-                    _vm._s(description) +
-                    "\n                "
-                )
+            return _c("div", { staticClass: "column" }, [
+              _c("div", { staticClass: "box" }, [
+                _c("article", { staticClass: "media" }, [
+                  _c("div", { staticClass: "media-center" }, [
+                    _c("figure", { staticClass: "image is-640x480" }, [
+                      _c("img", {
+                        attrs: { src: "/storage/" + picture, alt: "" }
+                      })
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "media-content" }, [
+                    _c("div", { staticClass: "content" }, [
+                      _c("h3", { staticClass: "title is-3" }, [
+                        _vm._v("teszt szoveg " + _vm._s(headline))
+                      ]),
+                      _vm._v(" "),
+                      _c("p", [
+                        _vm._v(
+                          "\n                                Lorem ipsum dolor sit amet hosszabb szoveg " +
+                            _vm._s(description) +
+                            "\n                            "
+                        )
+                      ])
+                    ])
+                  ])
+                ])
               ])
             ])
           }),

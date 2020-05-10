@@ -12057,6 +12057,11 @@ label.panel-block:hover {
 
 body {
   color: #187A7D;
+  font-family: "apokabold", sans-serif;
+}
+
+footer {
+  font-family: "apokaregular" sans-serif;
 }
 
 h1,
@@ -12069,6 +12074,11 @@ h3 {
 h1 {
   color: white;
   font-size: 3.25em;
+}
+
+h3 {
+  color: white;
+  font-size: 2.625em;
 }
 
 .card p {
@@ -12106,6 +12116,30 @@ h1 {
 .kajla-wrapper {
   background: #1bd2c9;
   background: linear-gradient(112.01deg, #1bd2c9 6.38%, #3ab0d1 85.43%);
+}
+
+.guide-steps .title {
+  color: white;
+  text-shadow: 0px 4px 0px #3CA1A1;
+  margin: 14px 0;
+}
+
+.guide-steps .media {
+  flex-direction: column;
+  justify-content: center;
+}
+
+.guide-steps .media-content {
+  text-align: center;
+}
+
+.guide-steps .box {
+  /* fehér átmenet */
+  background: linear-gradient(104.15deg, rgba(255, 255, 255, 0.45) -4.57%, rgba(255, 255, 255, 0.072) 104.02%);
+}
+
+.guide-steps .content p {
+  color: #187A7D;
 }
 
 .container .navbar {
@@ -12179,5 +12213,36 @@ h1 {
   text-align: center;
   line-height: 60px;
   text-shadow: 0px 4px 0px #2CC0CD;
+}
+
+footer.footer {
+  background-color: transparent;
+  margin-top: 4.5em;
+  font-family: "apokaregular" sans-serif;
+  font-size: 0.813em;
+}
+
+footer.footer .container {
+  color: white;
+  display: flex;
+  justify-content: center;
+  max-width: 1266px;
+  border-top: 1px solid white;
+  padding-top: 1.5em;
+}
+
+footer.footer .container a {
+  color: white;
+}
+
+footer.footer .container p,
+footer.footer .container a {
+  padding: 0 1.875em;
+}
+
+footer.footer .container span {
+  display: inline;
+  content: " ";
+  border-right: 1px solid white;
 }
 

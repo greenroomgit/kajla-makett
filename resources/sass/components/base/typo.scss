@@ -55,12 +55,17 @@
     font-style: normal;
 }
 
+$font-footer: 'apokaregular' sans-serif;
 $font-header: 'marujoregular', sans-serif;
 $font-body: 'apokabold', sans-serif;
-$font-footer: 'apokaregular' sans-serif;
 
 body {
     color: $blue-body;
+    font-family: $font-body;
+}
+
+footer {
+    font-family: $font-footer;
 }
 
 h1, h2, h3 {
@@ -71,6 +76,11 @@ h1, h2, h3 {
 h1 {
     color: $white;
     font-size: $h1-size;
+}
+
+h3 {
+    color: $white;
+    font-size: $h3-size;
 }
 
 .card p {
