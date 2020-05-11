@@ -18,4 +18,16 @@
             background-color: transparent;
         }
     }
+    &.is-secondary {
+        //todo: meg nem nyulik a bg. Kerlek, hogy nezz majd ra.
+        background-image: svg('button-secondary-bg.svg');
+        background-color: transparent;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 100% 100%;
+        border: none;
+        &:hover {
+            background-color: transparent;
+        }
+    }
 }

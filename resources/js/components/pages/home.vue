@@ -24,13 +24,14 @@
                         <button class="button is-primary">Szeretnék makettet</button>
                     </div>
                     <div class="column">
-                        <button class="button is-primary">Képet küldök be</button>
+                        <button class="button is-primary" @click.prevent="openPhotoUploadModal">Képet küldök be</button>
                     </div>
                 </div>
             </div>
         </div>
         <Videos />
         <Pictures />
+        <PhotoUpload :is-open="isPhotoUploadModalOpen" v-on:onClose="openPhotoUploadModal"/>
     </div>
 </template>
 
@@ -47,6 +48,16 @@
             'PhotoUpload': PhotoUpload,
             'Videos': Videos,
             'Pictures': Pictures
+        },
+        data() {
+            return {
+                isPhotoUploadModalOpen: false
+            }
+        },
+        methods: {
+            openPhotoUploadModal() {
+                this.isPhotoUploadModalOpen = !this.isPhotoUploadModalOpen
+            }
         }
     }
 

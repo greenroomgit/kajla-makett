@@ -1,0 +1,93 @@
+.form {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 4.125rem;
+  background-image: svg("modal-background.svg");
+  &__description {
+    font-size: $modal-headline;
+    color: $brown;
+    text-align: center;
+  }
+  &__input-container {
+    flex-basis: 50%;
+    margin: 1rem 0;
+    &--full-width {
+      flex-basis: 100%;
+    }
+    &--horizontal-centered {
+      text-align: center;
+    }
+  }
+  &__input {
+    padding: 1em 1.5em ;
+    font-family: "apokabold", sans-serif;
+    color: #fff;
+    font-size: $font-size;
+    border: none;
+    background: transparent;
+    background-image: svg("input-background.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    &--full-width {
+      width: 100%;
+    }
+    &--hidden {
+      display: none;
+    }
+    &:focus {
+      background-image: svg("active-input-background.svg");
+      outline: none;
+    }
+  }
+  &__label {
+    font-family: "marujoregular", sans-serif;
+    color: $brown;
+    &--checkbox {
+      font-family: "apokabold", sans-serif;
+      display: block;
+      position: relative;
+      padding-left: 35px;
+      margin-bottom: 12px;
+      cursor: pointer;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+  }
+  &__checkbox {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+  &__checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 33px;
+    width: 33px;
+    background-image: svg("checkbox.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+
+  }
+  &__checkbox:checked ~ &__checkmark {
+    background-image: svg("checkbox-checked.svg");
+  }
+  &__input-button-container {
+    display: inline-block;
+    cursor: pointer;
+  }
+  &__image-preview-container {
+    width: 100%;
+    margin-top: 1rem;
+  }
+  &__image-preview {
+    width: 5rem;
+    margin: 0 auto;
+  }
+}
