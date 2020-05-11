@@ -1,5 +1,5 @@
 <template>
-    <section class="section section-hero">
+    <section class="section section-hero separator">
         <div class="container">
             <Navigation />
             <div class="hero-body">
@@ -7,7 +7,6 @@
                     Építsd fel kajlával Magyarország<br>
                     nevezettességeit és nyerj!
                 </h1>
-                <a href="" class="button is-primary">button is-primary</a>
             </div>
         </div>
     </section>

@@ -1937,6 +1937,70 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 var getSteps = function getSteps(callback) {
@@ -2000,7 +2064,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'app',
@@ -2022,7 +2085,6 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _hero__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./hero */ "./resources/js/components/hero.vue");
 /* harmony import */ var _footer__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./footer */ "./resources/js/components/footer.vue");
-/* harmony import */ var _videos__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./videos */ "./resources/js/components/videos.vue");
 //
 //
 //
@@ -2035,22 +2097,13 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'app',
   components: {
     'Hero': _hero__WEBPACK_IMPORTED_MODULE_0__["default"],
-    'Footer': _footer__WEBPACK_IMPORTED_MODULE_1__["default"],
-    'Videos': _videos__WEBPACK_IMPORTED_MODULE_2__["default"]
+    'Footer': _footer__WEBPACK_IMPORTED_MODULE_1__["default"]
   }
 });
 
@@ -2186,6 +2239,8 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _guide_steps__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../guide-steps */ "./resources/js/components/guide-steps.vue");
 /* harmony import */ var _photo_upload__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../photo-upload */ "./resources/js/components/photo-upload.vue");
+/* harmony import */ var _videos__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../videos */ "./resources/js/components/videos.vue");
+/* harmony import */ var _pictures__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../pictures */ "./resources/js/components/pictures.vue");
 //
 //
 //
@@ -2220,13 +2275,19 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'homepage',
   components: {
     'GuideSteps': _guide_steps__WEBPACK_IMPORTED_MODULE_0__["default"],
-    'PhotoUpload': _photo_upload__WEBPACK_IMPORTED_MODULE_1__["default"]
+    'PhotoUpload': _photo_upload__WEBPACK_IMPORTED_MODULE_1__["default"],
+    'Videos': _videos__WEBPACK_IMPORTED_MODULE_2__["default"],
+    'Pictures': _pictures__WEBPACK_IMPORTED_MODULE_3__["default"]
   }
 });
 
@@ -2467,6 +2528,64 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/pictures.vue?vue&type=script&lang=js&":
+/*!*******************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/pictures.vue?vue&type=script&lang=js& ***!
+  \*******************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/videos.vue?vue&type=script&lang=js&":
 /*!*****************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/videos.vue?vue&type=script&lang=js& ***!
@@ -2478,6 +2597,56 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -2528,6 +2697,8 @@ var getVideos = function getVideos(callback) {
       } else {
         this.videos = videos;
       }
+
+      console.log(videos.length);
     }
   }
 });
@@ -20188,52 +20359,127 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "container guide-steps" }, [
+  return _c("div", { staticClass: "guide-steps separator" }, [
     _vm.steps
-      ? _c(
-          "div",
-          { staticClass: "columns" },
-          _vm._l(_vm.steps, function(ref) {
-            var id = ref.id
-            var headline = ref.headline
-            var description = ref.description
-            var picture = ref.picture
-            return _c("div", { staticClass: "column" }, [
-              _c("div", { staticClass: "box" }, [
-                _c("article", { staticClass: "media" }, [
-                  _c("div", { staticClass: "media-center" }, [
-                    _c("figure", { staticClass: "image is-640x480" }, [
-                      _c("img", {
-                        attrs: { src: "/storage/" + picture, alt: "" }
-                      })
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "media-content" }, [
-                    _c("div", { staticClass: "content" }, [
-                      _c("h3", { staticClass: "title is-3" }, [
-                        _vm._v("teszt szoveg " + _vm._s(headline))
-                      ]),
-                      _vm._v(" "),
-                      _c("p", [
-                        _vm._v(
-                          "\n                                Lorem ipsum dolor sit amet hosszabb szoveg " +
-                            _vm._s(description) +
-                            "\n                            "
-                        )
-                      ])
-                    ])
+      ? _c("div", { staticClass: "columns" }, [
+          _c("div", { staticClass: "column" }, [
+            _c("div", { staticClass: "box" }, [
+              _c("article", { staticClass: "media box__inner" }, [
+                _c("div", { staticClass: "media-center" }, [
+                  _c("figure", { staticClass: "image is-640x480" }, [
+                    _c("img", {
+                      attrs: {
+                        src: "/assets/images/makett-csomag-01.png",
+                        alt: ""
+                      }
+                    })
                   ])
-                ])
+                ]),
+                _vm._v(" "),
+                _vm._m(0)
               ])
             ])
-          }),
-          0
-        )
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "column" }, [
+            _c("div", { staticClass: "box" }, [
+              _c("article", { staticClass: "media box__inner" }, [
+                _c("div", { staticClass: "media-center" }, [
+                  _c("figure", { staticClass: "image is-640x480" }, [
+                    _c("img", {
+                      attrs: { src: "/assets/images/makett-kajla.png", alt: "" }
+                    })
+                  ])
+                ]),
+                _vm._v(" "),
+                _vm._m(1)
+              ])
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "column" }, [
+            _c("div", { staticClass: "box" }, [
+              _c("article", { staticClass: "media box__inner" }, [
+                _c("div", { staticClass: "media-center" }, [
+                  _c("figure", { staticClass: "image is-640x480" }, [
+                    _c("img", {
+                      attrs: { src: "/assets/images/fotos-kajla.png", alt: "" }
+                    })
+                  ])
+                ]),
+                _vm._v(" "),
+                _vm._m(2)
+              ])
+            ])
+          ])
+        ])
       : _vm._e()
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "media-content" }, [
+      _c("div", { staticClass: "content" }, [
+        _c("h3", { staticClass: "title is-3" }, [
+          _vm._v("Szerezd be a makettet")
+        ]),
+        _vm._v(" "),
+        _c("p", [
+          _vm._v(
+            "\n                                 Kérd az ingyenes makett csomagot, amit pár napon belül postán fogsz megkapni. Vagy le is töltheted és kinyomtathatod.\n                            "
+          )
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "box-bottom" }, [
+          _c("button", { staticClass: "button is-primary" }, [
+            _vm._v("Igénylek")
+          ]),
+          _vm._v(" "),
+          _c("button", { staticClass: "button is-primary" }, [
+            _vm._v("Letöltök")
+          ])
+        ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "media-content" }, [
+      _c("div", { staticClass: "content" }, [
+        _c("h3", { staticClass: "title is-3" }, [_vm._v("Állítsd Össze")]),
+        _vm._v(" "),
+        _c("p", [
+          _vm._v(
+            "\n                                 Az útmutató segítségével állítsd össze a makettet, majd rajzolj egy hozzá illő hátteret, és tedd mögé.\n                            "
+          )
+        ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "media-content" }, [
+      _c("div", { staticClass: "content" }, [
+        _c("h3", { staticClass: "title is-3" }, [
+          _vm._v("Fotózz és töltsd fel")
+        ]),
+        _vm._v(" "),
+        _c("p", [
+          _vm._v(
+            "\n                                Fényképezd le az így kapott helyszínt, adj neki egy címet, és töltsd fel az oldalon.\n                            "
+          )
+        ])
+      ])
+    ])
+  }
+]
 render._withStripped = true
 
 
@@ -20255,7 +20501,7 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("section", { staticClass: "section section-hero" }, [
+  return _c("section", { staticClass: "section section-hero separator" }, [
     _c(
       "div",
       { staticClass: "container" },
@@ -20274,10 +20520,6 @@ var staticRenderFns = [
         _vm._v("\n                Építsd fel kajlával Magyarország"),
         _c("br"),
         _vm._v("\n                nevezettességeit és nyerj!\n            ")
-      ]),
-      _vm._v(" "),
-      _c("a", { staticClass: "button is-primary", attrs: { href: "" } }, [
-        _vm._v("button is-primary")
       ])
     ])
   }
@@ -20309,20 +20551,7 @@ var render = function() {
     [
       _c("Hero"),
       _vm._v(" "),
-      _c("section", { staticClass: "section" }, [
-        _c("div", { staticClass: "container" }, [
-          _c("div", { staticClass: "columns" }, [
-            _c(
-              "div",
-              { staticClass: "column is-four-fifths" },
-              [_c("router-view")],
-              1
-            ),
-            _vm._v(" "),
-            _c("div", { staticClass: "column" }, [_c("Videos")], 1)
-          ])
-        ])
-      ]),
+      _c("div", { staticClass: "container" }, [_c("router-view")], 1),
       _vm._v(" "),
       _c("Footer")
     ],
@@ -20574,198 +20803,71 @@ var render = function() {
     "div",
     {},
     [
-      _vm._v("\n        Home\n"),
-      _c(
-        "svg",
-        {
-          attrs: {
-            width: "603",
-            height: "526",
-            viewBox: "0 0 603 526",
-            fill: "none",
-            xmlns: "http://www.w3.org/2000/svg"
-          }
-        },
-        [
-          _c("path", {
-            attrs: {
-              "fill-rule": "evenodd",
-              "clip-rule": "evenodd",
-              d:
-                "M4.81305 45.8694C7.82173 -6.44165 47.8226 9.74393 134.639 3.94997C221.456 -1.84399 267.763 0.527386 312.302 0.649966C334.025 0.709751 398.492 5.74355 418.751 6.45165C439.011 7.15977 469.287 8.27271 508.507 7.30943C522.499 6.96578 558.316 4.16932 581.011 2.31114C591.64 1.44092 600.717 9.91511 600.559 20.578C600.104 51.2631 599.294 108.726 599.294 129.661C599.294 300.932 602.167 392.323 602.167 428C602.167 445.917 604.562 476.215 600.862 492.35C593.293 525.35 568.6 513.403 483.162 516.948C397.723 520.492 354.987 524.635 303.323 525.35C252.357 526.055 205.74 525.961 168.51 525.35C56.0566 523.506 40.9787 524.333 19.4494 516.948C-2.0799 509.562 1.2465 459.701 1.2465 459.701C1.2465 459.701 4.9642 359.178 4.81305 294.627C4.6619 230.075 5.21554 297.392 4.81305 205.862C4.41056 114.332 3.64288 66.2148 4.81305 45.8694Z",
-              fill: "#FFE667"
-            }
-          }),
-          _vm._v(" "),
-          _c("path", {
-            attrs: {
-              "fill-rule": "evenodd",
-              "clip-rule": "evenodd",
-              d:
-                "M9.80716 39.2161C9.80716 13.1698 40.2471 13.1698 47.5663 12.1691C72.4525 8.76652 102.459 14.511 138.273 12.1691C223.355 6.60538 267.506 10.2011 311.156 10.3188C354.805 10.4365 394.967 11.2046 416.869 12.1691C454.732 13.8366 538.732 11.8631 575.953 10.8487C586.058 10.5733 594.384 18.5379 594.468 28.6462C595.016 94.5815 597.018 319.156 599.351 382.368C601.744 447.221 598.578 484.528 596.958 487.904C591.644 498.977 589.528 506.831 559.397 507.057C529.265 507.283 559.638 504.569 470.323 511.49C381.008 518.412 354.023 516.89 303.392 517.576C253.444 518.253 205.284 518.163 168.797 517.576C90.5964 516.32 43.3227 508.02 22.4602 503.305C14.8431 501.583 9.80716 494.963 9.80716 487.154C9.80716 414.895 9.80716 62.5822 9.80716 39.2161Z",
-              fill: "#F8AD1F"
-            }
-          }),
-          _vm._v(" "),
-          _c("path", {
-            attrs: {
-              opacity: "0.526507",
-              "fill-rule": "evenodd",
-              "clip-rule": "evenodd",
-              d:
-                "M23.5998 455.127C21.0524 442.422 17.395 484.525 34.0766 490.106C50.7582 495.687 68.7596 490.106 68.7596 490.106C68.7596 490.106 26.1473 467.832 23.5998 455.127Z",
-              fill: "#C3630B"
-            }
-          }),
-          _vm._v(" "),
-          _c("path", {
-            attrs: {
-              opacity: "0.526507",
-              "fill-rule": "evenodd",
-              "clip-rule": "evenodd",
-              d:
-                "M579.753 455.127C583.507 442.422 588.898 484.525 564.311 490.106C539.724 495.687 513.191 490.106 513.191 490.106C513.191 490.106 575.998 467.832 579.753 455.127Z",
-              fill: "#C3630B"
-            }
-          }),
-          _vm._v(" "),
-          _c("g", { attrs: { filter: "url(#filter0_di)" } }, [
-            _c("path", {
-              attrs: {
-                "fill-rule": "evenodd",
-                "clip-rule": "evenodd",
-                d:
-                  "M14.63 38.885C14.5589 27.7716 24.4972 18.9569 35.5892 19.6495C55.3997 20.8863 89.3609 21.7006 138.305 18.4909C222.244 12.9861 260.005 17.5482 303.068 17.6647C324.072 17.7215 416.154 19.6109 437.762 20.5652C473.752 22.1547 540.31 20.2676 572.703 19.1702C582.923 18.8239 591.388 27.0056 591.388 37.2312V480.762C591.388 490.168 584.147 497.988 574.769 498.709L472.07 506.61C472.07 506.61 353.019 512.428 303.068 513.107C253.791 513.777 209.362 513.687 173.367 513.107C97.0914 511.878 51.1568 504.658 30.5317 500.458C22.7591 498.875 17.5284 492.005 17.4777 484.073L14.63 38.885Z",
-                fill: "#FCC627"
-              }
-            })
-          ]),
-          _vm._v(" "),
-          _c("path", {
-            attrs: {
-              opacity: "0.526507",
-              "fill-rule": "evenodd",
-              "clip-rule": "evenodd",
-              d:
-                "M8.47519 483.757C5.92774 471.053 2.72866 503.052 19.4102 508.633C36.0918 514.214 34.8184 508.633 34.8184 508.633C34.8184 508.633 11.0226 496.462 8.47519 483.757Z",
-              fill: "#E9B627"
-            }
-          }),
-          _vm._v(" "),
-          _c("path", {
-            attrs: {
-              opacity: "0.526507",
-              "fill-rule": "evenodd",
-              "clip-rule": "evenodd",
-              d:
-                "M597.359 483.757C599.906 471.053 603.105 503.052 586.424 508.633C569.742 514.214 571.016 508.633 571.016 508.633C571.016 508.633 594.812 496.462 597.359 483.757Z",
-              fill: "#E9B627"
-            }
-          }),
-          _vm._v(" "),
-          _c("defs", [
-            _c(
-              "filter",
-              {
-                attrs: {
-                  id: "filter0_di",
-                  x: "4.62958",
-                  y: "7.77966",
-                  width: "596.759",
-                  height: "517.797",
-                  filterUnits: "userSpaceOnUse",
-                  "color-interpolation-filters": "sRGB"
-                }
-              },
-              [
-                _c("feFlood", {
-                  attrs: { "flood-opacity": "0", result: "BackgroundImageFix" }
-                }),
-                _vm._v(" "),
-                _c("feColorMatrix", {
-                  attrs: {
-                    in: "SourceAlpha",
-                    type: "matrix",
-                    values: "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
-                  }
-                }),
-                _vm._v(" "),
-                _c("feOffset", { attrs: { dy: "2" } }),
-                _vm._v(" "),
-                _c("feGaussianBlur", { attrs: { stdDeviation: "5" } }),
-                _vm._v(" "),
-                _c("feColorMatrix", {
-                  attrs: {
-                    type: "matrix",
-                    values:
-                      "0 0 0 0 0.774102 0 0 0 0 0.2636 0 0 0 0 0 0 0 0 0.737375 0"
-                  }
-                }),
-                _vm._v(" "),
-                _c("feBlend", {
-                  attrs: {
-                    mode: "normal",
-                    in2: "BackgroundImageFix",
-                    result: "effect1_dropShadow"
-                  }
-                }),
-                _vm._v(" "),
-                _c("feBlend", {
-                  attrs: {
-                    mode: "normal",
-                    in: "SourceGraphic",
-                    in2: "effect1_dropShadow",
-                    result: "shape"
-                  }
-                }),
-                _vm._v(" "),
-                _c("feColorMatrix", {
-                  attrs: {
-                    in: "SourceAlpha",
-                    type: "matrix",
-                    values: "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0",
-                    result: "hardAlpha"
-                  }
-                }),
-                _vm._v(" "),
-                _c("feOffset", { attrs: { dy: "4" } }),
-                _vm._v(" "),
-                _c("feComposite", {
-                  attrs: {
-                    in2: "hardAlpha",
-                    operator: "arithmetic",
-                    k2: "-1",
-                    k3: "1"
-                  }
-                }),
-                _vm._v(" "),
-                _c("feColorMatrix", {
-                  attrs: {
-                    type: "matrix",
-                    values: "0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.302649 0"
-                  }
-                }),
-                _vm._v(" "),
-                _c("feBlend", {
-                  attrs: {
-                    mode: "normal",
-                    in2: "shape",
-                    result: "effect2_innerShadow"
-                  }
-                })
-              ],
-              1
-            )
-          ])
-        ]
-      ),
+      _c("GuideSteps"),
       _vm._v(" "),
-      _c("GuideSteps")
+      _vm._m(0),
+      _vm._v(" "),
+      _vm._m(1),
+      _vm._v(" "),
+      _c("Videos"),
+      _vm._v(" "),
+      _c("Pictures")
     ],
     1
   )
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "separator" }, [
+      _c("div", { staticClass: "columns" }, [
+        _c("div", { staticClass: "column" }, [
+          _c("div", { staticClass: "info-horizonatal has-text-centered" }, [
+            _c("div", { staticClass: "info-horizonatal__inner" }, [
+              _c("p", [
+                _vm._v(
+                  "A feltöltött képeket egy gyors ellenőrzés után publikáljuk. Ha közzé tettük  a képedet, \n                        akkor újabb makett csomaggal lepünk meg. A játék végén pedig egy zsűri fogja kiválasztani \n                        a legjobb képeket, a beküldői pedig a külön díjban részesülnek."
+                )
+              ])
+            ])
+          ])
+        ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "yellow-box separator" }, [
+      _c("div", { staticClass: "yellow-box__inner" }, [
+        _c("div", { staticClass: "columns" }, [
+          _c("div", { staticClass: "column is-half" }, [
+            _c("h3", { staticClass: "title is-3" }, [
+              _vm._v("Építsd fel Kajlával Magyarország"),
+              _c("br"),
+              _vm._v(" nevezetességeit és nyerj!")
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "column" }, [
+            _c("button", { staticClass: "button is-primary" }, [
+              _vm._v("Szeretnék makettet")
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "column" }, [
+            _c("button", { staticClass: "button is-primary" }, [
+              _vm._v("Képet küldök be")
+            ])
+          ])
+        ])
+      ])
+    ])
+  }
+]
 render._withStripped = true
 
 
@@ -21242,6 +21344,125 @@ render._withStripped = true
 
 /***/ }),
 
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/pictures.vue?vue&type=template&id=3acf3c00&":
+/*!***********************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/pictures.vue?vue&type=template&id=3acf3c00& ***!
+  \***********************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _vm._m(0)
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "picture-box" }, [
+      _c("div", { staticClass: "picture-box__inner" }, [
+        _c("h3", { staticClass: "title" }, [_vm._v("Beküldött képek")]),
+        _vm._v(" "),
+        _c("div", { staticClass: "picture-wrapper" }, [
+          _c("div", { staticClass: "columns is-multiline" }, [
+            _c("div", { staticClass: "column is-one-quarter" }, [
+              _c("img", {
+                attrs: { src: "assets/svg/picture-bg.svg", alt: "" }
+              }),
+              _vm._v(" "),
+              _c("p", [
+                _vm._v("Kajla és az őslények kalandjai két soros címben")
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "column is-one-quarter" }, [
+              _c("img", {
+                attrs: { src: "assets/svg/picture-bg.svg", alt: "" }
+              }),
+              _vm._v(" "),
+              _c("p", [
+                _vm._v("Kajla és az őslények kalandjai két soros címben")
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "column is-one-quarter" }, [
+              _c("img", {
+                attrs: { src: "assets/svg/picture-bg.svg", alt: "" }
+              }),
+              _vm._v(" "),
+              _c("p", [
+                _vm._v("Kajla és az őslények kalandjai két soros címben")
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "column is-one-quarter" }, [
+              _c("img", {
+                attrs: { src: "assets/svg/picture-bg.svg", alt: "" }
+              }),
+              _vm._v(" "),
+              _c("p", [
+                _vm._v("Kajla és az őslények kalandjai két soros címben")
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "column is-one-quarter" }, [
+              _c("img", {
+                attrs: { src: "assets/svg/picture-bg.svg", alt: "" }
+              }),
+              _vm._v(" "),
+              _c("p", [
+                _vm._v("Kajla és az őslények kalandjai két soros címben")
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "column is-one-quarter" }, [
+              _c("img", {
+                attrs: { src: "assets/svg/picture-bg.svg", alt: "" }
+              }),
+              _vm._v(" "),
+              _c("p", [
+                _vm._v("Kajla és az őslények kalandjai két soros címben")
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "column is-one-quarter" }, [
+              _c("img", {
+                attrs: { src: "assets/svg/picture-bg.svg", alt: "" }
+              }),
+              _vm._v(" "),
+              _c("p", [
+                _vm._v("Kajla és az őslények kalandjai két soros címben")
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "column is-one-quarter" }, [
+              _c("img", {
+                attrs: { src: "assets/svg/picture-bg.svg", alt: "" }
+              }),
+              _vm._v(" "),
+              _c("p", [
+                _vm._v("Kajla és az őslények kalandjai két soros címben")
+              ])
+            ])
+          ])
+        ])
+      ])
+    ])
+  }
+]
+render._withStripped = true
+
+
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/videos.vue?vue&type=template&id=b76a3d3a&":
 /*!*********************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/videos.vue?vue&type=template&id=b76a3d3a& ***!
@@ -21257,50 +21478,114 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "videos" }, [
-    _c("h3", [_vm._v("Videók")]),
-    _vm._v(" "),
-    _vm.videos
-      ? _c(
-          "ul",
-          _vm._l(_vm.videos, function(ref) {
-            var id = ref.id
-            var caption = ref.caption
-            var youtube_id = ref.youtube_id
-            return _c("li", [
-              _c(
-                "a",
-                {
-                  attrs: { href: "https://youtube.com/watch?v=" + youtube_id }
-                },
-                [
-                  _c("img", {
-                    attrs: {
-                      src:
-                        "https://img.youtube.com/vi/" +
-                        youtube_id +
-                        "/mqdefault.jpg",
-                      alt: ""
-                    }
-                  }),
-                  _vm._v(" "),
-                  _c("p", [
-                    _vm._v(
-                      "\n                    " +
-                        _vm._s(caption) +
-                        "\n                "
-                    )
-                  ])
-                ]
-              )
-            ])
-          }),
-          0
-        )
-      : _vm._e()
+  return _c("div", { staticClass: "video-box separator" }, [
+    _c("div", { staticClass: "video-box__inner" }, [
+      _c("h3", { staticClass: "title" }, [_vm._v("Kajla makett mesék")]),
+      _vm._v(" "),
+      _c("div", { staticClass: "video-wrapper" }, [
+        _c("div", { staticClass: "columns" }, [
+          _c("div", { staticClass: "column is-9 first" }, [
+            _c(
+              "a",
+              {
+                staticClass: "video-item-button",
+                attrs: { href: "https://youtube.com/" }
+              },
+              [
+                _vm._m(0),
+                _vm._v(" "),
+                _c("p", [_vm._v("Kovács Petike influencer makett meséje")])
+              ]
+            )
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "column" }, [
+            _c(
+              "a",
+              {
+                staticClass: "video-item-button",
+                attrs: { href: "https://youtube.com/" }
+              },
+              [_vm._m(1), _vm._v(" "), _c("p", [_vm._v("Kovács Petike")])]
+            ),
+            _vm._v(" "),
+            _c(
+              "a",
+              {
+                staticClass: "video-item-button",
+                attrs: { href: "https://youtube.com/" }
+              },
+              [_vm._m(2), _vm._v(" "), _c("p", [_vm._v("Kovács Petike")])]
+            ),
+            _vm._v(" "),
+            _c(
+              "a",
+              {
+                staticClass: "video-item-button",
+                attrs: { href: "https://youtube.com/" }
+              },
+              [_vm._m(3), _vm._v(" "), _c("p", [_vm._v("Kovács Petike")])]
+            )
+          ])
+        ])
+      ])
+    ])
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "video-item" }, [
+      _c("div", { staticClass: "video-item__inner has-text-centered" }, [
+        _c("img", {
+          staticClass: "play-button",
+          attrs: { src: "/assets/svg/button-video.svg", alt: "" }
+        })
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "video-item" }, [
+      _c("div", { staticClass: "video-item__inner has-text-centered" }, [
+        _c("img", {
+          staticClass: "play-button",
+          attrs: { src: "/assets/svg/button-video.svg", alt: "" }
+        })
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "video-item" }, [
+      _c("div", { staticClass: "video-item__inner has-text-centered" }, [
+        _c("img", {
+          staticClass: "play-button",
+          attrs: { src: "/assets/svg/button-video.svg", alt: "" }
+        })
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "video-item" }, [
+      _c("div", { staticClass: "video-item__inner has-text-centered" }, [
+        _c("img", {
+          staticClass: "play-button",
+          attrs: { src: "/assets/svg/button-video.svg", alt: "" }
+        })
+      ])
+    ])
+  }
+]
 render._withStripped = true
 
 
@@ -37370,6 +37655,75 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/components/pictures.vue":
+/*!**********************************************!*\
+  !*** ./resources/js/components/pictures.vue ***!
+  \**********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _pictures_vue_vue_type_template_id_3acf3c00___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./pictures.vue?vue&type=template&id=3acf3c00& */ "./resources/js/components/pictures.vue?vue&type=template&id=3acf3c00&");
+/* harmony import */ var _pictures_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./pictures.vue?vue&type=script&lang=js& */ "./resources/js/components/pictures.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _pictures_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _pictures_vue_vue_type_template_id_3acf3c00___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _pictures_vue_vue_type_template_id_3acf3c00___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/pictures.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/pictures.vue?vue&type=script&lang=js&":
+/*!***********************************************************************!*\
+  !*** ./resources/js/components/pictures.vue?vue&type=script&lang=js& ***!
+  \***********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_pictures_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./pictures.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/pictures.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_pictures_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/pictures.vue?vue&type=template&id=3acf3c00&":
+/*!*****************************************************************************!*\
+  !*** ./resources/js/components/pictures.vue?vue&type=template&id=3acf3c00& ***!
+  \*****************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_pictures_vue_vue_type_template_id_3acf3c00___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./pictures.vue?vue&type=template&id=3acf3c00& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/pictures.vue?vue&type=template&id=3acf3c00&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_pictures_vue_vue_type_template_id_3acf3c00___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_pictures_vue_vue_type_template_id_3acf3c00___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
 /***/ "./resources/js/components/videos.vue":
 /*!********************************************!*\
   !*** ./resources/js/components/videos.vue ***!
@@ -37530,8 +37884,8 @@ var routes = [{
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/pixeloid/Sites/kajla-makett/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /Users/pixeloid/Sites/kajla-makett/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /Users/jocc/Sites/kajla-makett/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /Users/jocc/Sites/kajla-makett/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

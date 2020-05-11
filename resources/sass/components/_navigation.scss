@@ -33,7 +33,7 @@
         margin-left: -6em;
     }
 
-    .navbar-item {
+    a.navbar-item {
         font-family: $font-header;
         font-size: $nav-size;
         color: $white;
@@ -54,6 +54,16 @@
             
             text-shadow: shadow($orange-dark, 2px);
         }
+
+        navbar-link:hover, .navbar-link.is-active {
+            backlground: transparent;
+            color: $white;
+        }
+
+        &:focus {
+            backlground: transparent;
+            color: $white;
+        }
     }
 
 }
@@ -63,3 +73,7 @@
     margin-top: $shift-1;
 }
 
+a.navbar-item:focus, a.navbar-item:focus-within, a.navbar-item:hover, a.navbar-item.is-active, .navbar-link:focus, .navbar-link:focus-within, .navbar-link:hover, .navbar-link.is-active {
+    backlground: transparent;
+    color: $white;
+}

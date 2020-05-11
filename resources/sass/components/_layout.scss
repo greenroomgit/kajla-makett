@@ -8,6 +8,10 @@
     padding-top: 0;
 }
 
+.columns {
+    margin-bottom: $size * 4;
+}
+
 .kajla-wrapper {
     background: rgb(27,210,201);
     background: linear-gradient(112.01deg, $bg-gradient-first 6.38%, $bg-gradient-second 85.43%);
@@ -16,8 +20,9 @@
 .guide-steps {
     .title {
         color: $white;
-        text-shadow: shadow(#3CA1A1, 4px);
+        text-shadow: shadow($title-shadow, 4px);
         margin: 14px 0;
+        //height: 72px;
     }
     .media {
         flex-direction: column;
@@ -25,14 +30,140 @@
     }
     .media-content {
         text-align: center;
+        min-width:100%;
+        .content {
+            font-size: 16px;
+            line-height: 18px;
+        }
     }
     .box {
-        /* fehér átmenet */
-        background: linear-gradient(104.15deg, rgba(255, 255, 255, 0.45) -4.57%, rgba(255, 255, 255, 0.072) 104.02%);
+        border-image: svg('box-blue-vertical.svg') 40 / 32px / 0 stretch;
+        min-width: 300px;
+        padding: 32px;
+        box-shadow: none;
+        border-radius: 0;
+        background-color: transparent;
+        position:relative;
+        min-height:420px;
+        height: 600px;
+
+        &__inner {
+            min-height:420px;
+            height: 536px;
+            background-color:$box-bg;
+            padding: 0;
+            background-image: svg('step-circle-bg.svg');
+            background-position: top center;
+            background-repeat: no-repeat;
+            background-size: contain;
+
+        }
+
+        .box-bottom {
+            //position: absolute;
+            //left: 0;
+        }
+    }
+    .media-center {
+        height:340px;
     }
     .content {
         p {
             color: $blue-body;
         }
     }
+}
+
+.info-horizonatal {
+    border-image: svg('box-blue-horizontal.svg') 40 / 16px / 0 stretch;
+    //min-width: 300px;
+    //min-width: 300px;
+    padding: 16px;
+    
+    &__inner {
+        background-color:$box-bg;
+        padding: 16px;
+    
+    }
+}
+
+.video-box {
+    border-image: svg('box-blue-video.svg') 40 / 32px / 0 stretch;
+    padding: 32px;
+    height: 704px;
+
+    .title {
+        color: $white;
+        text-shadow: shadow($title-box-shadow, 2px);
+    }
+
+    &__inner {
+        background-color:$box-bg;
+        padding: 0;
+    }
+
+    .video-wrapper {
+        a {
+            color: $blue-body;
+        }
+        p {
+            padding: $size *2 0;
+        }
+        .first {
+            p {
+                font-family: $font-header;
+                font-size: $size * 3;
+                display: block;
+            }
+            .video-item {
+                height: 500px;
+                margin-bottom: 0;
+                &__inner {
+                    height: 468px;
+                }
+            }
+        }
+        .video-item-button {
+            display: block;
+        }
+        .video-item {
+            height: 128px;
+            border-image: svg('video-bg.svg') 40 / 16px / 0 stretch;
+            padding: 16px;
+            //margin-bottom: 40px;
+            &__inner {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 96px;
+                background-color:$video-bg;
+                padding: 0;
+            }
+
+            .play-button {
+                width: $size * 7;
+                height: auto;
+            }
+
+        }
+
+    }
+}
+
+.picture-box {
+    border-image: svg('box-blue-pictures.svg') 60 / 70px / 0 stretch;
+    padding: 60px;
+    height: 704px;
+
+    .title {
+        color: $white;
+        text-shadow: shadow($title-box-shadow, 2px);
+    }
+
+    &__inner {
+        min-height: 574px;
+        background-color:#7BCBD4;
+        padding: 10px 20px;
+    }
+
 }

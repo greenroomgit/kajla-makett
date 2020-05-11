@@ -9,4 +9,9 @@
       padding: 30px;
 
   }
+
+  h3 {
+    color: $white;
+    text-shadow: shadow($brown,2px);
+  }
 }
