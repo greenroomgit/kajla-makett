@@ -2,8 +2,22 @@
 }
 
 .modal-content {
-  background-repeat: no-repeat;
-  background-size: contain;
   width: calc(640px + 4rem);
   padding: 2rem;
+}
+
+.modal-close-button {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  width: 64px;
+  height: 60px;
+  max-height: unset;
+  max-width: unset;
+  background: transparent;
+  border: none;
+  background-image: svg("close-button.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
 }

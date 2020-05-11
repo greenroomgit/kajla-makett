@@ -63,11 +63,13 @@
 
                 <div class="form__input-container form__input-container--full-width form__input-container--horizontal-centered form__input-container--bottom-offset">
                   <div class="col-md-6 offset-md-4 column">
-                    <button @click.prevent="submit" type="submit" class="btn button is-secondary" >
+                    <button @click.prevent="submit" type="submit" class="btn button is-secondary upload" >
                     </button>
                   </div>
                 </div>
               </form>
+
+              <button class="modal-close-button" aria-label="close" @click.prevent="$emit('onClose')"></button>
 
               <div v-if="upload">
                 <div class="alert alert-success">Thank You!</div>
@@ -79,7 +81,6 @@
               </div>
     </div>
   </div>
-  <button class="modal-close is-large" aria-label="close" @click.prevent="$emit('onClose')"></button>
 </div>
 
 

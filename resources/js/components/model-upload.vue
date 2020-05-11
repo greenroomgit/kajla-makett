@@ -81,7 +81,7 @@
               <div>Name : {{ upload.name }}</div>
               <div>Email : {{ upload.email }}</div>
             </div>  </div>
-  <button class="modal-close is-large" aria-label="close" @click.prevent="$emit('onClose')"></button>
+  <button class="modal-close" aria-label="close" @click.prevent="$emit('onClose')"></button>
 </div>
 
 

@@ -1,7 +1,7 @@
 .form {
   display: flex;
   flex-wrap: wrap;
-  padding: 4.125rem;
+  padding: 4.125rem 4.125rem 1.5rem 4.125rem;
   background-image: svg("modal-background.svg");
   &__description {
     font-size: $modal-headline;
@@ -16,6 +16,12 @@
     }
     &--horizontal-centered {
       text-align: center;
+    }
+    &--bottom-offset {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -1.5em;
     }
   }
   &__input {
