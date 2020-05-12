@@ -12266,6 +12266,7 @@ h3 {
 .yellow-box {
   -o-border-image: url("/assets/svg/yellow-box-bg.svg") 40/30px/0 stretch;
      border-image: url("/assets/svg/yellow-box-bg.svg") 40/30px/0 stretch;
+  -webkit-border-image: url("/assets/svg/yellow-box-bg.svg") 40/30px/0 stretch;
   min-width: 300px;
   min-width: 300px;
   padding: 20px;
@@ -12324,6 +12325,7 @@ h3 {
 .guide-steps .box {
   -o-border-image: url("/assets/svg/box-blue-vertical.svg") 40/33px/0 stretch;
      border-image: url("/assets/svg/box-blue-vertical.svg") 40/33px/0 stretch;
+  -webkit-border-image: url("/assets/svg/box-blue-vertical.svg") 40/33px/0 stretch;
   min-width: 300px;
   padding: 30px;
   box-shadow: none;
@@ -12352,6 +12354,7 @@ h3 {
 .info-horizonatal {
   -o-border-image: url("/assets/svg/box-blue-horizontal.svg") 40/19px/0 stretch;
      border-image: url("/assets/svg/box-blue-horizontal.svg") 40/19px/0 stretch;
+  -webkit-border-image: url("/assets/svg/box-blue-horizontal.svg") 40/19px/0 stretch;
   padding: 16px;
 }
 
@@ -12363,6 +12366,7 @@ h3 {
 .video-box {
   -o-border-image: url("/assets/svg/box-blue-vertical.svg") 40/33px/0 stretch;
      border-image: url("/assets/svg/box-blue-vertical.svg") 40/33px/0 stretch;
+  -webkit-border-image: url("/assets/svg/box-blue-vertical.svg") 40/33px/0 stretch;
   padding: 30px;
 }
 
@@ -12401,6 +12405,7 @@ h3 {
 .video-box .video-wrapper .video-item {
   -o-border-image: url("/assets/svg/video-bg.svg") 40/19px/0 stretch;
      border-image: url("/assets/svg/video-bg.svg") 40/19px/0 stretch;
+  -webkit-border-image: url("/assets/svg/video-bg.svg") 40/19px/0 stretch;
   padding: 16px;
 }
 
@@ -12428,6 +12433,7 @@ h3 {
 .picture-box {
   -o-border-image: url("/assets/svg/box-blue-pictures.svg") 60/70px/0 stretch;
      border-image: url("/assets/svg/box-blue-pictures.svg") 60/70px/0 stretch;
+  -webkit-border-image: url("/assets/svg/box-blue-pictures.svg") 60/70px/0 stretch;
   padding: 60px;
 }
 
@@ -12444,6 +12450,7 @@ h3 {
 .picture-box .picture {
   -o-border-image: url("/assets/svg/picture-bg.svg") 60/16px/0 stretch;
      border-image: url("/assets/svg/picture-bg.svg") 60/16px/0 stretch;
+  -webkit-border-image: url("/assets/svg/picture-bg.svg") 60/16px/0 stretch;
   padding: 12px;
 }
 
@@ -12468,6 +12475,34 @@ h3 {
 
 .picture-box p {
   padding: 0.5em 0;
+}
+
+.jackpot-box {
+  -o-border-image: url("/assets/svg/box-blue-horizontal.svg") 40/19px/0 stretch;
+     border-image: url("/assets/svg/box-blue-horizontal.svg") 40/19px/0 stretch;
+  -webkit-border-image: url("/assets/svg/box-blue-horizontal.svg") 40/19px/0 stretch;
+  padding: 16px;
+}
+
+.jackpot-box__inner {
+  background-color: #6ED8DD;
+  padding: 16px;
+}
+
+.jackpot-box h3 {
+  color: white;
+  text-shadow: 0px 2px 0px #3CA1A1;
+}
+
+.jackpot-box .jackpot-map-item {
+  position: relative;
+}
+
+.jackpot-box .jackpot-map-item .jackpot-map {
+  position: absolute;
+  width: 146%;
+  top: -35%;
+  left: -10%;
 }
 
 .container .navbar {
