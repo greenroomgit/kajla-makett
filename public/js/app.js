@@ -2639,6 +2639,12 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
 
 
 var getUploads = function getUploads(callback) {
@@ -21533,18 +21539,28 @@ var render = function() {
             var caption = ref.caption
             var picture = ref.picture
             return _c("div", { staticClass: "column is-one-quarter" }, [
-              _c("img", {
-                attrs: { src: "assets/svg/picture-bg.svg", alt: "" }
-              }),
-              _vm._v(" "),
-              _c("img", { attrs: { src: "storage/" + picture, alt: "" } }),
+              _c("div", { staticClass: "picture" }, [
+                _c("div", { staticClass: "picture__inner" }, [
+                  _c(
+                    "div",
+                    { staticClass: "picture-center has-text-centered" },
+                    [
+                      _c("img", {
+                        attrs: { src: "storage/" + picture, alt: "" }
+                      })
+                    ]
+                  )
+                ])
+              ]),
               _vm._v(" "),
               _c("p", [_vm._v(_vm._s(caption))])
             ])
           }),
           0
         )
-      ])
+      ]),
+      _vm._v(" "),
+      _c("br")
     ])
   ])
 }

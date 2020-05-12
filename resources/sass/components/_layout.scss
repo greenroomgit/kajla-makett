@@ -23,7 +23,6 @@
         color: $white;
         text-shadow: shadow($title-shadow, 4px);
         margin: 14px 0;
-        //height: 72px;
     }
     .media {
         flex-direction: column;
@@ -46,12 +45,9 @@
         border-radius: 0;
         background-color: transparent;
         position:relative;
-        //min-height:420px;
-        //height: 600px;
+
 
         &__inner {
-            //min-height:420px;
-            //height: 536px;
             background-color:$box-bg;
             padding: 0;
             background-image: svg('step-circle-bg.svg');
@@ -62,8 +58,7 @@
         }
 
         .box-bottom {
-            //position: absolute;
-            //left: 0;
+
         }
     }
     .media-center {
@@ -118,10 +113,9 @@
                 display: block;
             }
             .video-item {
-                //height: 500px;
                 margin-bottom: 0;
                 &__inner {
-                    //height: 468px;
+
                 }
             }
         }
@@ -129,23 +123,19 @@
             display: block;
         }
         .video-item {
-            //height: 128px;
             border-image: svg('video-bg.svg') 40 / 19px / 0 stretch;
             padding: 16px;
-            //margin-bottom: 40px;
             &__inner {
                 position: relative;
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                //height: 96px;
                 background-color:$video-bg;
                 padding: 0;
             }
 
             .play-button {
                 position: absolute;
-                //z-index: 1;
                 width: $size * 7;
                 height: auto;
                 z-index: 1;
@@ -164,17 +154,47 @@
 .picture-box {
     border-image: svg('box-blue-pictures.svg') 60 / 70px / 0 stretch;
     padding: 60px;
-    height: 704px;
+    &__inner {
+        background-color:#7BCBD4;
+        padding: 10px 20px;
+    }
 
     .title {
         color: $white;
         text-shadow: shadow($title-box-shadow, 2px);
     }
 
-    &__inner {
-        min-height: 574px;
-        background-color:#7BCBD4;
-        padding: 10px 20px;
+    .picture {
+        border-image: svg('picture-bg.svg') 60 / 16px / 0 stretch;
+        padding: 12px;
+        &__inner {
+            overflow: hidden;
+            position: relative;
+            background-color: $video-bg;
+            height: 170px;
+            .picture-center {
+                width: 100%;
+                //display: flex;
+                //justify-content: center;
+                position: absolute;
+                //left: 0;
+                //top: 0;
+                //margin-left: -500px;
+                img {
+                    min-width: 160%;
+                    height: auto;
+                    display: block;
+                    margin: 0 auto;
+                }
+
+            }
+            
+        }
     }
+
+    p {
+        padding: $size 0;
+    }
+
 
 }

@@ -6,12 +6,18 @@
             <div class="picture-wrapper">
                 <div class="columns is-multiline">
                     <div v-for="{caption, picture} in uploads" class="column is-one-quarter">
-                        <img src="assets/svg/picture-bg.svg" alt="">
-                        <img v-bind:src="'storage/' + picture"  alt="">
-                        <p>{{ caption }}</p>
+                        <div class="picture">
+                            <div class="picture__inner">
+                                <div class="picture-center has-text-centered">
+                                    <img v-bind:src="'storage/' + picture"  alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <p>{{ caption }}</p>    
                     </div>
                 </div>
             </div>
+            <br>
         </div>
     </div>
 </template>

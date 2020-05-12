@@ -12429,7 +12429,11 @@ h3 {
   -o-border-image: url("/assets/svg/box-blue-pictures.svg") 60/70px/0 stretch;
      border-image: url("/assets/svg/box-blue-pictures.svg") 60/70px/0 stretch;
   padding: 60px;
-  height: 704px;
+}
+
+.picture-box__inner {
+  background-color: #7BCBD4;
+  padding: 10px 20px;
 }
 
 .picture-box .title {
@@ -12437,10 +12441,33 @@ h3 {
   text-shadow: 0px 2px 0px #51A2A5;
 }
 
-.picture-box__inner {
-  min-height: 574px;
-  background-color: #7BCBD4;
-  padding: 10px 20px;
+.picture-box .picture {
+  -o-border-image: url("/assets/svg/picture-bg.svg") 60/16px/0 stretch;
+     border-image: url("/assets/svg/picture-bg.svg") 60/16px/0 stretch;
+  padding: 12px;
+}
+
+.picture-box .picture__inner {
+  overflow: hidden;
+  position: relative;
+  background-color: #41A3AB;
+  height: 170px;
+}
+
+.picture-box .picture__inner .picture-center {
+  width: 100%;
+  position: absolute;
+}
+
+.picture-box .picture__inner .picture-center img {
+  min-width: 160%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.picture-box p {
+  padding: 0.5em 0;
 }
 
 .container .navbar {
