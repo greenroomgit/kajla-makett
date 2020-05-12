@@ -10,7 +10,7 @@
                             <div class="video-item">
 
                                 <div class="video-item__inner has-text-centered">
-                                <img :src="'https://img.youtube.com/vi/' + videos[0].youtube_id + '/mqdefault.jpg'" alt="">
+                                <img :src="'https://img.youtube.com/vi/' + videos[0].youtube_id + '/maxresdefault.jpg'" alt="">
                                     <img class="play-button" src="/assets/svg/button-video.svg" alt="">
                                 </div>
                             </div>

@@ -22,7 +22,6 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::resource('/video', 'VideoController', [
     'except' => ['edit', 'show', 'store']
   ]);
-Route::get('/guide-steps', 'HomeController@steps', [
-]);
-Route::post('/upload-photo', 'PhotoUploadsController@upload', [
-]);
+Route::get('/guide-steps', 'HomeController@steps', []);
+Route::get('/published-photos', 'PhotoUploadsController@published', []);
+Route::post('/upload-photo', 'PhotoUploadsController@upload', []);
