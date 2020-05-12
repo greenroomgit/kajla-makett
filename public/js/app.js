@@ -2277,6 +2277,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 
 
@@ -2288,6 +2289,16 @@ __webpack_require__.r(__webpack_exports__);
     'PhotoUpload': _photo_upload__WEBPACK_IMPORTED_MODULE_1__["default"],
     'Videos': _videos__WEBPACK_IMPORTED_MODULE_2__["default"],
     'Pictures': _pictures__WEBPACK_IMPORTED_MODULE_3__["default"]
+  },
+  data: function data() {
+    return {
+      isPhotoUploadModalOpen: false
+    };
+  },
+  methods: {
+    openPhotoUploadModal: function openPhotoUploadModal() {
+      this.isPhotoUploadModalOpen = !this.isPhotoUploadModalOpen;
+    }
   }
 });
 
@@ -2471,19 +2482,23 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  props: {
+    isOpen: Boolean,
+    "default": false
+  },
   data: function data() {
     return {
       formData: {
-        firstname: null,
+        name: null,
         email: null,
-        lastname: null
+        terms: null,
+        caption: null
       },
       picture: null,
+      pictureUrl: null,
       showForm: true,
       upload: null,
       errors: null
@@ -2493,11 +2508,12 @@ __webpack_require__.r(__webpack_exports__);
     submit: function submit() {
       var _this = this;
 
-      this.errors = null;
+      this.errors = [];
       var formData = new FormData();
       formData.append('picture', this.picture);
 
       lodash__WEBPACK_IMPORTED_MODULE_1___default.a.each(this.formData, function (value, key) {
+        console.log(key, value);
         formData.append(key, value);
       });
 
@@ -2520,8 +2536,40 @@ __webpack_require__.r(__webpack_exports__);
         }
       });
     },
+    checkForm: function checkForm(event) {
+      this.errors = [];
+
+      if (!this.formData.name) {
+        this.errors.push("Név megadása kötelező");
+      }
+
+      if (!this.formData.email) {
+        this.errors.push('E-mail cím megadása kötelező.');
+      } else if (!this.validEmail(this.formData.email)) {
+        this.errors.push('Nem megfelelő e-mail cím.');
+      }
+
+      if (!this.errors.length) {
+        return true;
+      }
+
+      event.preventDefault();
+    },
+    validEmail: function validEmail(email) {
+      var emailRegex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+      return emailRegex.test(email);
+    },
     handleFileObject: function handleFileObject() {
       this.picture = this.$refs.file.files[0];
+      this.pictureUrl = URL.createObjectURL(this.picture);
+    },
+    closeModal: function closeModal() {
+      this.$emit('onClose');
+    }
+  },
+  computed: {
+    modalIsVisible: function modalIsVisible() {
+      return this.isOpen;
     }
   }
 });
@@ -2597,24 +2645,6 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -20807,11 +20837,40 @@ var render = function() {
       _vm._v(" "),
       _vm._m(0),
       _vm._v(" "),
-      _vm._m(1),
+      _c("div", { staticClass: "yellow-box separator" }, [
+        _c("div", { staticClass: "yellow-box__inner" }, [
+          _c("div", { staticClass: "columns" }, [
+            _vm._m(1),
+            _vm._v(" "),
+            _vm._m(2),
+            _vm._v(" "),
+            _c("div", { staticClass: "column" }, [
+              _c(
+                "button",
+                {
+                  staticClass: "button is-primary",
+                  on: {
+                    click: function($event) {
+                      $event.preventDefault()
+                      return _vm.openPhotoUploadModal($event)
+                    }
+                  }
+                },
+                [_vm._v("Képet küldök be")]
+              )
+            ])
+          ])
+        ])
+      ]),
       _vm._v(" "),
       _c("Videos"),
       _vm._v(" "),
-      _c("Pictures")
+      _c("Pictures"),
+      _vm._v(" "),
+      _c("PhotoUpload", {
+        attrs: { "is-open": _vm.isPhotoUploadModalOpen },
+        on: { onClose: _vm.openPhotoUploadModal }
+      })
     ],
     1
   )
@@ -20841,29 +20900,21 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "yellow-box separator" }, [
-      _c("div", { staticClass: "yellow-box__inner" }, [
-        _c("div", { staticClass: "columns" }, [
-          _c("div", { staticClass: "column is-half" }, [
-            _c("h3", { staticClass: "title is-3" }, [
-              _vm._v("Építsd fel Kajlával Magyarország"),
-              _c("br"),
-              _vm._v(" nevezetességeit és nyerj!")
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "column" }, [
-            _c("button", { staticClass: "button is-primary" }, [
-              _vm._v("Szeretnék makettet")
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "column" }, [
-            _c("button", { staticClass: "button is-primary" }, [
-              _vm._v("Képet küldök be")
-            ])
-          ])
-        ])
+    return _c("div", { staticClass: "column is-half" }, [
+      _c("h3", { staticClass: "title is-3" }, [
+        _vm._v("Építsd fel Kajlával Magyarország"),
+        _c("br"),
+        _vm._v(" nevezetességeit és nyerj!")
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "column" }, [
+      _c("button", { staticClass: "button is-primary" }, [
+        _vm._v("Szeretnék makettet")
       ])
     ])
   }
@@ -21019,323 +21070,361 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "modal is-active" }, [
-    _c("div", { staticClass: "modal-background" }),
-    _vm._v(" "),
-    _c("div", { staticClass: "modal-content" }, [
-      _vm.errors
-        ? _c(
-            "div",
-            _vm._l(_vm.errors, function(error) {
-              return _c("div", { staticClass: "alert alert-danger" }, [
-                _vm._v(_vm._s(error))
-              ])
-            }),
-            0
-          )
-        : _vm._e(),
+  return _c(
+    "div",
+    { staticClass: "modal", class: { "is-active": _vm.modalIsVisible } },
+    [
+      _c("div", { staticClass: "modal-background" }),
       _vm._v(" "),
-      _vm.showForm
-        ? _c("form", [
-            _c("div", { staticClass: "form-group row" }, [
-              _c(
-                "label",
-                {
-                  staticClass: "col-md-4 col-form-label text-md-right",
-                  attrs: { for: "name" }
-                },
-                [_vm._v("FirstName")]
-              ),
-              _vm._v(" "),
-              _c("div", { staticClass: "col-md-6" }, [
-                _c("input", {
-                  directives: [
-                    {
-                      name: "model",
-                      rawName: "v-model",
-                      value: _vm.formData.firstname,
-                      expression: "formData.firstname"
-                    }
-                  ],
-                  staticClass: "form-control",
-                  attrs: {
-                    id: "name",
-                    type: "text",
-                    name: "firstname",
-                    required: "",
-                    autocomplete: "name",
-                    autofocus: ""
-                  },
-                  domProps: { value: _vm.formData.firstname },
-                  on: {
-                    input: function($event) {
-                      if ($event.target.composing) {
-                        return
-                      }
-                      _vm.$set(_vm.formData, "firstname", $event.target.value)
-                    }
-                  }
-                })
-              ])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "form-group row" }, [
-              _c(
-                "label",
-                {
-                  staticClass: "col-md-4 col-form-label text-md-right",
-                  attrs: { for: "name" }
-                },
-                [_vm._v("LastName")]
-              ),
-              _vm._v(" "),
-              _c("div", { staticClass: "col-md-6" }, [
-                _c("input", {
-                  directives: [
-                    {
-                      name: "model",
-                      rawName: "v-model",
-                      value: _vm.formData.lastname,
-                      expression: "formData.lastname"
-                    }
-                  ],
-                  staticClass: "form-control",
-                  attrs: {
-                    id: "name",
-                    type: "text",
-                    name: "lastname",
-                    required: "",
-                    autocomplete: "name",
-                    autofocus: ""
-                  },
-                  domProps: { value: _vm.formData.lastname },
-                  on: {
-                    input: function($event) {
-                      if ($event.target.composing) {
-                        return
-                      }
-                      _vm.$set(_vm.formData, "lastname", $event.target.value)
-                    }
-                  }
-                })
-              ])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "form-group row" }, [
-              _c(
-                "label",
-                {
-                  staticClass: "col-md-4 col-form-label text-md-right",
-                  attrs: { for: "name" }
-                },
-                [_vm._v("Address")]
-              ),
-              _vm._v(" "),
-              _c("div", { staticClass: "col-md-6" }, [
-                _c("input", {
-                  directives: [
-                    {
-                      name: "model",
-                      rawName: "v-model",
-                      value: _vm.formData.address,
-                      expression: "formData.address"
-                    }
-                  ],
-                  staticClass: "form-control",
-                  attrs: {
-                    id: "name",
-                    type: "text",
-                    name: "address",
-                    required: "",
-                    autocomplete: "name",
-                    autofocus: ""
-                  },
-                  domProps: { value: _vm.formData.address },
-                  on: {
-                    input: function($event) {
-                      if ($event.target.composing) {
-                        return
-                      }
-                      _vm.$set(_vm.formData, "address", $event.target.value)
-                    }
-                  }
-                })
-              ])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "form-group row" }, [
-              _c(
-                "label",
-                {
-                  staticClass: "col-md-4 col-form-label text-md-right",
-                  attrs: { for: "name" }
-                },
-                [_vm._v("Telephone")]
-              ),
-              _vm._v(" "),
-              _c("div", { staticClass: "col-md-6" }, [
-                _c("input", {
-                  directives: [
-                    {
-                      name: "model",
-                      rawName: "v-model",
-                      value: _vm.formData.telephone,
-                      expression: "formData.telephone"
-                    }
-                  ],
-                  staticClass: "form-control",
-                  attrs: {
-                    id: "name",
-                    type: "text",
-                    name: "telephone",
-                    required: "",
-                    autocomplete: "name",
-                    autofocus: ""
-                  },
-                  domProps: { value: _vm.formData.telephone },
-                  on: {
-                    input: function($event) {
-                      if ($event.target.composing) {
-                        return
-                      }
-                      _vm.$set(_vm.formData, "telephone", $event.target.value)
-                    }
-                  }
-                })
-              ])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "form-group row" }, [
-              _c(
-                "label",
-                {
-                  staticClass: "col-md-4 col-form-label text-md-right",
-                  attrs: { for: "email" }
-                },
-                [_vm._v("Email")]
-              ),
-              _vm._v(" "),
-              _c("div", { staticClass: "col-md-6" }, [
-                _c("input", {
-                  directives: [
-                    {
-                      name: "model",
-                      rawName: "v-model",
-                      value: _vm.formData.email,
-                      expression: "formData.email"
-                    }
-                  ],
-                  staticClass: "form-control",
-                  attrs: {
-                    id: "email",
-                    type: "email",
-                    name: "email",
-                    required: "",
-                    autocomplete: "email"
-                  },
-                  domProps: { value: _vm.formData.email },
-                  on: {
-                    input: function($event) {
-                      if ($event.target.composing) {
-                        return
-                      }
-                      _vm.$set(_vm.formData, "email", $event.target.value)
-                    }
-                  }
-                })
-              ])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "form-group row" }, [
-              _c(
-                "label",
-                { staticClass: "col-md-4 col-form-label text-md-right" },
-                [_vm._v("Photo")]
-              ),
-              _vm._v(" "),
-              _c("div", { staticClass: "col-md-6" }, [
-                _c("div", { staticClass: "custom-file" }, [
-                  _c("input", {
-                    ref: "file",
-                    staticClass: "custom-file-input",
-                    attrs: { type: "file", id: "customFile" },
-                    on: {
-                      change: function($event) {
-                        return _vm.handleFileObject()
-                      }
-                    }
-                  }),
-                  _vm._v(" "),
+      _c("div", { staticClass: "modal-inner" }, [
+        _c("div", { staticClass: "modal-content" }, [
+          _vm.errors
+            ? _c(
+                "div",
+                _vm._l(_vm.errors, function(error) {
+                  return _c("div", { staticClass: "alert alert-danger" }, [
+                    _vm._v(_vm._s(error))
+                  ])
+                }),
+                0
+              )
+            : _vm._e(),
+          _vm._v(" "),
+          _vm.showForm
+            ? _c("form", { staticClass: "form" }, [
+                _c("div", { staticClass: "form__description" }, [
+                  _vm._v(
+                    "\n                  A kép feltöltéséhez kérlek add meg a neved, e-mail címed és feltöltött kép címét\n                "
+                  )
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "form__input-container" }, [
                   _c(
                     "label",
                     {
-                      staticClass: "custom-file-label text-left",
-                      attrs: { for: "customFile" }
+                      staticClass:
+                        "form__label col-md-4 col-form-label text-md-right",
+                      attrs: { for: "modalNameInput" }
                     },
-                    [_vm._v(_vm._s(_vm.picture))]
-                  )
-                ])
-              ])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "form-group row mb-0" }, [
-              _c("div", { staticClass: "col-md-6 offset-md-4" }, [
-                _c(
-                  "button",
-                  {
-                    staticClass: "btn btn-primary",
-                    attrs: { type: "submit" },
-                    on: {
-                      click: function($event) {
-                        $event.preventDefault()
-                        return _vm.submit($event)
+                    [_vm._v("Név")]
+                  ),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col-md-6" }, [
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.formData.name,
+                          expression: "formData.name"
+                        }
+                      ],
+                      staticClass: "form__input",
+                      attrs: {
+                        id: "modalNameInput",
+                        type: "text",
+                        name: "name",
+                        required: "",
+                        autocomplete: "",
+                        autofocus: ""
+                      },
+                      domProps: { value: _vm.formData.name },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(_vm.formData, "name", $event.target.value)
+                        }
                       }
-                    }
+                    })
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "form__input-container" }, [
+                  _c(
+                    "label",
+                    {
+                      staticClass:
+                        "form__label col-md-4 col-form-label text-md-right",
+                      attrs: { for: "modalEmailInput" }
+                    },
+                    [_vm._v("E-mail cím")]
+                  ),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col-md-6" }, [
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.formData.email,
+                          expression: "formData.email"
+                        }
+                      ],
+                      staticClass: "form__input",
+                      attrs: {
+                        id: "modalEmailInput",
+                        type: "text",
+                        name: "email",
+                        required: "",
+                        autocomplete: "",
+                        autofocus: ""
+                      },
+                      domProps: { value: _vm.formData.email },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(_vm.formData, "email", $event.target.value)
+                        }
+                      }
+                    })
+                  ])
+                ]),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass:
+                      "form__input-container form__input-container--full-width"
                   },
-                  [_vm._v("\n                    Register\n                  ")]
+                  [
+                    _c(
+                      "label",
+                      {
+                        staticClass:
+                          "form__label col-md-4 col-form-label text-md-right",
+                        attrs: { for: "modalImageTitleInput" }
+                      },
+                      [_vm._v("Kép címe")]
+                    ),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-md-6" }, [
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.formData.caption,
+                            expression: "formData.caption"
+                          }
+                        ],
+                        staticClass: "form__input form__input--full-width",
+                        attrs: {
+                          id: "modalImageTitleInput",
+                          type: "text",
+                          name: "caption",
+                          required: "",
+                          autocomplete: "",
+                          autofocus: ""
+                        },
+                        domProps: { value: _vm.formData.caption },
+                        on: {
+                          input: function($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.$set(
+                              _vm.formData,
+                              "caption",
+                              $event.target.value
+                            )
+                          }
+                        }
+                      })
+                    ])
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass:
+                      "form__input-container form__input-container--full-width"
+                  },
+                  [
+                    _c(
+                      "label",
+                      { staticClass: "form__label form__label--checkbox" },
+                      [
+                        _vm._v(
+                          "Megismertem, és elfogadom a jatékszabályzatot és az adatkezelési tájékoztatót\n                    "
+                        ),
+                        _c("input", {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.formData.terms,
+                              expression: "formData.terms"
+                            }
+                          ],
+                          staticClass: "form__checkbox",
+                          attrs: {
+                            type: "checkbox",
+                            name: "terms",
+                            value: "1"
+                          },
+                          domProps: {
+                            checked: Array.isArray(_vm.formData.terms)
+                              ? _vm._i(_vm.formData.terms, "1") > -1
+                              : _vm.formData.terms
+                          },
+                          on: {
+                            change: function($event) {
+                              var $$a = _vm.formData.terms,
+                                $$el = $event.target,
+                                $$c = $$el.checked ? true : false
+                              if (Array.isArray($$a)) {
+                                var $$v = "1",
+                                  $$i = _vm._i($$a, $$v)
+                                if ($$el.checked) {
+                                  $$i < 0 &&
+                                    _vm.$set(
+                                      _vm.formData,
+                                      "terms",
+                                      $$a.concat([$$v])
+                                    )
+                                } else {
+                                  $$i > -1 &&
+                                    _vm.$set(
+                                      _vm.formData,
+                                      "terms",
+                                      $$a
+                                        .slice(0, $$i)
+                                        .concat($$a.slice($$i + 1))
+                                    )
+                                }
+                              } else {
+                                _vm.$set(_vm.formData, "terms", $$c)
+                              }
+                            }
+                          }
+                        }),
+                        _vm._v(" "),
+                        _c("span", { staticClass: "form__checkmark" })
+                      ]
+                    )
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass:
+                      "form__input-container form__input-container--full-width form__input-container--horizontal-centered"
+                  },
+                  [
+                    _c("div", { staticClass: "col-md-6" }, [
+                      _c("div", { staticClass: "custom-file" }, [
+                        _c("input", {
+                          ref: "file",
+                          staticClass: "custom-file-input form__input--hidden",
+                          attrs: { type: "file", id: "customFile" },
+                          on: {
+                            change: function($event) {
+                              return _vm.handleFileObject()
+                            }
+                          }
+                        }),
+                        _vm._v(" "),
+                        _c(
+                          "label",
+                          {
+                            staticClass:
+                              "form__input-button-container custom-file-label text-left",
+                            attrs: { for: "customFile" }
+                          },
+                          [
+                            _c("img", {
+                              staticClass: "form__input-button",
+                              attrs: {
+                                src: "/assets/svg/button-primary-picture.svg"
+                              }
+                            }),
+                            _vm._v(" "),
+                            _c(
+                              "div",
+                              { staticClass: "form__image-preview-container" },
+                              [
+                                _vm.picture
+                                  ? _c("img", {
+                                      staticClass: "form__image-preview",
+                                      attrs: { src: _vm.pictureUrl }
+                                    })
+                                  : _vm._e()
+                              ]
+                            )
+                          ]
+                        )
+                      ])
+                    ])
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass:
+                      "form__input-container form__input-container--full-width form__input-container--horizontal-centered form__input-container--bottom-offset"
+                  },
+                  [
+                    _c("div", { staticClass: "col-md-6 offset-md-4 column" }, [
+                      _c("button", {
+                        staticClass: "btn button is-secondary upload",
+                        attrs: { type: "submit" },
+                        on: {
+                          click: function($event) {
+                            $event.preventDefault()
+                            return _vm.submit($event)
+                          }
+                        }
+                      })
+                    ])
+                  ]
                 )
               ])
-            ])
-          ])
-        : _vm._e(),
-      _vm._v(" "),
-      _vm.upload
-        ? _c("div", [
-            _c("div", { staticClass: "alert alert-success" }, [
-              _vm._v("Thank You!")
-            ]),
-            _vm._v(" "),
-            _c("div", [
-              _c("img", {
-                attrs: {
-                  height: "100px",
-                  width: "auto",
-                  src: _vm.upload.picture_url,
-                  alt: ""
-                }
-              })
-            ]),
-            _vm._v(" "),
-            _c("div", [
-              _vm._v(
-                "Name : " +
-                  _vm._s(_vm.upload.lastname) +
-                  " " +
-                  _vm._s(_vm.upload.firstname) +
-                  " "
-              )
-            ]),
-            _vm._v(" "),
-            _c("div", [_vm._v("Email : " + _vm._s(_vm.upload.email))])
-          ])
-        : _vm._e()
-    ]),
-    _vm._v(" "),
-    _c("button", {
-      staticClass: "modal-close is-large",
-      attrs: { "aria-label": "close" }
-    })
-  ])
+            : _vm._e(),
+          _vm._v(" "),
+          _c("button", {
+            staticClass: "modal-close-button",
+            attrs: { "aria-label": "close" },
+            on: {
+              click: function($event) {
+                $event.preventDefault()
+                return _vm.$emit("onClose")
+              }
+            }
+          }),
+          _vm._v(" "),
+          _vm.upload
+            ? _c("div", [
+                _c("div", { staticClass: "alert alert-success" }, [
+                  _vm._v("Thank You!")
+                ]),
+                _vm._v(" "),
+                _c("div", [
+                  _c("img", {
+                    attrs: {
+                      height: "100px",
+                      width: "auto",
+                      src: _vm.upload.picture_url,
+                      alt: ""
+                    }
+                  })
+                ]),
+                _vm._v(" "),
+                _c("div", [_vm._v("Name : " + _vm._s(_vm.upload.name))]),
+                _vm._v(" "),
+                _c("div", [_vm._v("Email : " + _vm._s(_vm.upload.email))])
+              ])
+            : _vm._e()
+        ])
+      ])
+    ]
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -21489,103 +21578,102 @@ var render = function() {
               "a",
               {
                 staticClass: "video-item-button",
-                attrs: { href: "https://youtube.com/" }
+                attrs: {
+                  href:
+                    "https://youtube.com/watch?v=" + _vm.videos[0].youtube_id
+                }
               },
               [
-                _vm._m(0),
+                _c("div", { staticClass: "video-item" }, [
+                  _c(
+                    "div",
+                    { staticClass: "video-item__inner has-text-centered" },
+                    [
+                      _c("img", {
+                        staticClass: "play-button",
+                        attrs: { src: "/assets/svg/button-video.svg", alt: "" }
+                      }),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "video-thumb" }, [
+                        _c("img", {
+                          attrs: {
+                            src:
+                              "https://img.youtube.com/vi/" +
+                              _vm.videos[0].youtube_id +
+                              "/mqdefault.jpg",
+                            alt: ""
+                          }
+                        })
+                      ])
+                    ]
+                  )
+                ]),
                 _vm._v(" "),
-                _c("p", [_vm._v("Kovács Petike influencer makett meséje")])
+                _c("p", [_vm._v(_vm._s(_vm.videos[0].caption))])
               ]
             )
           ]),
           _vm._v(" "),
-          _c("div", { staticClass: "column" }, [
-            _c(
-              "a",
-              {
-                staticClass: "video-item-button",
-                attrs: { href: "https://youtube.com/" }
-              },
-              [_vm._m(1), _vm._v(" "), _c("p", [_vm._v("Kovács Petike")])]
-            ),
-            _vm._v(" "),
-            _c(
-              "a",
-              {
-                staticClass: "video-item-button",
-                attrs: { href: "https://youtube.com/" }
-              },
-              [_vm._m(2), _vm._v(" "), _c("p", [_vm._v("Kovács Petike")])]
-            ),
-            _vm._v(" "),
-            _c(
-              "a",
-              {
-                staticClass: "video-item-button",
-                attrs: { href: "https://youtube.com/" }
-              },
-              [_vm._m(3), _vm._v(" "), _c("p", [_vm._v("Kovács Petike")])]
-            )
-          ])
+          _c(
+            "div",
+            { staticClass: "column" },
+            _vm._l(_vm.videos, function(ref, index) {
+              var id = ref.id
+              var caption = ref.caption
+              var youtube_id = ref.youtube_id
+              return index > "0"
+                ? _c(
+                    "a",
+                    {
+                      staticClass: "video-item-button",
+                      attrs: {
+                        href: "https://youtube.com/watch?v=" + youtube_id
+                      }
+                    },
+                    [
+                      _c("div", { staticClass: "video-item" }, [
+                        _c(
+                          "div",
+                          {
+                            staticClass: "video-item__inner has-text-centered"
+                          },
+                          [
+                            _c("img", {
+                              staticClass: "play-button",
+                              attrs: {
+                                src: "/assets/svg/button-video.svg",
+                                alt: ""
+                              }
+                            }),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "video-thumb" }, [
+                              _c("img", {
+                                attrs: {
+                                  src:
+                                    "https://img.youtube.com/vi/" +
+                                    youtube_id +
+                                    "/mqdefault.jpg",
+                                  alt: ""
+                                }
+                              })
+                            ])
+                          ]
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("p", [_vm._v(_vm._s(caption))])
+                    ]
+                  )
+                : _vm._e()
+            }),
+            0
+          )
         ])
       ])
     ])
   ])
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "video-item" }, [
-      _c("div", { staticClass: "video-item__inner has-text-centered" }, [
-        _c("img", {
-          staticClass: "play-button",
-          attrs: { src: "/assets/svg/button-video.svg", alt: "" }
-        })
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "video-item" }, [
-      _c("div", { staticClass: "video-item__inner has-text-centered" }, [
-        _c("img", {
-          staticClass: "play-button",
-          attrs: { src: "/assets/svg/button-video.svg", alt: "" }
-        })
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "video-item" }, [
-      _c("div", { staticClass: "video-item__inner has-text-centered" }, [
-        _c("img", {
-          staticClass: "play-button",
-          attrs: { src: "/assets/svg/button-video.svg", alt: "" }
-        })
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "video-item" }, [
-      _c("div", { staticClass: "video-item__inner has-text-centered" }, [
-        _c("img", {
-          staticClass: "play-button",
-          attrs: { src: "/assets/svg/button-video.svg", alt: "" }
-        })
-      ])
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
 

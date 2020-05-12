@@ -132,6 +132,7 @@
             padding: 16px;
             //margin-bottom: 40px;
             &__inner {
+                position: relative;
                 display: flex;
                 align-items: center;
                 justify-content: center;
@@ -143,6 +144,19 @@
             .play-button {
                 width: $size * 7;
                 height: auto;
+                position: relative;
+                z-index: 1;
+            }
+
+            .video-thumb {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                
+                img {
+                    width: 100%;
+                    height: auto;
+                }
             }
 
         }
