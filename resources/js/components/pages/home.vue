@@ -14,6 +14,7 @@
                 </div>
             </div>
         </div>
+        <Jackpot />
         <div class="yellow-box separator">
             <div class="yellow-box__inner">
                 <div class="columns">
@@ -40,6 +41,7 @@
     import PhotoUpload from '../photo-upload';
     import Videos from '../videos'
     import Pictures from '../pictures'
+    import Jackpot from '../jackpot'
 
     export default {
         name: 'homepage',
@@ -47,7 +49,8 @@
             'GuideSteps': GuideSteps,
             'PhotoUpload': PhotoUpload,
             'Videos': Videos,
-            'Pictures': Pictures
+            'Pictures': Pictures,
+            'Jackpot': Jackpot
         },
         data() {
             return {
