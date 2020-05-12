@@ -2736,10 +2736,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
 
 
 var getVideos = function getVideos(callback) {
@@ -21598,37 +21594,20 @@ var render = function() {
                     "div",
                     { staticClass: "video-item__inner has-text-centered" },
                     [
-                      _vm._v(
-                        "\n<<<<<<< HEAD\n=======\n                                "
-                      ),
-                      _c("img", {
-                        attrs: {
-                          src:
-                            "https://img.youtube.com/vi/" +
-                            _vm.videos[0].youtube_id +
-                            "/maxresdefault.jpg",
-                          alt: ""
-                        }
-                      }),
-                      _vm._v(
-                        "\n>>>>>>> cf6fe2941e2245cc6d50cb051bc01c3844e02cec\n                                    "
-                      ),
                       _c("img", {
                         staticClass: "play-button",
                         attrs: { src: "/assets/svg/button-video.svg", alt: "" }
                       }),
                       _vm._v(" "),
-                      _c("div", { staticClass: "video-thumb" }, [
-                        _c("img", {
-                          attrs: {
-                            src:
-                              "https://img.youtube.com/vi/" +
-                              _vm.videos[0].youtube_id +
-                              "/mqdefault.jpg",
-                            alt: ""
-                          }
-                        })
-                      ])
+                      _c("img", {
+                        attrs: {
+                          src:
+                            "https://img.youtube.com/vi/" +
+                            _vm.videos[0].youtube_id +
+                            "/mqdefault.jpg",
+                          alt: ""
+                        }
+                      })
                     ]
                   )
                 ]),

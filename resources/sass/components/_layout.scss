@@ -37,19 +37,19 @@
         }
     }
     .box {
-        border-image: svg('box-blue-vertical.svg') 40 / 32px / 0 stretch;
+        border-image: svg('box-blue-vertical.svg') 40 / 33px / 0 stretch;
         min-width: 300px;
-        padding: 32px;
+        padding: 30px;
         box-shadow: none;
         border-radius: 0;
         background-color: transparent;
         position:relative;
-        min-height:420px;
-        height: 600px;
+        //min-height:420px;
+        //height: 600px;
 
         &__inner {
-            min-height:420px;
-            height: 536px;
+            //min-height:420px;
+            //height: 536px;
             background-color:$box-bg;
             padding: 0;
             background-image: svg('step-circle-bg.svg');
@@ -75,7 +75,7 @@
 }
 
 .info-horizonatal {
-    border-image: svg('box-blue-horizontal.svg') 40 / 16px / 0 stretch;
+    border-image: svg('box-blue-horizontal.svg') 40 / 19px / 0 stretch;
     //min-width: 300px;
     //min-width: 300px;
     padding: 16px;
@@ -88,9 +88,9 @@
 }
 
 .video-box {
-    border-image: svg('box-blue-video.svg') 40 / 32px / 0 stretch;
-    padding: 32px;
-    height: 704px;
+    border-image: svg('box-blue-vertical.svg') 40 / 33px / 0 stretch;
+    padding: 30px;
+    //height: 704px;
 
     .title {
         color: $white;
@@ -116,7 +116,7 @@
                 display: block;
             }
             .video-item {
-                height: 500px;
+                //height: 500px;
                 margin-bottom: 0;
                 &__inner {
                     height: 468px;
@@ -127,8 +127,8 @@
             display: block;
         }
         .video-item {
-            height: 128px;
-            border-image: svg('video-bg.svg') 40 / 16px / 0 stretch;
+            //height: 128px;
+            border-image: svg('video-bg.svg') 40 / 19px / 0 stretch;
             padding: 16px;
             //margin-bottom: 40px;
             &__inner {
@@ -136,7 +136,7 @@
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                height: 96px;
+                //height: 96px;
                 background-color:$video-bg;
                 padding: 0;
             }
@@ -152,7 +152,6 @@
                 position: absolute;
                 width: 100%;
                 height: 100%;
-                
                 img {
                     width: 100%;
                     height: auto;

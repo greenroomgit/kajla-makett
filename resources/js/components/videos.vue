@@ -10,14 +10,10 @@
                             <div class="video-item">
 
                                 <div class="video-item__inner has-text-centered">
-<<<<<<< HEAD
-=======
-                                <img :src="'https://img.youtube.com/vi/' + videos[0].youtube_id + '/maxresdefault.jpg'" alt="">
->>>>>>> cf6fe2941e2245cc6d50cb051bc01c3844e02cec
                                     <img class="play-button" src="/assets/svg/button-video.svg" alt="">
-                                    <div class="video-thumb">
-                                        <img :src="'https://img.youtube.com/vi/' + videos[0].youtube_id + '/mqdefault.jpg'" alt="">
-                                    </div>
+                                   
+                                    <img :src="'https://img.youtube.com/vi/' + videos[0].youtube_id + '/mqdefault.jpg'" alt="">
+                                    
                                 </div>
                             </div>
                             <p>{{ videos[0].caption }}</p>
