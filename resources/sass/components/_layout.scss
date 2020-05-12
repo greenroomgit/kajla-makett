@@ -38,7 +38,8 @@
         }
     }
     .box {
-        border-image: svg('box-blue-vertical.svg') 30 fill / 30px / 10px;
+        border-image: svg('box-blue-vertical.svg') 40 / 33px / 0 stretch;
+        -webkit-border-image: svg('box-blue-vertical.svg') 40 / 33px / 0 stretch;
         min-width: 300px;
         padding: 30px;
         box-shadow: none;
@@ -72,7 +73,8 @@
 }
 
 .info-horizonatal {
-    border-image: svg('box-blue-horizontal.svg') 20 fill / 20px / 10px;
+    border-image: svg('box-blue-horizontal.svg') 40 / 19px / 0 stretch;
+    -webkit-border-image: svg('box-blue-horizontal.svg') 40 / 19px / 0 stretch;
     //min-width: 300px;
     //min-width: 300px;
     padding: 16px;
@@ -85,7 +87,8 @@
 }
 
 .video-box {
-    border-image: svg('box-blue-vertical.svg') 20 fill / 20px / 10px;
+    border-image: svg('box-blue-vertical.svg') 40 / 33px / 0 stretch;
+    -webkit-border-image: svg('box-blue-vertical.svg') 40 / 33px / 0 stretch;
     padding: 30px;
     //height: 704px;
 
@@ -124,6 +127,7 @@
         }
         .video-item {
             border-image: svg('video-bg.svg') 40 / 19px / 0 stretch;
+            -webkit-border-image: svg('video-bg.svg') 40 / 19px / 0 stretch;
             padding: 16px;
             &__inner {
                 position: relative;
@@ -152,7 +156,8 @@
 }
 
 .picture-box {
-    border-image: svg('box-blue-pictures.svg') 20 fill / 20px / 10px;;
+    border-image: svg('box-blue-pictures.svg') 60 / 70px / 0 stretch;
+    -webkit-border-image: svg('box-blue-pictures.svg') 60 / 70px / 0 stretch;
     padding: 60px;
     &__inner {
         background-color:#7BCBD4;
@@ -165,8 +170,9 @@
     }
 
     .picture {
-        border-image: svg('picture-bg.svg') 30 fill / 30px / 10px;
-        padding: 5px;
+        border-image: svg('picture-bg.svg') 60 / 16px / 0 stretch;
+        -webkit-border-image: svg('picture-bg.svg') 60 / 16px / 0 stretch;
+        padding: 12px;
         &__inner {
             overflow: hidden;
             position: relative;
@@ -196,5 +202,33 @@
         padding: $size 0;
     }
 
+
+}
+
+.jackpot-box {
+    border-image: svg('box-blue-horizontal.svg') 40 / 19px / 0 stretch;
+    -webkit-border-image: svg('box-blue-horizontal.svg') 40 / 19px / 0 stretch;
+    padding: 16px;
+    
+    &__inner {
+        background-color:$box-bg;
+        padding: 16px;
+    }
+
+    h3 {
+        color: $white;
+        text-shadow: shadow($title-shadow,2px);
+    }
+
+    .jackpot-map-item {
+        position: relative;
+
+        .jackpot-map {
+            position: absolute;
+            width: 146%;
+            top: -35%;
+            left: -10%;
+        }
+    }
 
 }
