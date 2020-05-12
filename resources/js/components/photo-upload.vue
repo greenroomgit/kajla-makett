@@ -5,7 +5,7 @@
   <div class="modal-inner">
     <div class="modal-content">
               <div v-if="errors">
-                <div :v-for="error in errors" class="alert alert-danger">{{ error }}</div>
+                <div v-for="error in errors" class="alert alert-danger">{{ error }}</div>
               </div>
 
               <!-- FORM WITH v-if WILL BE SHOWN BUT THEN HIDDEN AFTER SUCCESS SUBMIT -->
@@ -35,12 +35,12 @@
 
                   <div class="col-md-6">
                     <!-- NOTICE v-model="formData.name" - THAT'S HOW IT GETS ATTACHED TO THE FIELD -->
-                    <input v-model="formData.postcode" id="modalImageTitleInput" type="text" class="form__input form__input--full-width" name="image title" required autocomplete autofocus>
+                    <input v-model="formData.caption" id="modalImageTitleInput" type="text" class="form__input form__input--full-width" name="caption" required autocomplete autofocus>
                   </div>
                 </div>
                 <div class="form__input-container form__input-container--full-width">
                   <label class="form__label form__label--checkbox">Megismertem, és elfogadom a jatékszabályzatot és az adatkezelési tájékoztatót
-                    <input type="checkbox" class="form__checkbox">
+                    <input v-model="formData.terms" type="checkbox" class="form__checkbox" name="terms" value="1">
                     <span class="form__checkmark"></span>
                   </label>
                 </div>
@@ -95,16 +95,15 @@
   export default {
     props: {
       isOpen: Boolean,
-      default: false
+      default: false,
     },
     data() {
       return {
         formData: {
           name: null,
           email: null,
-          postcode: null,
-          city: null,
-          street: null
+          terms: null,
+          caption: null,
         },
         picture: null,
         pictureUrl: null,
@@ -115,15 +114,15 @@
     },
     methods: {
       submit() {
-        this.errors = null
+        this.errors = []
 
         let formData = new FormData()
         formData.append('picture', this.picture)
 
         _.each(this.formData, (value, key) => {
+console.log(key, value)
           formData.append(key, value)
         })
-
         axios.post('/api/upload-photo', formData, {
             headers: {
               'Content-Type': "multipart/form-data; charset=utf-8; boundary=" + Math.random().toString().substr(2)
@@ -135,6 +134,7 @@
         }).catch(err => {
           if (err.response.status === 422) {
             this.errors = []
+
             _.each(err.response.data.errors, error => {
               _.each(error, e => {
                 this.errors.push(e)

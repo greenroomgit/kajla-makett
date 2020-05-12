@@ -28,8 +28,8 @@ class PhotoUploadsController extends AdminController
 
         $grid->column('id', __('Id'));
         $grid->column('picture', __('Picture'))->image();
-        $grid->column('firstname', __('Firstname'));
-        $grid->column('lastname', __('Lastname'));
+        $grid->column('name', __('Name'));
+        $grid->column('caption', __('Caption'));
         $grid->column('email', __('Email'));
         $grid->column('published', __('Published'));
         $grid->column('created_at', __('Created at'));
@@ -49,12 +49,10 @@ class PhotoUploadsController extends AdminController
         $show = new Show(PhotoUploads::findOrFail($id));
 
         $show->field('id', __('Id'));
-        $show->field('firstname', __('Firstname'));
-        $show->field('lastname', __('Lastname'));
-        $show->field('address', __('Address'));
+        $show->field('name', __('Name'));
         $show->field('email', __('Email'));
+        $show->field('caption', __('Caption'));
         $show->field('published', __('Published'));
-        $show->field('telephone', __('Telephone'));
         $show->field('created_at', __('Created at'));
         $show->field('updated_at', __('Updated at'));
 
@@ -70,12 +68,10 @@ class PhotoUploadsController extends AdminController
     {
         $form = new Form(new PhotoUploads());
 
-        $form->text('firstname', __('Firstname'));
-        $form->text('lastname', __('Lastname'));
-        $form->text('address', __('Address'));
+        $form->text('name', __('Name'));
         $form->text('email', __('Email'));
+        $form->text('caption', __('Caption'));
         $form->switch('published', __('Published'));
-        $form->text('telephone', __('Telephone'));
 
         return $form;
     }

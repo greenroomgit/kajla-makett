@@ -11,12 +11,11 @@ class PhotoUploadsController extends Controller
     public function upload(Request $request)
     {
         $data = $request->validate([
-            'picture'   => ['image'],
-            'firstname'     => ['required', 'string'],
-            'lastname'     => ['required', 'string'],
+            'picture'   => ['required', 'image'],
+            'name'     => ['required', 'string'],
+            'caption'     => ['required', 'string'],
             'email'    => ['required', 'email'],
-            'address'    => ['required'],
-            'telephone'    => ['required'],
+            'terms'    => ['required'],
         ]);
 
         $file = $request->file('picture');

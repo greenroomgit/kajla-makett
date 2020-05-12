@@ -15,12 +15,10 @@ class CreatePhotoUploadsTable extends Migration
     {
         Schema::create('photo_uploads', function (Blueprint $table) {
             $table->id();
-            $table->string('firstname');
-            $table->string('lastname');
-            $table->string('address');
+            $table->string('name');
             $table->string('email');
             $table->boolean('published');
-            $table->string('telephone');
+            $table->string('caption');
             $table->string('picture');
             $table->timestamps();
         });
