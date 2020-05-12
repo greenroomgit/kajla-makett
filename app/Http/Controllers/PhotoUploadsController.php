@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 use App\PhotoUploads;
 use App\Http\Resources\PhotoUploadsResource;
 
@@ -27,5 +28,9 @@ class PhotoUploadsController extends Controller
         $upload = PhotoUploads::create($data);
 
         return new PhotoUploadsResource($upload);
+    }
+    public function published(Request $request)
+    {
+        return response(PhotoUploads::where('published', '=', 1)->get(['id', 'caption', 'picture', 'name'])->jsonSerialize(), Response::HTTP_OK);
     }
 }

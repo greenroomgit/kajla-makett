@@ -2199,13 +2199,46 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _pictures__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../pictures */ "./resources/js/components/pictures.vue");
 //
 //
 //
 //
 //
 //
-/* harmony default export */ __webpack_exports__["default"] = ({});
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  name: 'uploads',
+  components: {
+    'Pictures': _pictures__WEBPACK_IMPORTED_MODULE_0__["default"]
+  },
+  data: function data() {
+    return {};
+  },
+  methods: {}
+});
 
 /***/ }),
 
@@ -2585,6 +2618,8 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
 //
 //
 //
@@ -2604,33 +2639,40 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-/* harmony default export */ __webpack_exports__["default"] = ({});
+
+
+var getUploads = function getUploads(callback) {
+  axios__WEBPACK_IMPORTED_MODULE_0___default.a.get('http://localhost:8000/api/published-photos', {}).then(function (response) {
+    callback(null, response.data);
+  })["catch"](function (error) {
+    callback(error, error.response.data);
+  });
+};
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      uploads: null,
+      error: null
+    };
+  },
+  mounted: function mounted() {
+    var _this = this;
+
+    getUploads(function (err, data) {
+      _this.setData(err, data);
+    });
+  },
+  methods: {
+    setData: function setData(err, uploads) {
+      if (err) {
+        this.error = err.toString();
+      } else {
+        this.uploads = uploads;
+      }
+    }
+  }
+});
 
 /***/ }),
 
@@ -2645,6 +2687,10 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
+//
+//
+//
+//
 //
 //
 //
@@ -20763,15 +20809,48 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c(
+    "div",
+    { attrs: { id: "makett-fotok" } },
+    [_vm._m(0), _vm._v(" "), _vm._m(1), _vm._v(" "), _c("Pictures")],
+    1
+  )
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { attrs: { id: "makett-fotok" } }, [
-      _c("h1", [_vm._v("Makett Fotok")])
+    return _c("div", { staticClass: "yellow-box" }, [
+      _c("div", { staticClass: "yellow-box__inner" }, [
+        _c("h1", [_vm._v("Nem töltöttél még fel képet?")]),
+        _vm._v(" "),
+        _c("p", [
+          _vm._v(
+            "Ne habozz, igényeld az ingyenes makett csomagot, vagy töltsd le és nyomtass sajátot. Utána már csak építened és lefotóznod kell, majd beküldeni az oldalon keresztül. "
+          )
+        ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "prize" }, [
+      _c("div", { staticClass: "prize__inner" }, [
+        _c("div", { staticClass: "prize__left" }, [
+          _vm._v(
+            "\n                A fődíj a 20 darabos makett-szett és a hozzá kapcsolódó Magyarország térkép\n            "
+          )
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "prize__right" }, [
+          _c("img", {
+            attrs: { src: "/assets/images/terkep_makett_fodij.png", alt: "" }
+          })
+        ])
+      ])
     ])
   }
 ]
@@ -21448,104 +21527,34 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "picture-box" }, [
-      _c("div", { staticClass: "picture-box__inner" }, [
-        _c("h3", { staticClass: "title" }, [_vm._v("Beküldött képek")]),
-        _vm._v(" "),
-        _c("div", { staticClass: "picture-wrapper" }, [
-          _c("div", { staticClass: "columns is-multiline" }, [
-            _c("div", { staticClass: "column is-one-quarter" }, [
+  return _c("div", { staticClass: "picture-box" }, [
+    _c("div", { staticClass: "picture-box__inner" }, [
+      _c("h3", { staticClass: "title" }, [_vm._v("Beküldött képek")]),
+      _vm._v(" "),
+      _c("div", { staticClass: "picture-wrapper" }, [
+        _c(
+          "div",
+          { staticClass: "columns is-multiline" },
+          _vm._l(_vm.uploads, function(ref) {
+            var caption = ref.caption
+            var picture = ref.picture
+            return _c("div", { staticClass: "column is-one-quarter" }, [
               _c("img", {
                 attrs: { src: "assets/svg/picture-bg.svg", alt: "" }
               }),
               _vm._v(" "),
-              _c("p", [
-                _vm._v("Kajla és az őslények kalandjai két soros címben")
-              ])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "column is-one-quarter" }, [
-              _c("img", {
-                attrs: { src: "assets/svg/picture-bg.svg", alt: "" }
-              }),
+              _c("img", { attrs: { src: "storage/" + picture, alt: "" } }),
               _vm._v(" "),
-              _c("p", [
-                _vm._v("Kajla és az őslények kalandjai két soros címben")
-              ])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "column is-one-quarter" }, [
-              _c("img", {
-                attrs: { src: "assets/svg/picture-bg.svg", alt: "" }
-              }),
-              _vm._v(" "),
-              _c("p", [
-                _vm._v("Kajla és az őslények kalandjai két soros címben")
-              ])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "column is-one-quarter" }, [
-              _c("img", {
-                attrs: { src: "assets/svg/picture-bg.svg", alt: "" }
-              }),
-              _vm._v(" "),
-              _c("p", [
-                _vm._v("Kajla és az őslények kalandjai két soros címben")
-              ])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "column is-one-quarter" }, [
-              _c("img", {
-                attrs: { src: "assets/svg/picture-bg.svg", alt: "" }
-              }),
-              _vm._v(" "),
-              _c("p", [
-                _vm._v("Kajla és az őslények kalandjai két soros címben")
-              ])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "column is-one-quarter" }, [
-              _c("img", {
-                attrs: { src: "assets/svg/picture-bg.svg", alt: "" }
-              }),
-              _vm._v(" "),
-              _c("p", [
-                _vm._v("Kajla és az őslények kalandjai két soros címben")
-              ])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "column is-one-quarter" }, [
-              _c("img", {
-                attrs: { src: "assets/svg/picture-bg.svg", alt: "" }
-              }),
-              _vm._v(" "),
-              _c("p", [
-                _vm._v("Kajla és az őslények kalandjai két soros címben")
-              ])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "column is-one-quarter" }, [
-              _c("img", {
-                attrs: { src: "assets/svg/picture-bg.svg", alt: "" }
-              }),
-              _vm._v(" "),
-              _c("p", [
-                _vm._v("Kajla és az őslények kalandjai két soros címben")
-              ])
+              _c("p", [_vm._v(_vm._s(caption))])
             ])
-          ])
-        ])
+          }),
+          0
+        )
       ])
     ])
-  }
-]
+  ])
+}
+var staticRenderFns = []
 render._withStripped = true
 
 
@@ -21589,6 +21598,21 @@ var render = function() {
                     "div",
                     { staticClass: "video-item__inner has-text-centered" },
                     [
+                      _vm._v(
+                        "\n<<<<<<< HEAD\n=======\n                                "
+                      ),
+                      _c("img", {
+                        attrs: {
+                          src:
+                            "https://img.youtube.com/vi/" +
+                            _vm.videos[0].youtube_id +
+                            "/maxresdefault.jpg",
+                          alt: ""
+                        }
+                      }),
+                      _vm._v(
+                        "\n>>>>>>> cf6fe2941e2245cc6d50cb051bc01c3844e02cec\n                                    "
+                      ),
                       _c("img", {
                         staticClass: "play-button",
                         attrs: { src: "/assets/svg/button-video.svg", alt: "" }
