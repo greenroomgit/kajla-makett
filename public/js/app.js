@@ -2734,8 +2734,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
 
 
 var getVideos = function getVideos(callback) {
@@ -21600,6 +21598,7 @@ var render = function() {
                       }),
                       _vm._v(" "),
                       _c("img", {
+                        staticClass: "video-thumb",
                         attrs: {
                           src:
                             "https://img.youtube.com/vi/" +

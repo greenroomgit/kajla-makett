@@ -11,9 +11,7 @@
 
                                 <div class="video-item__inner has-text-centered">
                                     <img class="play-button" src="/assets/svg/button-video.svg" alt="">
-                                   
-                                    <img :src="'https://img.youtube.com/vi/' + videos[0].youtube_id + '/mqdefault.jpg'" alt="">
-                                    
+                                    <img class="video-thumb" :src="'https://img.youtube.com/vi/' + videos[0].youtube_id + '/mqdefault.jpg'" alt="">
                                 </div>
                             </div>
                             <p>{{ videos[0].caption }}</p>
@@ -24,7 +22,7 @@
           
 
                         <a class="video-item-button" v-for="{ id, caption, youtube_id }, index in videos"
-                v-if="index > '0'" :href="'https://youtube.com/watch?v=' + youtube_id ">
+                        v-if="index > '0'" :href="'https://youtube.com/watch?v=' + youtube_id ">
                             <div class="video-item">
 
                                 <div class="video-item__inner has-text-centered">
