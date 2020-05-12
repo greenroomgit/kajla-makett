@@ -1,15 +1,17 @@
 .modal-inner {
+  
 }
 
 .modal-content {
   width: calc(640px + 4rem);
-  padding: 2rem;
+  padding: 0 0 2rem 0;
+  overflow: hidden;
 }
 
 .modal-close-button {
   position: absolute;
-  top: 1.25rem;
-  right: 1.25rem;
+  top: 0;
+  right: 0;
   width: 64px;
   height: 60px;
   max-height: unset;
