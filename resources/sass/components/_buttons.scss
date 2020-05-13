@@ -29,6 +29,9 @@
         &:hover {
             background-color: transparent;
         }
+        &--send {
+            background-image: svg('button-background-send.svg');
+        }
     }
     &.upload {
         min-width: 10rem;

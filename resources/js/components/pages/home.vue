@@ -22,7 +22,7 @@
                         <h3 class="title is-3">Építsd fel Kajlával Magyarország<br> nevezetességeit és nyerj!</h3>
                     </div>
                     <div class="column">
-                        <button class="button is-primary">Szeretnék makettet</button>
+                        <button class="button is-primary" @click.prevent="openKitRequestModal">Szeretnék makettet</button>
                     </div>
                     <div class="column">
                         <button class="button is-primary" @click.prevent="openPhotoUploadModal">Képet küldök be</button>
@@ -32,12 +32,14 @@
         </div>
         <Videos />
         <Pictures />
+        <KitRequest :is-open="isKitRequestModalOpen" v-on:onClose="openKitRequestModal"/>
         <PhotoUpload :is-open="isPhotoUploadModalOpen" v-on:onClose="openPhotoUploadModal"/>
     </div>
 </template>
 
 <script>
     import GuideSteps from '../guide-steps';
+    import KitRequest from '../kit-request';
     import PhotoUpload from '../photo-upload';
     import Videos from '../videos'
     import Pictures from '../pictures'
@@ -47,6 +49,7 @@
         name: 'homepage',
         components: {
             'GuideSteps': GuideSteps,
+            'KitRequest': KitRequest,
             'PhotoUpload': PhotoUpload,
             'Videos': Videos,
             'Pictures': Pictures,
@@ -54,10 +57,14 @@
         },
         data() {
             return {
+                isKitRequestModalOpen: false,
                 isPhotoUploadModalOpen: false
             }
         },
         methods: {
+            openKitRequestModal() {
+                this.isKitRequestModalOpen = !this.isKitRequestModalOpen
+            },
             openPhotoUploadModal() {
                 this.isPhotoUploadModalOpen = !this.isPhotoUploadModalOpen
             }

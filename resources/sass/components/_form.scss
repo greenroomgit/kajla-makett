@@ -17,6 +17,9 @@
     &--horizontal-centered {
       text-align: center;
     }
+    &--last-centered {
+      margin: 1rem auto 4rem auto;
+    }
     &--bottom-offset {
       position: absolute;
       left: 0;
