@@ -8,32 +8,27 @@
 
     &.is-primary {
         //todo: meg nem nyulik a bg. Kerlek, hogy nezz majd ra.
-        background-image: svg('button-primary-bg.svg');
-        background-color: transparent;
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: 100% 100%;
-
+        background: transparent;
+        border-image: svg('button-primary-bg.svg') 21 fill / 24px / 0 stretch;
+        -webkit-border-image: svg('button-primary-bg.svg') 21 fill / 24px / 0 stretch;
+        min-height: unset;
+        height: auto;
+        padding: 0 0.5em;
         &:hover {
             background-color: transparent;
         }
     }
     &.is-secondary {
         //todo: meg nem nyulik a bg. Kerlek, hogy nezz majd ra.
-        background-image: svg('button-secondary-bg.svg');
-        background-color: transparent;
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: 100% 100%;
+        padding-left: 2em;
+        padding-right: 2em;
         border: none;
+        background: transparent;
+        border-image: svg('button-secondary-bg.svg') 28 fill / 30px / 0 stretch;
+        -webkit-border-image: svg('button-secondary-bg.svg') 28 fill / 30px / 0 stretch;
         &:hover {
             background-color: transparent;
+            color: $white;
         }
-        &--send {
-            background-image: svg('button-background-send.svg');
-        }
-    }
-    &.upload {
-        min-width: 10rem;
     }
 }

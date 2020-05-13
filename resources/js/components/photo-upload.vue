@@ -65,18 +65,21 @@
         <div class="form__input-container form__input-container--full-width form__input-container--horizontal-centered form__input-container--bottom-offset">
           <div class="col-md-6 offset-md-4 column">
             <button @click.prevent="submit" type="submit" class="btn button is-secondary upload" >
+              Feltöltés
             </button>
           </div>
         </div>
       </form>
 
-      <div v-if="upload">
-        <div class="alert alert-success">Thank You!</div>
-        <div>
-          <img height="100px" width="auto" :src="upload.picture_url" alt="">
+      <div v-if="upload" class="modal-success yellow-box">
+        <div class="yellow-box__inner">
+          <div class="modal-success-header">Köszönjük!</div>
+          <div>
+            <img height="100px" width="auto" :src="upload.picture_url" alt="">
+          </div>
+          <div>Név : {{ upload.name }}</div>
+          <div>Email cím : {{ upload.email }}</div>
         </div>
-        <div>Name : {{ upload.name }}</div>
-        <div>Email : {{ upload.email }}</div>
       </div>
     </div>
   </div>

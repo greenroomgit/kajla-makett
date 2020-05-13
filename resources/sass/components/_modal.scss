@@ -4,14 +4,14 @@
 
 .modal-content {
   width: 603px;
-  padding: 0.5em 0.5em 2rem 0.5em;
+  padding: 1em 1em 2rem 1em;
   overflow: hidden;
 }
 
 .modal-close-button {
   position: absolute;
-  top: -0.5em;
-  right: -0.5em;
+  top: 0em;
+  right: 0em;
   width: 64px;
   height: 60px;
   max-height: unset;
@@ -23,4 +23,14 @@
   background-position: center;
   background-size: contain;
   cursor: pointer;
+}
+
+.modal-success {
+  color: $brown;
+}
+
+.modal-success-header {
+  font-size: $modal-headline;
+  color: $brown;
+  text-align: center;
 }
