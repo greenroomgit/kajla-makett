@@ -2,7 +2,7 @@
   display: flex;
   flex-wrap: wrap;
   padding: 4.125rem 4.125rem 1.5rem 4.125rem;
-  background-image: svg("modal-background.svg");
+  background-image: svg("modal-background-paws.svg");
   &__description {
     font-size: $modal-headline;
     color: $brown;
@@ -37,6 +37,9 @@
     background-size: contain;
     &--full-width {
       width: 100%;
+    }
+    &--long-bg {
+      background-image: svg("input-background-long.svg");
     }
     &--hidden {
       display: none;
@@ -95,6 +98,10 @@
   &__image-preview {
     width: 5rem;
     margin: 0 auto;
+  }
+  &__error-container {
+    text-align: center;
+    margin: 1rem auto;
   }
   &__error {
     color: red;

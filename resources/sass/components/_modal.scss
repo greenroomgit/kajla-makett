@@ -3,15 +3,15 @@
 }
 
 .modal-content {
-  width: calc(640px + 4rem);
-  padding: 0 0 2rem 0;
+  width: 603px;
+  padding: 0.5em 0.5em 2rem 0.5em;
   overflow: hidden;
 }
 
 .modal-close-button {
   position: absolute;
-  top: 0;
-  right: 0;
+  top: -0.5em;
+  right: -0.5em;
   width: 64px;
   height: 60px;
   max-height: unset;
@@ -22,4 +22,5 @@
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
+  cursor: pointer;
 }

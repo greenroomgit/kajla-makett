@@ -32,7 +32,7 @@
 
           <div class="col-md-6">
             <!-- NOTICE v-model="formData.name" - THAT'S HOW IT GETS ATTACHED TO THE FIELD -->
-            <input v-model="formData.caption" id="modalImageTitleInput" type="text" class="form__input form__input--full-width" name="caption" required autocomplete autofocus>
+            <input v-model="formData.caption" id="modalImageTitleInput" type="text" class="form__input form__input--full-width form__input--long-bg" name="caption" required autocomplete autofocus>
           </div>
         </div>
         <div class="form__input-container form__input-container--full-width">
@@ -42,7 +42,7 @@
           </label>
         </div>
 
-        <div v-if="errors.length > 0">
+        <div v-if="errors.length > 0" class="form__error-container">
           <div v-for="(error, index) in errors" :key="index" class="form__error alert alert-danger">{{ error }}</div>
         </div>
 
