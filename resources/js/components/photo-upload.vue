@@ -4,7 +4,7 @@
   <div class="modal-background"></div>
   <div class="modal-inner">
     <div class="modal-content">
-      <button class="modal-close-button" aria-label="close" @click.prevent="$emit('onClose')"></button>
+      <button class="modal-close-button" aria-label="close" @click.prevent="closeModal()"></button>
       <!-- FORM WITH v-if WILL BE SHOWN BUT THEN HIDDEN AFTER SUCCESS SUBMIT -->
       <form v-if="showForm" class="form">
         <div class="form__description">
@@ -108,6 +108,7 @@
         pictureUrl: null,
         showForm: true,
         upload: null,
+        uploadWasSuccess: null,
         errors: [],
       }
     },
@@ -174,6 +175,20 @@
         }
       },
 
+      resetForm() {
+        this.formData = {
+          name: null,
+          email: null,
+          terms: true,
+          caption: null,
+        }
+        this.picture = null,
+        this.pictureUrl = null,
+        this.showForm = true,
+        this.upload = null,
+        this.errors = []
+      },
+
       validEmail(email) {
       const emailRegex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
         return emailRegex.test(email);
@@ -184,6 +199,7 @@
         this.pictureUrl = URL.createObjectURL(this.picture);
       },
       closeModal() {
+        this.resetForm()
         this.$emit('onClose')
       }
     },
