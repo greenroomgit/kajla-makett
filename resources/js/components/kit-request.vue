@@ -68,13 +68,18 @@
         </div>
       </form>
 
-      <div v-if="upload">
-        <div class="alert alert-success">Thank You!</div>
-        <div>
-          <img height="100px" width="auto" :src="upload.picture_url" alt="">
+      <div v-if="upload" class="modal-success yellow-box">
+        <div class="yellow-box__inner">
+          <div class="modal-success-header">Köszönjük!</div>
+          <div>
+            <img height="100px" width="auto" :src="upload.picture_url" alt="">
+          </div>
+          <div>Név : {{ upload.name }}</div>
+          <div>Email cím : {{ upload.email }}</div>
+          <div>Irányítószám : {{ upload.postal }}</div>
+          <div>Település : {{ upload.city }}</div>
+          <div>Email cím : {{ upload.address }}</div>
         </div>
-        <div>Name : {{ upload.name }}</div>
-        <div>Email : {{ upload.email }}</div>
       </div>
     </div>
   </div>
@@ -128,7 +133,7 @@
             }
           ).then(response => {
             this.showForm = false 
-            this.upload = response.data.data
+            this.upload = response.data
           }).catch(err => {
             if (err.response.status === 422) {
               this.errors = []
@@ -178,10 +183,10 @@
         this.formData = {
           name: null,
           email: null,
-          terms: true,
+          postal: null,
+          city:  null,
+          address: null,
         }
-        this.picture = null,
-        this.pictureUrl = null,
         this.showForm = true,
         this.upload = null,
         this.errors = []
@@ -192,10 +197,6 @@
         return emailRegex.test(email);
       },
 
-      handleFileObject() {
-        this.picture = this.$refs.file.files[0]
-        this.pictureUrl = URL.createObjectURL(this.picture);
-      },
       closeModal() {
         this.resetForm()
         this.$emit('onClose')
