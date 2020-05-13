@@ -2074,6 +2074,223 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/kit-request.vue?vue&type=script&lang=js&":
+/*!**********************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/kit-request.vue?vue&type=script&lang=js& ***!
+  \**********************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_1__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  props: {
+    isOpen: Boolean,
+    "default": false
+  },
+  data: function data() {
+    return {
+      formData: {
+        name: null,
+        email: null,
+        postal: null,
+        city: null,
+        address: null
+      },
+      showForm: true,
+      upload: null,
+      errors: []
+    };
+  },
+  methods: {
+    submit: function submit() {
+      var _this = this;
+
+      this.errors = [];
+      var isFromOk = this.checkForm();
+
+      if (isFromOk) {
+        var formData = new FormData();
+        formData.append('picture', this.picture);
+
+        lodash__WEBPACK_IMPORTED_MODULE_1___default.a.each(this.formData, function (value, key) {
+          formData.append(key, value);
+        });
+
+        axios__WEBPACK_IMPORTED_MODULE_0___default.a.post('/api/kit-request', formData, {
+          headers: {
+            'Content-Type': "multipart/form-data; charset=utf-8; boundary=" + Math.random().toString().substr(2)
+          }
+        }).then(function (response) {
+          _this.showForm = false;
+          _this.upload = response.data.data;
+        })["catch"](function (err) {
+          if (err.response.status === 422) {
+            _this.errors = [];
+
+            lodash__WEBPACK_IMPORTED_MODULE_1___default.a.each(err.response.data.errors, function (error) {
+              lodash__WEBPACK_IMPORTED_MODULE_1___default.a.each(error, function (e) {
+                _this.errors.push(e);
+              });
+            });
+          }
+        });
+      } else {
+        return;
+      }
+    },
+    checkForm: function checkForm() {
+      this.errors = [];
+
+      if (!this.formData.name) {
+        this.errors.push("Név megadása kötelező");
+      }
+
+      if (!this.formData.email) {
+        this.errors.push('E-mail cím megadása kötelező.');
+      } else if (!this.validEmail(this.formData.email)) {
+        this.errors.push('Nem megfelelő e-mail cím.');
+      }
+
+      if (!this.formData.postal) {
+        this.errors.push("Irányítószám megadása kötelező.");
+      }
+
+      if (!this.formData.city) {
+        this.errors.push("Település megadása kötelező.");
+      }
+
+      if (!this.formData.address) {
+        this.errors.push("Utca,házszám megadása kötelező.");
+      }
+
+      if (!this.errors.length) {
+        return true;
+      } else {
+        return false;
+      }
+    },
+    resetForm: function resetForm() {
+      this.formData = {
+        name: null,
+        email: null,
+        terms: true
+      };
+      this.picture = null, this.pictureUrl = null, this.showForm = true, this.upload = null, this.errors = [];
+    },
+    validEmail: function validEmail(email) {
+      var emailRegex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+      return emailRegex.test(email);
+    },
+    handleFileObject: function handleFileObject() {
+      this.picture = this.$refs.file.files[0];
+      this.pictureUrl = URL.createObjectURL(this.picture);
+    },
+    closeModal: function closeModal() {
+      this.resetForm();
+      this.$emit('onClose');
+    }
+  },
+  computed: {
+    modalIsVisible: function modalIsVisible() {
+      return this.isOpen;
+    }
+  }
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/mainapp.vue?vue&type=script&lang=js&":
 /*!******************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/mainapp.vue?vue&type=script&lang=js& ***!
@@ -2271,10 +2488,11 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _guide_steps__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../guide-steps */ "./resources/js/components/guide-steps.vue");
-/* harmony import */ var _photo_upload__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../photo-upload */ "./resources/js/components/photo-upload.vue");
-/* harmony import */ var _videos__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../videos */ "./resources/js/components/videos.vue");
-/* harmony import */ var _pictures__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../pictures */ "./resources/js/components/pictures.vue");
-/* harmony import */ var _jackpot__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../jackpot */ "./resources/js/components/jackpot.vue");
+/* harmony import */ var _kit_request__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../kit-request */ "./resources/js/components/kit-request.vue");
+/* harmony import */ var _photo_upload__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../photo-upload */ "./resources/js/components/photo-upload.vue");
+/* harmony import */ var _videos__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../videos */ "./resources/js/components/videos.vue");
+/* harmony import */ var _pictures__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../pictures */ "./resources/js/components/pictures.vue");
+/* harmony import */ var _jackpot__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../jackpot */ "./resources/js/components/jackpot.vue");
 //
 //
 //
@@ -2313,6 +2531,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+
 
 
 
@@ -2322,17 +2542,22 @@ __webpack_require__.r(__webpack_exports__);
   name: 'homepage',
   components: {
     'GuideSteps': _guide_steps__WEBPACK_IMPORTED_MODULE_0__["default"],
-    'PhotoUpload': _photo_upload__WEBPACK_IMPORTED_MODULE_1__["default"],
-    'Videos': _videos__WEBPACK_IMPORTED_MODULE_2__["default"],
-    'Pictures': _pictures__WEBPACK_IMPORTED_MODULE_3__["default"],
-    'Jackpot': _jackpot__WEBPACK_IMPORTED_MODULE_4__["default"]
+    'KitRequest': _kit_request__WEBPACK_IMPORTED_MODULE_1__["default"],
+    'PhotoUpload': _photo_upload__WEBPACK_IMPORTED_MODULE_2__["default"],
+    'Videos': _videos__WEBPACK_IMPORTED_MODULE_3__["default"],
+    'Pictures': _pictures__WEBPACK_IMPORTED_MODULE_4__["default"],
+    'Jackpot': _jackpot__WEBPACK_IMPORTED_MODULE_5__["default"]
   },
   data: function data() {
     return {
+      isKitRequestModalOpen: false,
       isPhotoUploadModalOpen: false
     };
   },
   methods: {
+    openKitRequestModal: function openKitRequestModal() {
+      this.isKitRequestModalOpen = !this.isKitRequestModalOpen;
+    },
     openPhotoUploadModal: function openPhotoUploadModal() {
       this.isPhotoUploadModalOpen = !this.isPhotoUploadModalOpen;
     }
@@ -2518,7 +2743,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -2531,14 +2755,14 @@ __webpack_require__.r(__webpack_exports__);
       formData: {
         name: null,
         email: null,
-        terms: null,
+        terms: true,
         caption: null
       },
       picture: null,
       pictureUrl: null,
       showForm: true,
       upload: null,
-      errors: null
+      errors: []
     };
   },
   methods: {
@@ -2546,34 +2770,39 @@ __webpack_require__.r(__webpack_exports__);
       var _this = this;
 
       this.errors = [];
-      var formData = new FormData();
-      formData.append('picture', this.picture);
+      var isFromOk = this.checkForm();
 
-      lodash__WEBPACK_IMPORTED_MODULE_1___default.a.each(this.formData, function (value, key) {
-        console.log(key, value);
-        formData.append(key, value);
-      });
+      if (isFromOk) {
+        var formData = new FormData();
+        formData.append('picture', this.picture);
 
-      axios__WEBPACK_IMPORTED_MODULE_0___default.a.post('/api/upload-photo', formData, {
-        headers: {
-          'Content-Type': "multipart/form-data; charset=utf-8; boundary=" + Math.random().toString().substr(2)
-        }
-      }).then(function (response) {
-        _this.showForm = false;
-        _this.upload = response.data.data;
-      })["catch"](function (err) {
-        if (err.response.status === 422) {
-          _this.errors = [];
+        lodash__WEBPACK_IMPORTED_MODULE_1___default.a.each(this.formData, function (value, key) {
+          formData.append(key, value);
+        });
 
-          lodash__WEBPACK_IMPORTED_MODULE_1___default.a.each(err.response.data.errors, function (error) {
-            lodash__WEBPACK_IMPORTED_MODULE_1___default.a.each(error, function (e) {
-              _this.errors.push(e);
+        axios__WEBPACK_IMPORTED_MODULE_0___default.a.post('/api/upload-photo', formData, {
+          headers: {
+            'Content-Type': "multipart/form-data; charset=utf-8; boundary=" + Math.random().toString().substr(2)
+          }
+        }).then(function (response) {
+          _this.showForm = false;
+          _this.upload = response.data.data;
+        })["catch"](function (err) {
+          if (err.response.status === 422) {
+            _this.errors = [];
+
+            lodash__WEBPACK_IMPORTED_MODULE_1___default.a.each(err.response.data.errors, function (error) {
+              lodash__WEBPACK_IMPORTED_MODULE_1___default.a.each(error, function (e) {
+                _this.errors.push(e);
+              });
             });
-          });
-        }
-      });
+          }
+        });
+      } else {
+        return;
+      }
     },
-    checkForm: function checkForm(event) {
+    checkForm: function checkForm() {
       this.errors = [];
 
       if (!this.formData.name) {
@@ -2586,11 +2815,28 @@ __webpack_require__.r(__webpack_exports__);
         this.errors.push('Nem megfelelő e-mail cím.');
       }
 
-      if (!this.errors.length) {
-        return true;
+      if (!this.formData.terms) {
+        this.errors.push("A játékszabályzat és az adatkezelési tájékoztató elfogadása kötelező.");
       }
 
-      event.preventDefault();
+      if (!this.picture) {
+        this.errors.push("Nem adtál hozzá képet");
+      }
+
+      if (!this.errors.length) {
+        return true;
+      } else {
+        return false;
+      }
+    },
+    resetForm: function resetForm() {
+      this.formData = {
+        name: null,
+        email: null,
+        terms: true,
+        caption: null
+      };
+      this.picture = null, this.pictureUrl = null, this.showForm = true, this.upload = null, this.errors = [];
     },
     validEmail: function validEmail(email) {
       var emailRegex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -2601,6 +2847,7 @@ __webpack_require__.r(__webpack_exports__);
       this.pictureUrl = URL.createObjectURL(this.picture);
     },
     closeModal: function closeModal() {
+      this.resetForm();
       this.$emit('onClose');
     }
   },
@@ -20672,6 +20919,351 @@ render._withStripped = true
 
 /***/ }),
 
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/kit-request.vue?vue&type=template&id=0adb759d&":
+/*!**************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/kit-request.vue?vue&type=template&id=0adb759d& ***!
+  \**************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    { staticClass: "modal", class: { "is-active": _vm.modalIsVisible } },
+    [
+      _c("div", { staticClass: "modal-background" }),
+      _vm._v(" "),
+      _c("div", { staticClass: "modal-inner" }, [
+        _c("div", { staticClass: "modal-content" }, [
+          _c("button", {
+            staticClass: "modal-close-button",
+            attrs: { "aria-label": "close" },
+            on: {
+              click: function($event) {
+                $event.preventDefault()
+                return _vm.closeModal()
+              }
+            }
+          }),
+          _vm._v(" "),
+          _vm.showForm
+            ? _c("form", { staticClass: "form" }, [
+                _c("div", { staticClass: "form__description" }, [
+                  _vm._v(
+                    "\n          A makett igényléséhez kérlek add meg az alábbi adatokat.\n        "
+                  )
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "form__input-container" }, [
+                  _c(
+                    "label",
+                    {
+                      staticClass:
+                        "form__label col-md-4 col-form-label text-md-right",
+                      attrs: { for: "modalNameInput" }
+                    },
+                    [_vm._v("Név")]
+                  ),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col-md-6" }, [
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.formData.name,
+                          expression: "formData.name"
+                        }
+                      ],
+                      staticClass: "form__input",
+                      attrs: {
+                        id: "modalNameInput",
+                        type: "text",
+                        name: "name",
+                        required: "",
+                        autocomplete: "",
+                        autofocus: ""
+                      },
+                      domProps: { value: _vm.formData.name },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(_vm.formData, "name", $event.target.value)
+                        }
+                      }
+                    })
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "form__input-container" }, [
+                  _c(
+                    "label",
+                    {
+                      staticClass:
+                        "form__label col-md-4 col-form-label text-md-right",
+                      attrs: { for: "modalEmailInput" }
+                    },
+                    [_vm._v("E-mail cím")]
+                  ),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col-md-6" }, [
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.formData.email,
+                          expression: "formData.email"
+                        }
+                      ],
+                      staticClass: "form__input",
+                      attrs: {
+                        id: "modalEmailInput",
+                        type: "text",
+                        name: "email",
+                        required: "",
+                        autocomplete: "",
+                        autofocus: ""
+                      },
+                      domProps: { value: _vm.formData.email },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(_vm.formData, "email", $event.target.value)
+                        }
+                      }
+                    })
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "form__input-container" }, [
+                  _c(
+                    "label",
+                    {
+                      staticClass:
+                        "form__label col-md-4 col-form-label text-md-right",
+                      attrs: { for: "modalpostalInput" }
+                    },
+                    [_vm._v("Irányítószám")]
+                  ),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col-md-6" }, [
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.formData.postal,
+                          expression: "formData.postal"
+                        }
+                      ],
+                      staticClass: "form__input",
+                      attrs: {
+                        id: "modalpostalInput",
+                        type: "text",
+                        name: "postal",
+                        required: "",
+                        autocomplete: "",
+                        autofocus: ""
+                      },
+                      domProps: { value: _vm.formData.postal },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(_vm.formData, "postal", $event.target.value)
+                        }
+                      }
+                    })
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "form__input-container" }, [
+                  _c(
+                    "label",
+                    {
+                      staticClass:
+                        "form__label col-md-4 col-form-label text-md-right",
+                      attrs: { for: "modalCityInput" }
+                    },
+                    [_vm._v("Település")]
+                  ),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col-md-6" }, [
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.formData.city,
+                          expression: "formData.city"
+                        }
+                      ],
+                      staticClass: "form__input",
+                      attrs: {
+                        id: "modalCityInput",
+                        type: "text",
+                        name: "city",
+                        required: "",
+                        autocomplete: "",
+                        autofocus: ""
+                      },
+                      domProps: { value: _vm.formData.city },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(_vm.formData, "city", $event.target.value)
+                        }
+                      }
+                    })
+                  ])
+                ]),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass:
+                      "form__input-container form__input-container--last-centered"
+                  },
+                  [
+                    _c(
+                      "label",
+                      {
+                        staticClass:
+                          "form__label col-md-4 col-form-label text-md-right",
+                        attrs: { for: "modaladdressInput" }
+                      },
+                      [_vm._v("Utca, házszám")]
+                    ),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-md-6" }, [
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.formData.address,
+                            expression: "formData.address"
+                          }
+                        ],
+                        staticClass: "form__input",
+                        attrs: {
+                          id: "modaladdressInput",
+                          type: "text",
+                          name: "address",
+                          required: "",
+                          autocomplete: "",
+                          autofocus: ""
+                        },
+                        domProps: { value: _vm.formData.address },
+                        on: {
+                          input: function($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.$set(
+                              _vm.formData,
+                              "address",
+                              $event.target.value
+                            )
+                          }
+                        }
+                      })
+                    ])
+                  ]
+                ),
+                _vm._v(" "),
+                _vm.errors.length > 0
+                  ? _c(
+                      "div",
+                      { staticClass: "form__error-container" },
+                      _vm._l(_vm.errors, function(error, index) {
+                        return _c(
+                          "div",
+                          {
+                            key: index,
+                            staticClass: "form__error alert alert-danger"
+                          },
+                          [_vm._v(_vm._s(error))]
+                        )
+                      }),
+                      0
+                    )
+                  : _vm._e(),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass:
+                      "form__input-container form__input-container--full-width form__input-container--horizontal-centered form__input-container--bottom-offset"
+                  },
+                  [
+                    _c("div", { staticClass: "col-md-6 offset-md-4 column" }, [
+                      _c("button", {
+                        staticClass:
+                          "btn button is-secondary is-secondary--send upload",
+                        attrs: { type: "submit" },
+                        on: {
+                          click: function($event) {
+                            $event.preventDefault()
+                            return _vm.submit($event)
+                          }
+                        }
+                      })
+                    ])
+                  ]
+                )
+              ])
+            : _vm._e(),
+          _vm._v(" "),
+          _vm.upload
+            ? _c("div", [
+                _c("div", { staticClass: "alert alert-success" }, [
+                  _vm._v("Thank You!")
+                ]),
+                _vm._v(" "),
+                _c("div", [
+                  _c("img", {
+                    attrs: {
+                      height: "100px",
+                      width: "auto",
+                      src: _vm.upload.picture_url,
+                      alt: ""
+                    }
+                  })
+                ]),
+                _vm._v(" "),
+                _c("div", [_vm._v("Name : " + _vm._s(_vm.upload.name))]),
+                _vm._v(" "),
+                _c("div", [_vm._v("Email : " + _vm._s(_vm.upload.email))])
+              ])
+            : _vm._e()
+        ])
+      ])
+    ]
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/mainapp.vue?vue&type=template&id=a6706966&":
 /*!**********************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/mainapp.vue?vue&type=template&id=a6706966& ***!
@@ -20989,7 +21581,21 @@ var render = function() {
           _c("div", { staticClass: "columns" }, [
             _vm._m(1),
             _vm._v(" "),
-            _vm._m(2),
+            _c("div", { staticClass: "column" }, [
+              _c(
+                "button",
+                {
+                  staticClass: "button is-primary",
+                  on: {
+                    click: function($event) {
+                      $event.preventDefault()
+                      return _vm.openKitRequestModal($event)
+                    }
+                  }
+                },
+                [_vm._v("Szeretnék makettet")]
+              )
+            ]),
             _vm._v(" "),
             _c("div", { staticClass: "column" }, [
               _c(
@@ -21013,6 +21619,11 @@ var render = function() {
       _c("Videos"),
       _vm._v(" "),
       _c("Pictures"),
+      _vm._v(" "),
+      _c("KitRequest", {
+        attrs: { "is-open": _vm.isKitRequestModalOpen },
+        on: { onClose: _vm.openKitRequestModal }
+      }),
       _vm._v(" "),
       _c("PhotoUpload", {
         attrs: { "is-open": _vm.isPhotoUploadModalOpen },
@@ -21052,16 +21663,6 @@ var staticRenderFns = [
         _vm._v("Építsd fel Kajlával Magyarország"),
         _c("br"),
         _vm._v(" nevezetességeit és nyerj!")
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "column" }, [
-      _c("button", { staticClass: "button is-primary" }, [
-        _vm._v("Szeretnék makettet")
       ])
     ])
   }
@@ -21225,23 +21826,22 @@ var render = function() {
       _vm._v(" "),
       _c("div", { staticClass: "modal-inner" }, [
         _c("div", { staticClass: "modal-content" }, [
-          _vm.errors
-            ? _c(
-                "div",
-                _vm._l(_vm.errors, function(error) {
-                  return _c("div", { staticClass: "alert alert-danger" }, [
-                    _vm._v(_vm._s(error))
-                  ])
-                }),
-                0
-              )
-            : _vm._e(),
+          _c("button", {
+            staticClass: "modal-close-button",
+            attrs: { "aria-label": "close" },
+            on: {
+              click: function($event) {
+                $event.preventDefault()
+                return _vm.closeModal()
+              }
+            }
+          }),
           _vm._v(" "),
           _vm.showForm
             ? _c("form", { staticClass: "form" }, [
                 _c("div", { staticClass: "form__description" }, [
                   _vm._v(
-                    "\n                  A kép feltöltéséhez kérlek add meg a neved, e-mail címed és feltöltött kép címét\n                "
+                    "\n          A kép feltöltéséhez kérlek add meg a neved, e-mail címed és feltöltött kép címét\n        "
                   )
                 ]),
                 _vm._v(" "),
@@ -21358,7 +21958,8 @@ var render = function() {
                             expression: "formData.caption"
                           }
                         ],
-                        staticClass: "form__input form__input--full-width",
+                        staticClass:
+                          "form__input form__input--full-width form__input--long-bg",
                         attrs: {
                           id: "modalImageTitleInput",
                           type: "text",
@@ -21397,7 +21998,7 @@ var render = function() {
                       { staticClass: "form__label form__label--checkbox" },
                       [
                         _vm._v(
-                          "Megismertem, és elfogadom a jatékszabályzatot és az adatkezelési tájékoztatót\n                    "
+                          "Megismertem, és elfogadom a jatékszabályzatot és az adatkezelési tájékoztatót\n            "
                         ),
                         _c("input", {
                           directives: [
@@ -21456,6 +22057,24 @@ var render = function() {
                     )
                   ]
                 ),
+                _vm._v(" "),
+                _vm.errors.length > 0
+                  ? _c(
+                      "div",
+                      { staticClass: "form__error-container" },
+                      _vm._l(_vm.errors, function(error, index) {
+                        return _c(
+                          "div",
+                          {
+                            key: index,
+                            staticClass: "form__error alert alert-danger"
+                          },
+                          [_vm._v(_vm._s(error))]
+                        )
+                      }),
+                      0
+                    )
+                  : _vm._e(),
                 _vm._v(" "),
                 _c(
                   "div",
@@ -21534,17 +22153,6 @@ var render = function() {
                 )
               ])
             : _vm._e(),
-          _vm._v(" "),
-          _c("button", {
-            staticClass: "modal-close-button",
-            attrs: { "aria-label": "close" },
-            on: {
-              click: function($event) {
-                $event.preventDefault()
-                return _vm.$emit("onClose")
-              }
-            }
-          }),
           _vm._v(" "),
           _vm.upload
             ? _c("div", [
@@ -21654,110 +22262,117 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "video-box separator" }, [
-    _c("div", { staticClass: "video-box__inner" }, [
-      _c("h3", { staticClass: "title" }, [_vm._v("Kajla makett mesék")]),
-      _vm._v(" "),
-      _c("div", { staticClass: "video-wrapper" }, [
-        _c("div", { staticClass: "columns" }, [
-          _c("div", { staticClass: "column is-9 first" }, [
-            _c(
-              "a",
-              {
-                staticClass: "video-item-button",
-                attrs: {
-                  href:
-                    "https://youtube.com/watch?v=" + _vm.videos[0].youtube_id
-                }
-              },
-              [
-                _c("div", { staticClass: "video-item" }, [
-                  _c(
-                    "div",
-                    { staticClass: "video-item__inner has-text-centered" },
-                    [
-                      _c("img", {
-                        staticClass: "play-button",
-                        attrs: { src: "/assets/svg/button-video.svg", alt: "" }
-                      }),
-                      _vm._v(" "),
-                      _c("img", {
-                        staticClass: "video-thumb",
-                        attrs: {
-                          src:
-                            "https://img.youtube.com/vi/" +
-                            _vm.videos[0].youtube_id +
-                            "/mqdefault.jpg",
-                          alt: ""
-                        }
-                      })
-                    ]
-                  )
-                ]),
-                _vm._v(" "),
-                _c("p", [_vm._v(_vm._s(_vm.videos[0].caption))])
-              ]
-            )
-          ]),
+  return _vm.videos
+    ? _c("div", { staticClass: "video-box separator" }, [
+        _c("div", { staticClass: "video-box__inner" }, [
+          _c("h3", { staticClass: "title" }, [_vm._v("Kajla makett mesék")]),
           _vm._v(" "),
-          _c(
-            "div",
-            { staticClass: "column" },
-            _vm._l(_vm.videos, function(ref, index) {
-              var id = ref.id
-              var caption = ref.caption
-              var youtube_id = ref.youtube_id
-              return index > "0"
-                ? _c(
-                    "a",
-                    {
-                      staticClass: "video-item-button",
-                      attrs: {
-                        href: "https://youtube.com/watch?v=" + youtube_id
-                      }
-                    },
-                    [
-                      _c("div", { staticClass: "video-item" }, [
-                        _c(
-                          "div",
-                          {
-                            staticClass: "video-item__inner has-text-centered"
-                          },
-                          [
-                            _c("img", {
-                              staticClass: "play-button",
-                              attrs: {
-                                src: "/assets/svg/button-video.svg",
-                                alt: ""
-                              }
-                            }),
-                            _vm._v(" "),
-                            _c("div", { staticClass: "video-thumb" }, [
-                              _c("img", {
-                                attrs: {
-                                  src:
-                                    "https://img.youtube.com/vi/" +
-                                    youtube_id +
-                                    "/mqdefault.jpg",
-                                  alt: ""
-                                }
-                              })
-                            ])
-                          ]
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("p", [_vm._v(_vm._s(caption))])
-                    ]
-                  )
-                : _vm._e()
-            }),
-            0
-          )
+          _c("div", { staticClass: "video-wrapper" }, [
+            _c("div", { staticClass: "columns" }, [
+              _c("div", { staticClass: "column is-9 first" }, [
+                _c(
+                  "a",
+                  {
+                    staticClass: "video-item-button",
+                    attrs: {
+                      href:
+                        "https://youtube.com/watch?v=" +
+                        _vm.videos[0].youtube_id
+                    }
+                  },
+                  [
+                    _c("div", { staticClass: "video-item" }, [
+                      _c(
+                        "div",
+                        { staticClass: "video-item__inner has-text-centered" },
+                        [
+                          _c("img", {
+                            staticClass: "play-button",
+                            attrs: {
+                              src: "/assets/svg/button-video.svg",
+                              alt: ""
+                            }
+                          }),
+                          _vm._v(" "),
+                          _c("img", {
+                            staticClass: "video-thumb",
+                            attrs: {
+                              src:
+                                "https://img.youtube.com/vi/" +
+                                _vm.videos[0].youtube_id +
+                                "/mqdefault.jpg",
+                              alt: ""
+                            }
+                          })
+                        ]
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("p", [_vm._v(_vm._s(_vm.videos[0].caption))])
+                  ]
+                )
+              ]),
+              _vm._v(" "),
+              _c(
+                "div",
+                { staticClass: "column" },
+                _vm._l(_vm.videos, function(ref, index) {
+                  var id = ref.id
+                  var caption = ref.caption
+                  var youtube_id = ref.youtube_id
+                  return index > "0"
+                    ? _c(
+                        "a",
+                        {
+                          staticClass: "video-item-button",
+                          attrs: {
+                            href: "https://youtube.com/watch?v=" + youtube_id
+                          }
+                        },
+                        [
+                          _c("div", { staticClass: "video-item" }, [
+                            _c(
+                              "div",
+                              {
+                                staticClass:
+                                  "video-item__inner has-text-centered"
+                              },
+                              [
+                                _c("img", {
+                                  staticClass: "play-button",
+                                  attrs: {
+                                    src: "/assets/svg/button-video.svg",
+                                    alt: ""
+                                  }
+                                }),
+                                _vm._v(" "),
+                                _c("div", { staticClass: "video-thumb" }, [
+                                  _c("img", {
+                                    attrs: {
+                                      src:
+                                        "https://img.youtube.com/vi/" +
+                                        youtube_id +
+                                        "/mqdefault.jpg",
+                                      alt: ""
+                                    }
+                                  })
+                                ])
+                              ]
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("p", [_vm._v(_vm._s(caption))])
+                        ]
+                      )
+                    : _vm._e()
+                }),
+                0
+              )
+            ])
+          ])
         ])
       ])
-    ])
-  ])
+    : _vm._e()
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -37123,6 +37738,75 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/components/kit-request.vue":
+/*!*************************************************!*\
+  !*** ./resources/js/components/kit-request.vue ***!
+  \*************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _kit_request_vue_vue_type_template_id_0adb759d___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./kit-request.vue?vue&type=template&id=0adb759d& */ "./resources/js/components/kit-request.vue?vue&type=template&id=0adb759d&");
+/* harmony import */ var _kit_request_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./kit-request.vue?vue&type=script&lang=js& */ "./resources/js/components/kit-request.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _kit_request_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _kit_request_vue_vue_type_template_id_0adb759d___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _kit_request_vue_vue_type_template_id_0adb759d___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/kit-request.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/kit-request.vue?vue&type=script&lang=js&":
+/*!**************************************************************************!*\
+  !*** ./resources/js/components/kit-request.vue?vue&type=script&lang=js& ***!
+  \**************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_kit_request_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./kit-request.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/kit-request.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_kit_request_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/kit-request.vue?vue&type=template&id=0adb759d&":
+/*!********************************************************************************!*\
+  !*** ./resources/js/components/kit-request.vue?vue&type=template&id=0adb759d& ***!
+  \********************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_kit_request_vue_vue_type_template_id_0adb759d___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./kit-request.vue?vue&type=template&id=0adb759d& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/kit-request.vue?vue&type=template&id=0adb759d&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_kit_request_vue_vue_type_template_id_0adb759d___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_kit_request_vue_vue_type_template_id_0adb759d___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
 /***/ "./resources/js/components/mainapp.vue":
 /*!*********************************************!*\
   !*** ./resources/js/components/mainapp.vue ***!
@@ -38111,8 +38795,8 @@ var routes = [{
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/jocc/Sites/kajla-makett/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /Users/jocc/Sites/kajla-makett/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /Users/pixeloid/Sites/kajla-makett/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /Users/pixeloid/Sites/kajla-makett/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

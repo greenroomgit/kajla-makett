@@ -15,12 +15,12 @@ class CreateKirRequestsTable extends Migration
     {
         Schema::create('kit_requests', function (Blueprint $table) {
             $table->id();
-            $table->string('firstname');
-            $table->string('lastname');
-            $table->string('address');
+            $table->string('name');
             $table->string('email');
+            $table->string('city');
+            $table->string('address');
+            $table->integer('postal');
             $table->boolean('sent');
-            $table->string('telephone');
             $table->timestamps();
         });
     }

@@ -12122,15 +12122,19 @@ h3 {
   background-color: transparent;
 }
 
+.button.is-secondary--send {
+  background-image: url("/assets/svg/button-background-send.svg");
+}
+
 .button.upload {
-  min-width: 9rem;
+  min-width: 10rem;
 }
 
 .form {
   display: flex;
   flex-wrap: wrap;
   padding: 4.125rem 4.125rem 1.5rem 4.125rem;
-  background-image: url("/assets/svg/modal-background.svg");
+  background-image: url("/assets/svg/modal-background-paws.svg");
 }
 
 .form__description {
@@ -12150,6 +12154,10 @@ h3 {
 
 .form__input-container--horizontal-centered {
   text-align: center;
+}
+
+.form__input-container--last-centered {
+  margin: 1rem auto 4rem auto;
 }
 
 .form__input-container--bottom-offset {
@@ -12174,6 +12182,10 @@ h3 {
 
 .form__input--full-width {
   width: 100%;
+}
+
+.form__input--long-bg {
+  background-image: url("/assets/svg/input-background-long.svg");
 }
 
 .form__input--hidden {
@@ -12242,15 +12254,25 @@ h3 {
   margin: 0 auto;
 }
 
+.form__error-container {
+  text-align: center;
+  margin: 1rem auto;
+}
+
+.form__error {
+  color: red;
+}
+
 .modal-content {
-  width: calc(640px + 4rem);
-  padding: 2rem;
+  width: 603px;
+  padding: 0.5em 0.5em 2rem 0.5em;
+  overflow: hidden;
 }
 
 .modal-close-button {
   position: absolute;
-  top: 1.25rem;
-  right: 1.25rem;
+  top: -0.5em;
+  right: -0.5em;
   width: 64px;
   height: 60px;
   max-height: unset;
@@ -12261,6 +12283,7 @@ h3 {
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
+  cursor: pointer;
 }
 
 .yellow-box {

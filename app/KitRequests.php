@@ -12,4 +12,10 @@ class KitRequests extends Model
      * @var string
      */
     protected $table = 'kit_requests';
+
+    protected $fillable = ['name','postal', 'email', 'city', 'address'];
+
+    protected $attributes = array(
+    'sent' => false
+    );
 }

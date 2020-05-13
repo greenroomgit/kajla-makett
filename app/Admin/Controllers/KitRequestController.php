@@ -8,7 +8,7 @@ use Encore\Admin\Form;
 use Encore\Admin\Grid;
 use Encore\Admin\Show;
 
-class KitRequestsController extends AdminController
+class KitRequestController extends AdminController
 {
     /**
      * Title for current resource.
@@ -27,12 +27,12 @@ class KitRequestsController extends AdminController
         $grid = new Grid(new KitRequests());
 
         $grid->column('id', __('Id'));
-        $grid->column('firstname', __('Firstname'));
-        $grid->column('lastname', __('Lastname'));
-        $grid->column('address', __('Address'));
+        $grid->column('name', __('Name'));
         $grid->column('email', __('Email'));
+        $grid->column('city', __('City'));
+        $grid->column('address', __('Address'));
+        $grid->column('postal', __('Postal'));
         $grid->column('sent', __('Sent'));
-        $grid->column('telephone', __('Telephone'));
         $grid->column('created_at', __('Created at'));
         $grid->column('updated_at', __('Updated at'));
 
@@ -50,12 +50,12 @@ class KitRequestsController extends AdminController
         $show = new Show(KitRequests::findOrFail($id));
 
         $show->field('id', __('Id'));
-        $show->field('firstname', __('Firstname'));
-        $show->field('lastname', __('Lastname'));
-        $show->field('address', __('Address'));
+        $show->field('name', __('Name'));
         $show->field('email', __('Email'));
+        $show->field('city', __('City'));
+        $show->field('address', __('Address'));
+        $show->field('postal', __('Postal'));
         $show->field('sent', __('Sent'));
-        $show->field('telephone', __('Telephone'));
         $show->field('created_at', __('Created at'));
         $show->field('updated_at', __('Updated at'));
 
@@ -71,12 +71,12 @@ class KitRequestsController extends AdminController
     {
         $form = new Form(new KitRequests());
 
-        $form->text('firstname', __('Firstname'));
-        $form->text('lastname', __('Lastname'));
+        $form->text('name', __('Name'));
+        $form->email('email', __('Email'));
+        $form->text('city', __('City'));
         $form->text('address', __('Address'));
-        $form->text('email', __('Email'));
+        $form->number('postal', __('Postal'));
         $form->switch('sent', __('Sent'));
-        $form->text('telephone', __('Telephone'));
 
         return $form;
     }

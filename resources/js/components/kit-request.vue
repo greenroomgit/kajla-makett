@@ -29,11 +29,11 @@
         </div>
 
         <div class="form__input-container">
-          <label for="modalPostcodeInput" class="form__label col-md-4 col-form-label text-md-right">Irányítószám</label>
+          <label for="modalpostalInput" class="form__label col-md-4 col-form-label text-md-right">Irányítószám</label>
 
           <div class="col-md-6">
             <!-- NOTICE v-model="formData.name" - THAT'S HOW IT GETS ATTACHED TO THE FIELD -->
-            <input v-model="formData.postcode" id="modalPostcodeInput" type="text" class="form__input" name="postcode" required autocomplete autofocus>
+            <input v-model="formData.postal" id="modalpostalInput" type="text" class="form__input" name="postal" required autocomplete autofocus>
           </div>
         </div>
 
@@ -47,11 +47,11 @@
         </div>
 
         <div class="form__input-container form__input-container--last-centered">
-          <label for="modalStreetInput" class="form__label col-md-4 col-form-label text-md-right">Utca, házszám</label>
+          <label for="modaladdressInput" class="form__label col-md-4 col-form-label text-md-right">Utca, házszám</label>
 
           <div class="col-md-6">
             <!-- NOTICE v-model="formData.name" - THAT'S HOW IT GETS ATTACHED TO THE FIELD -->
-            <input v-model="formData.street" id="modalStreetInput" type="text" class="form__input" name="street" required autocomplete autofocus>
+            <input v-model="formData.address" id="modaladdressInput" type="text" class="form__input" name="address" required autocomplete autofocus>
           </div>
         </div>
 
@@ -98,10 +98,9 @@
         formData: {
           name: null,
           email: null,
-          postcode: null,
+          postal: null,
           city:  null,
-          street: null,
-          caption: null,
+          address: null,
         },
         showForm: true,
         upload: null,
@@ -157,13 +156,13 @@
         } else if (!this.validEmail(this.formData.email)) {
           this.errors.push('Nem megfelelő e-mail cím.');
         }
-        if(!this.formData.postcode) {
+        if(!this.formData.postal) {
           this.errors.push("Irányítószám megadása kötelező.");
         }
         if(!this.formData.city) {
           this.errors.push("Település megadása kötelező.");
         }
-        if(!this.formData.street) {
+        if(!this.formData.address) {
           this.errors.push("Utca,házszám megadása kötelező.");
         }
 
@@ -179,7 +178,6 @@
           name: null,
           email: null,
           terms: true,
-          caption: null,
         }
         this.picture = null,
         this.pictureUrl = null,

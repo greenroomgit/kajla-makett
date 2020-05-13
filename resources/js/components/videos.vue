@@ -1,5 +1,5 @@
 <template>
-    <div class="video-box separator">
+    <div class="video-box separator" v-if="videos">
         <div class="video-box__inner">
             <h3 class="title">Kajla makett mesék</h3>
 
