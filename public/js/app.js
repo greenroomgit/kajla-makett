@@ -2172,6 +2172,12 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -2214,7 +2220,7 @@ __webpack_require__.r(__webpack_exports__);
           }
         }).then(function (response) {
           _this.showForm = false;
-          _this.upload = response.data.data;
+          _this.upload = response.data;
         })["catch"](function (err) {
           if (err.response.status === 422) {
             _this.errors = [];
@@ -2265,17 +2271,15 @@ __webpack_require__.r(__webpack_exports__);
       this.formData = {
         name: null,
         email: null,
-        terms: true
+        postal: null,
+        city: null,
+        address: null
       };
-      this.picture = null, this.pictureUrl = null, this.showForm = true, this.upload = null, this.errors = [];
+      this.showForm = true, this.upload = null, this.errors = [];
     },
     validEmail: function validEmail(email) {
       var emailRegex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
       return emailRegex.test(email);
-    },
-    handleFileObject: function handleFileObject() {
-      this.picture = this.$refs.file.files[0];
-      this.pictureUrl = URL.createObjectURL(this.picture);
     },
     closeModal: function closeModal() {
       this.resetForm();
@@ -2655,6 +2659,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
 /* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_1__);
+//
+//
+//
 //
 //
 //
@@ -21213,17 +21220,20 @@ var render = function() {
                   },
                   [
                     _c("div", { staticClass: "col-md-6 offset-md-4 column" }, [
-                      _c("button", {
-                        staticClass:
-                          "btn button is-secondary is-secondary--send upload",
-                        attrs: { type: "submit" },
-                        on: {
-                          click: function($event) {
-                            $event.preventDefault()
-                            return _vm.submit($event)
+                      _c(
+                        "button",
+                        {
+                          staticClass: "btn button is-secondary upload",
+                          attrs: { type: "submit" },
+                          on: {
+                            click: function($event) {
+                              $event.preventDefault()
+                              return _vm.submit($event)
+                            }
                           }
-                        }
-                      })
+                        },
+                        [_vm._v("\n              Küldés\n            ")]
+                      )
                     ])
                   ]
                 )
@@ -21231,25 +21241,39 @@ var render = function() {
             : _vm._e(),
           _vm._v(" "),
           _vm.upload
-            ? _c("div", [
-                _c("div", { staticClass: "alert alert-success" }, [
-                  _vm._v("Thank You!")
-                ]),
-                _vm._v(" "),
-                _c("div", [
-                  _c("img", {
-                    attrs: {
-                      height: "100px",
-                      width: "auto",
-                      src: _vm.upload.picture_url,
-                      alt: ""
-                    }
-                  })
-                ]),
-                _vm._v(" "),
-                _c("div", [_vm._v("Name : " + _vm._s(_vm.upload.name))]),
-                _vm._v(" "),
-                _c("div", [_vm._v("Email : " + _vm._s(_vm.upload.email))])
+            ? _c("div", { staticClass: "modal-success yellow-box" }, [
+                _c("div", { staticClass: "yellow-box__inner" }, [
+                  _c("div", { staticClass: "modal-success-header" }, [
+                    _vm._v("Köszönjük!")
+                  ]),
+                  _vm._v(" "),
+                  _c("div", [
+                    _c("img", {
+                      attrs: {
+                        height: "100px",
+                        width: "auto",
+                        src: _vm.upload.picture_url,
+                        alt: ""
+                      }
+                    })
+                  ]),
+                  _vm._v(" "),
+                  _c("div", [_vm._v("Név : " + _vm._s(_vm.upload.name))]),
+                  _vm._v(" "),
+                  _c("div", [
+                    _vm._v("Email cím : " + _vm._s(_vm.upload.email))
+                  ]),
+                  _vm._v(" "),
+                  _c("div", [
+                    _vm._v("Irányítószám : " + _vm._s(_vm.upload.postal))
+                  ]),
+                  _vm._v(" "),
+                  _c("div", [_vm._v("Település : " + _vm._s(_vm.upload.city))]),
+                  _vm._v(" "),
+                  _c("div", [
+                    _vm._v("Email cím : " + _vm._s(_vm.upload.address))
+                  ])
+                ])
               ])
             : _vm._e()
         ])
@@ -22138,16 +22162,20 @@ var render = function() {
                   },
                   [
                     _c("div", { staticClass: "col-md-6 offset-md-4 column" }, [
-                      _c("button", {
-                        staticClass: "btn button is-secondary upload",
-                        attrs: { type: "submit" },
-                        on: {
-                          click: function($event) {
-                            $event.preventDefault()
-                            return _vm.submit($event)
+                      _c(
+                        "button",
+                        {
+                          staticClass: "btn button is-secondary upload",
+                          attrs: { type: "submit" },
+                          on: {
+                            click: function($event) {
+                              $event.preventDefault()
+                              return _vm.submit($event)
+                            }
                           }
-                        }
-                      })
+                        },
+                        [_vm._v("\n              Feltöltés\n            ")]
+                      )
                     ])
                   ]
                 )
@@ -22155,25 +22183,27 @@ var render = function() {
             : _vm._e(),
           _vm._v(" "),
           _vm.upload
-            ? _c("div", [
-                _c("div", { staticClass: "alert alert-success" }, [
-                  _vm._v("Thank You!")
-                ]),
-                _vm._v(" "),
-                _c("div", [
-                  _c("img", {
-                    attrs: {
-                      height: "100px",
-                      width: "auto",
-                      src: _vm.upload.picture_url,
-                      alt: ""
-                    }
-                  })
-                ]),
-                _vm._v(" "),
-                _c("div", [_vm._v("Name : " + _vm._s(_vm.upload.name))]),
-                _vm._v(" "),
-                _c("div", [_vm._v("Email : " + _vm._s(_vm.upload.email))])
+            ? _c("div", { staticClass: "modal-success yellow-box" }, [
+                _c("div", { staticClass: "yellow-box__inner" }, [
+                  _c("div", { staticClass: "modal-success-header" }, [
+                    _vm._v("Köszönjük!")
+                  ]),
+                  _vm._v(" "),
+                  _c("div", [
+                    _c("img", {
+                      attrs: {
+                        height: "100px",
+                        width: "auto",
+                        src: _vm.upload.picture_url,
+                        alt: ""
+                      }
+                    })
+                  ]),
+                  _vm._v(" "),
+                  _c("div", [_vm._v("Név : " + _vm._s(_vm.upload.name))]),
+                  _vm._v(" "),
+                  _c("div", [_vm._v("Email cím : " + _vm._s(_vm.upload.email))])
+                ])
               ])
             : _vm._e()
         ])

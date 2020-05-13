@@ -12098,11 +12098,13 @@ h3 {
 }
 
 .button.is-primary {
-  background-image: url("/assets/svg/button-primary-bg.svg");
-  background-color: transparent;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 100% 100%;
+  background: transparent;
+  -o-border-image: url("/assets/svg/button-primary-bg.svg") 21 fill/24px/0 stretch;
+     border-image: url("/assets/svg/button-primary-bg.svg") 21 fill/24px/0 stretch;
+  -webkit-border-image: url("/assets/svg/button-primary-bg.svg") 21 fill/24px/0 stretch;
+  min-height: unset;
+  height: auto;
+  padding: 0 0.5em;
 }
 
 .button.is-primary:hover {
@@ -12110,31 +12112,27 @@ h3 {
 }
 
 .button.is-secondary {
-  background-image: url("/assets/svg/button-secondary-bg.svg");
-  background-color: transparent;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 100% 100%;
+  padding-left: 2em;
+  padding-right: 2em;
   border: none;
+  background: transparent;
+  -o-border-image: url("/assets/svg/button-secondary-bg.svg") 28 fill/30px/0 stretch;
+     border-image: url("/assets/svg/button-secondary-bg.svg") 28 fill/30px/0 stretch;
+  -webkit-border-image: url("/assets/svg/button-secondary-bg.svg") 28 fill/30px/0 stretch;
 }
 
 .button.is-secondary:hover {
   background-color: transparent;
-}
-
-.button.is-secondary--send {
-  background-image: url("/assets/svg/button-background-send.svg");
-}
-
-.button.upload {
-  min-width: 10rem;
+  color: white;
 }
 
 .form {
   display: flex;
   flex-wrap: wrap;
   padding: 4.125rem 4.125rem 1.5rem 4.125rem;
-  background-image: url("/assets/svg/modal-background-paws.svg");
+  -o-border-image: url("/assets/svg/yellow-box-bg.svg") 28 fill/40px/0 stretch;
+     border-image: url("/assets/svg/yellow-box-bg.svg") 28 fill/40px/0 stretch;
+  -webkit-border-image: url("/assets/svg/yellow-box-bg.svg") 28 fill/40px/0 stretch;
 }
 
 .form__description {
@@ -12164,7 +12162,7 @@ h3 {
   position: absolute;
   left: 0;
   right: 0;
-  bottom: -1.5em;
+  bottom: -1em;
 }
 
 .form__input {
@@ -12174,7 +12172,9 @@ h3 {
   font-size: 16px;
   border: none;
   background: transparent;
-  background-image: url("/assets/svg/input-background.svg");
+  -o-border-image: url("/assets/svg/input-background.svg") 28 fill/30px/0 stretch;
+     border-image: url("/assets/svg/input-background.svg") 28 fill/30px/0 stretch;
+  -webkit-border-image: url("/assets/svg/input-background.svg") 28 fill/30px/0 stretch;
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
@@ -12184,16 +12184,14 @@ h3 {
   width: 100%;
 }
 
-.form__input--long-bg {
-  background-image: url("/assets/svg/input-background-long.svg");
-}
-
 .form__input--hidden {
   display: none;
 }
 
 .form__input:focus {
-  background-image: url("/assets/svg/active-input-background.svg");
+  -o-border-image: url("/assets/svg/active-input-background.svg") 28 fill/30px/0 stretch;
+     border-image: url("/assets/svg/active-input-background.svg") 28 fill/30px/0 stretch;
+  -webkit-border-image: url("/assets/svg/active-input-background.svg") 28 fill/30px/0 stretch;
   outline: none;
 }
 
@@ -12265,14 +12263,14 @@ h3 {
 
 .modal-content {
   width: 603px;
-  padding: 0.5em 0.5em 2rem 0.5em;
+  padding: 1em 1em 2rem 1em;
   overflow: hidden;
 }
 
 .modal-close-button {
   position: absolute;
-  top: -0.5em;
-  right: -0.5em;
+  top: 0em;
+  right: 0em;
   width: 64px;
   height: 60px;
   max-height: unset;
@@ -12286,10 +12284,20 @@ h3 {
   cursor: pointer;
 }
 
+.modal-success {
+  color: #A7570B;
+}
+
+.modal-success-header {
+  font-size: 1.25em;
+  color: #A7570B;
+  text-align: center;
+}
+
 .yellow-box {
-  -o-border-image: url("/assets/svg/yellow-box-bg.svg") 40/30px/0 stretch;
-     border-image: url("/assets/svg/yellow-box-bg.svg") 40/30px/0 stretch;
-  -webkit-border-image: url("/assets/svg/yellow-box-bg.svg") 40/30px/0 stretch;
+  -o-border-image: url("/assets/svg/yellow-box-bg.svg") 40 fill/30px/0 stretch;
+     border-image: url("/assets/svg/yellow-box-bg.svg") 40 fill/30px/0 stretch;
+  -webkit-border-image: url("/assets/svg/yellow-box-bg.svg") 40 fill/30px/0 stretch;
   min-width: 300px;
   min-width: 300px;
   padding: 20px;

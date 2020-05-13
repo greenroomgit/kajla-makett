@@ -7,6 +7,8 @@ use Encore\Admin\Controllers\AdminController;
 use Encore\Admin\Form;
 use Encore\Admin\Grid;
 use Encore\Admin\Show;
+use App\Admin\Actions\PhotoUpload\Publish;
+use App\Admin\Actions\PhotoUpload\Unpublish;
 
 class PhotoUploadsController extends AdminController
 {
@@ -34,6 +36,11 @@ class PhotoUploadsController extends AdminController
         $grid->column('published', __('Published'));
         $grid->column('created_at', __('Created at'));
         $grid->column('updated_at', __('Updated at'));
+
+        $grid->actions(function ($actions) {
+            $actions->add($actions->row->getAttributes()['published'] ? new Unpublish : new Publish);
+        });
+
 
         return $grid;
     }
