@@ -3,7 +3,7 @@
 }
 
 .modal-content {
-  padding: 1em 1em 2rem 1em;
+  padding: 2rem 1em;
   margin: 0;
   max-height: unset;
   @media only screen and (min-width: 768px) {
@@ -16,8 +16,8 @@
 
 .modal-close-button {
   position: absolute;
-  top: 0em;
-  right: 0em;
+  top: 1.25em;
+  right: 0.25em;
   width: 64px;
   height: 60px;
   max-height: unset;

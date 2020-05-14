@@ -45,7 +45,7 @@
           <div class="form__input-error" v-if="errors.terms">{{errors.terms}}</div>
         </div>
 
-        <div class="form__input-container form__input-container--full-width form__input-container--last-centered">
+        <div class="form__input-container form__input-container--full-width form__input-container--horizontal-centered form__input-container--last-centered">
           <div class="col-md-6">
             <div class="custom-file">
               <!-- MOST IMPORTANT - SEE "ref" AND "@change" PROPERTIES -->

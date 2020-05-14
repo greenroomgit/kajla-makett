@@ -22,7 +22,6 @@
       text-align: center;
     }
     &--last-centered {
-      text-align: center;
       margin: 1rem auto 4rem auto;
     }
     &--bottom-offset {
@@ -39,6 +38,14 @@
       @media only screen and (min-width: 768px) {
         display: flex;
       }
+    }
+  }
+  &__separator {
+    display: none;
+    height: 4px;
+    margin: 1rem 0 2rem 0;
+    @media only screen and (min-width: 768px) {
+      display: block;
     }
   }
   &__input {

@@ -30,6 +30,8 @@
           </div>
         </div>
 
+        <img :src="'/assets/svg/separator.svg'" class="form__separator">
+
         <div :class="errors.postal ? 'form__input-container form__input-container--no-bottom-margin' : 'form__input-container'">
           <label for="modalpostalInput" class="form__label col-md-4 col-form-label text-md-right">Irányítószám</label>
 
