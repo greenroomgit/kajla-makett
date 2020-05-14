@@ -73,12 +73,9 @@
 
       <div v-if="upload" class="modal-success yellow-box">
         <div class="yellow-box__inner">
-          <div class="modal-success-header">Köszönjük!</div>
-          <div>
-            <img height="100px" width="auto" :src="upload.picture_url" alt="">
-          </div>
-          <div>Név : {{ upload.name }}</div>
-          <div>Email cím : {{ upload.email }}</div>
+          <img class="modal-success-icon" :src="'/assets/svg/success-icon.svg'" alt="">
+          <div class="modal-success-header">A képet sikeresen megkaptuk, köszönjük!</div>
+          <div class="modal-success-notice">Publikálás előtt még gyorsan ellenőrizzük, e-mailben fogunk értesíteni, ha kikerült az oldalra.</div>
         </div>
       </div>
     </div>
@@ -121,7 +118,6 @@
         const isFromOk = this.checkForm();
 
         if (isFromOk) {
-          alert('form is ok in submit')
           let formData = new FormData()
           formData.append('picture', this.picture)
 
@@ -174,10 +170,8 @@
         }
 
         if (Object.keys(this.errors).length === 0) {
-          alert('form is ok')
           return true;
         } else {
-          alert('form is not ok')
           return false;
         }
       },

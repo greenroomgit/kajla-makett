@@ -36,7 +36,21 @@
 }
 
 .modal-success-header {
-  font-size: $modal-headline;
-  color: $brown;
+  font-family: "marujoregular", sans-serif;
+  color: $white;
+  text-shadow: shadow($brown,2px);
+  font-size: 2.375rem;
   text-align: center;
+}
+
+.modal-success-icon {
+  display: block;
+  margin: 0 auto 1rem auto;
+}
+
+.modal-success-notice {
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 1.125rem;
+  color: $brown;
 }

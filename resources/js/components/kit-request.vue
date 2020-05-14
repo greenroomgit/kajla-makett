@@ -75,15 +75,8 @@
 
       <div v-if="upload" class="modal-success yellow-box">
         <div class="yellow-box__inner">
-          <div class="modal-success-header">Köszönjük!</div>
-          <div>
-            <img height="100px" width="auto" :src="upload.picture_url" alt="">
-          </div>
-          <div>Név : {{ upload.name }}</div>
-          <div>Email cím : {{ upload.email }}</div>
-          <div>Irányítószám : {{ upload.postal }}</div>
-          <div>Település : {{ upload.city }}</div>
-          <div>Email cím : {{ upload.address }}</div>
+          <img class="modal-success-icon" :src="'/assets/svg/success-icon.svg'" alt="">
+          <div class="modal-success-header">Az igénylésed megkaptuk, köszönjük!</div>
         </div>
       </div>
     </div>
