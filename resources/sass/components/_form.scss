@@ -10,8 +10,11 @@
     text-align: center;
   }
   &__input-container {
-    flex-basis: 50%;
+    flex-basis: 100%;
     margin: 0 0 1rem 0;
+    @media only screen and (min-width: 768px) {
+      flex-basis: 50%;
+    }
     &--full-width {
       flex-basis: 100%;
     }
@@ -19,6 +22,7 @@
       text-align: center;
     }
     &--last-centered {
+      text-align: center;
       margin: 1rem auto 4rem auto;
     }
     &--bottom-offset {
@@ -30,8 +34,15 @@
     &--no-bottom-margin {
       margin-bottom: 0;
     }
+    &--desktop-only {
+      display: none;
+      @media only screen and (min-width: 768px) {
+        display: flex;
+      }
+    }
   }
   &__input {
+    width: 100%;
     padding: 1em 1.5em ;
     font-family: "apokabold", sans-serif;
     color: #fff;
