@@ -11,7 +11,7 @@
   }
   &__input-container {
     flex-basis: 50%;
-    margin: 1rem 0;
+    margin: 0 0 1rem 0;
     &--full-width {
       flex-basis: 100%;
     }
@@ -26,6 +26,9 @@
       left: 0;
       right: 0;
       bottom: -1em;
+    }
+    &--no-bottom-margin {
+      margin-bottom: 0;
     }
   }
   &__input {
@@ -106,7 +109,9 @@
     text-align: center;
     margin: 1rem auto;
   }
-  &__error {
-    color: red;
+  &__input-error {
+    font-size: 15px;
+    color: $red;
+    text-align: center;
   }
 }

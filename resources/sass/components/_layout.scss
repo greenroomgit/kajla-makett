@@ -73,8 +73,8 @@
 }
 
 .info-horizonatal {
-    border-image: svg('box-blue-horizontal.svg') 40 / 19px / 0 stretch;
-    -webkit-border-image: svg('box-blue-horizontal.svg') 40 / 19px / 0 stretch;
+    border-image: svg('box-blue-horizontal.svg') 40 fill/ 19px / 0 stretch;
+    -webkit-border-image: svg('box-blue-horizontal.svg') 40 fill/ 19px / 0 stretch;
     //min-width: 300px;
     //min-width: 300px;
     padding: 16px;
@@ -87,8 +87,8 @@
 }
 
 .video-box {
-    border-image: svg('box-blue-vertical.svg') 40 / 33px / 0 stretch;
-    -webkit-border-image: svg('box-blue-vertical.svg') 40 / 33px / 0 stretch;
+    border-image: svg('box-blue-vertical.svg') 40 fill/ 33px / 0 stretch;
+    -webkit-border-image: svg('box-blue-vertical.svg') 40 fill/ 33px / 0 stretch;
     padding: 30px;
     //height: 704px;
 

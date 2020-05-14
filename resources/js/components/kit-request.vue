@@ -10,39 +10,43 @@
         <div class="form__description">
           A makett igényléséhez kérlek add meg az alábbi adatokat.
         </div>
-        <div class="form__input-container">
+        <div :class="errors.name ? 'form__input-container form__input-container--no-bottom-margin' : 'form__input-container'">
           <label for="modalNameInput" class="form__label col-md-4 col-form-label text-md-right">Név</label>
 
           <div class="col-md-6">
             <!-- NOTICE v-model="formData.name" - THAT'S HOW IT GETS ATTACHED TO THE FIELD -->
             <input v-model="formData.name" id="modalNameInput" type="text" class="form__input" name="name" required autocomplete autofocus>
+            <div class="form__input-error" v-if="errors.name">{{errors.name}}</div>
           </div>
         </div>
 
-        <div class="form__input-container">
+        <div :class="errors.email ? 'form__input-container form__input-container--no-bottom-margin' : 'form__input-container'">
           <label for="modalEmailInput" class="form__label col-md-4 col-form-label text-md-right">E-mail cím</label>
 
           <div class="col-md-6">
             <!-- NOTICE v-model="formData.name" - THAT'S HOW IT GETS ATTACHED TO THE FIELD -->
             <input v-model="formData.email" id="modalEmailInput" type="text" class="form__input" name="email" required autocomplete autofocus>
+            <div class="form__input-error" v-if="errors.email">{{errors.email}}</div>
           </div>
         </div>
 
-        <div class="form__input-container">
+        <div :class="errors.postal ? 'form__input-container form__input-container--no-bottom-margin' : 'form__input-container'">
           <label for="modalpostalInput" class="form__label col-md-4 col-form-label text-md-right">Irányítószám</label>
 
           <div class="col-md-6">
             <!-- NOTICE v-model="formData.name" - THAT'S HOW IT GETS ATTACHED TO THE FIELD -->
             <input v-model="formData.postal" id="modalpostalInput" type="text" class="form__input" name="postal" required autocomplete autofocus>
+            <div class="form__input-error" v-if="errors.postal">{{errors.postal}}</div>
           </div>
         </div>
 
-        <div class="form__input-container">
+        <div :class="errors.city ? 'form__input-container form__input-container--no-bottom-margin' : 'form__input-container'">
           <label for="modalCityInput" class="form__label col-md-4 col-form-label text-md-right">Település</label>
 
           <div class="col-md-6">
             <!-- NOTICE v-model="formData.name" - THAT'S HOW IT GETS ATTACHED TO THE FIELD -->
             <input v-model="formData.city" id="modalCityInput" type="text" class="form__input" name="city" required autocomplete autofocus>
+            <div class="form__input-error" v-if="errors.city">{{errors.city}}</div>
           </div>
         </div>
 
@@ -52,6 +56,7 @@
           <div class="col-md-6">
             <!-- NOTICE v-model="formData.name" - THAT'S HOW IT GETS ATTACHED TO THE FIELD -->
             <input v-model="formData.address" id="modaladdressInput" type="text" class="form__input" name="address" required autocomplete autofocus>
+            <div class="form__input-error" v-if="errors.address">{{errors.address}}</div>
           </div>
         </div>
 
@@ -110,12 +115,12 @@
         },
         showForm: true,
         upload: null,
-        errors: [],
+        errors: {}
       }
     },
     methods: {
       submit() {
-        this.errors = []
+        this.errors = {}
 
         const isFromOk = this.checkForm();
 
@@ -136,13 +141,11 @@
             this.upload = response.data
           }).catch(err => {
             if (err.response.status === 422) {
-              this.errors = []
+              this.errors = {}
 
-              _.each(err.response.data.errors, error => {
-                _.each(error, e => {
-                  this.errors.push(e)
-                })
-              })
+              for (let [key, value] of Object.entries(err.response.data.errors)) {
+                this.errors[key] = value[0]
+              }
 
             }
           });
@@ -152,27 +155,31 @@
       },
 
       checkForm() {
-        this.errors = [];
+        this.errors = {};
 
         if (!this.formData.name) {
-          this.errors.push("Név megadása kötelező");
+          this.errors.name = 'Kötelezően kitöltendő';
         }
         if (!this.formData.email) {
-          this.errors.push('E-mail cím megadása kötelező.');
-        } else if (!this.validEmail(this.formData.email)) {
-          this.errors.push('Nem megfelelő e-mail cím.');
+          this.errors.email = 'Kötelezően kitöltendő';
+        }
+        if (this.formData.email && !this.emailIsValid(this.formData.email)) {
+          this.errors.email = 'Nem megfelelő e-mail cím';
         }
         if(!this.formData.postal) {
-          this.errors.push("Irányítószám megadása kötelező.");
+          this.errors.postal = 'Kötelezően kitöltendő';
+        }
+        if (this.formData.postal && !this.postcodeIsValid(this.formData.postal)) {
+          this.errors.postal = 'Nem megfelelő irányítószám';
         }
         if(!this.formData.city) {
-          this.errors.push("Település megadása kötelező.");
+          this.errors.city = 'Kötelezően kitöltendő';
         }
         if(!this.formData.address) {
-          this.errors.push("Utca,házszám megadása kötelező.");
+          this.errors.address = 'Kötelezően kitöltendő';
         }
 
-        if (!this.errors.length) {
+        if (Object.keys(this.errors).length === 0) {
           return true;
         } else {
           return false;
@@ -192,10 +199,16 @@
         this.errors = []
       },
 
-      validEmail(email) {
-      const emailRegex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+      emailIsValid(email) {
+        const emailRegex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
         return emailRegex.test(email);
       },
+
+      postcodeIsValid(postcode) {
+        const postcodeRegex = /^[0-9]{4}?$/;
+        return postcodeRegex.test(postcode);
+      },
+
 
       closeModal() {
         this.resetForm()
