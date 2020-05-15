@@ -38,8 +38,10 @@
         }
     }
     .box {
-        border-image: svg('box-blue-vertical.svg') 40 / 33px / 0 stretch;
-        -webkit-border-image: svg('box-blue-vertical.svg') 40 / 33px / 0 stretch;
+        border-image-source: svg('box-blue-vertical.svg');
+        border-image-slice: 38 fill;
+        border-image-width: 30px;
+        border-image-repeat:  stretch;
         min-width: 300px;
         padding: 30px;
         box-shadow: none;
@@ -87,8 +89,10 @@
 }
 
 .video-box {
-    border-image: svg('box-blue-vertical.svg') 40 fill/ 33px / 0 stretch;
-    -webkit-border-image: svg('box-blue-vertical.svg') 40 fill/ 33px / 0 stretch;
+        border-image-source: svg('box-blue-vertical.svg');
+        border-image-slice: 38 fill;
+        border-image-width: 30px;
+        border-image-repeat: stretch;
     padding: 30px;
     //height: 704px;
 
@@ -126,8 +130,10 @@
             display: block;
         }
         .video-item {
-            border-image: svg('video-bg.svg') 40 / 19px / 0 stretch;
-            -webkit-border-image: svg('video-bg.svg') 40 / 19px / 0 stretch;
+        border-image-source: svg('video-bg.svg');
+        border-image-slice: 38 fill;
+        border-image-width: 30px;
+        border-image-repeat:stretch;
             padding: 16px;
             &__inner {
                 position: relative;
@@ -156,8 +162,10 @@
 }
 
 .picture-box {
-    border-image: svg('box-blue-pictures.svg') 60 / 70px / 0 stretch;
-    -webkit-border-image: svg('box-blue-pictures.svg') 60 / 70px / 0 stretch;
+        border-image-source: svg('box-blue-pictures.svg');
+        border-image-slice: 38 fill;
+        border-image-width: 30px;
+        border-image-repeat:stretch;
     padding: 60px;
     &__inner {
         background-color:#7BCBD4;
@@ -170,8 +178,10 @@
     }
 
     .picture {
-        border-image: svg('picture-bg.svg') 60 / 16px / 0 stretch;
-        -webkit-border-image: svg('picture-bg.svg') 60 / 16px / 0 stretch;
+        border-image-source: svg('picture-bg.svg');
+        border-image-slice: 38 fill;
+        border-image-width: 30px;
+        border-image-repeat:stretch;
         padding: 12px;
         &__inner {
             overflow: hidden;

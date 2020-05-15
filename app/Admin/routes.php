@@ -14,4 +14,5 @@ Route::group([
     $router->resource('photo-uploads', PhotoUploadsController::class);
     $router->resource('videos', VideosController::class);
     $router->resource('guide-steps', GuidesStepsController::class);
+    $router->resource('kits', KitsController::class);
 });

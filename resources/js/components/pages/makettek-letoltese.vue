@@ -1,11 +1,18 @@
 <template>
-    <div id="makettek-letoltese" class="">
-        <h1>Makettek letoltese</h1>
-    </div>
+    <Kits />
 </template>
 
 <script>
-export default {
-    
-}
+    import Kits from '../kits';
+
+    export default {
+        name: 'kits',
+        components: {
+            'Kits': Kits,
+        },
+
+    }
+
 </script>
+
+

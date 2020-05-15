@@ -23,7 +23,7 @@ const routes = [
     {
         path: '/jatek',
         name: 'jatek',
-        component: Jatek
+        component: Home
     },
     {
         path: '/bekuldott-kepek',

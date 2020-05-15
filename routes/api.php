@@ -24,5 +24,6 @@ Route::resource('/video', 'VideoController', [
   ]);
 Route::get('/guide-steps', 'HomeController@steps', []);
 Route::get('/published-photos', 'PhotoUploadsController@published', []);
+Route::get('/kits', 'KitsController@list', []);
 Route::post('/upload-photo', 'PhotoUploadsController@upload', []);
 Route::post('/kit-request', 'KitRequestController@create', []);
