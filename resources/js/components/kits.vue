@@ -50,7 +50,7 @@
     const getKits = (callback) => {
 
         axios
-            .get('http://localhost:8000/api/kits', {})
+            .get('/api/kits', {})
             .then(response => {
                 callback(null, response.data);
             }).catch(error => {

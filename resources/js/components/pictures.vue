@@ -45,7 +45,7 @@ import 'swiper/css/swiper.css'
 const getUploads = (callback) => {
 
     axios
-        .get('http://localhost:8000/api/published-photos', {  })
+        .get('/api/published-photos', {  })
         .then(response => {
             callback(null, response.data);
         }).catch(error => {

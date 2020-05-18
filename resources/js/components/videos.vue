@@ -51,7 +51,7 @@ import axios from 'axios';
 const getVideos = (callback) => {
 
     axios
-        .get('http://localhost:8000/api/video', {  })
+        .get('/api/video', {  })
         .then(response => {
             callback(null, response.data);
         }).catch(error => {
