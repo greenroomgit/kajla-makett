@@ -59,7 +59,7 @@
             background-repeat: no-repeat;
             background-size: contain;
 
-            @include until($mobile){
+            @include mobile{
                 background-size: 70%;
             }
 
@@ -72,7 +72,7 @@
     }
     .media-center {
         height:340px;
-        @include until($mobile) {
+        @include mobile {
             height: 270px;
             .image {
                 img {
