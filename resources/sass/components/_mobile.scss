@@ -1,0 +1,24 @@
+@media screen and (max-width: 768px) {
+
+    .section-hero {
+        height: 500px;
+        padding-bottom: 0;
+        background-position: top center;
+        background-size: cover;
+        background-repeat: no-repeat;
+    
+        h1 {
+            text-align: center;
+            line-height: 40px;
+            text-shadow: shadow($blue-light, 4px);
+            font-size: 32px;
+        }
+
+        nav {
+            //majd rakd vissza ha csinalod
+            display: none;
+        }
+    }
+    
+}
+  
