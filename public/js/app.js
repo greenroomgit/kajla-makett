@@ -31596,7 +31596,7 @@ var render = function() {
             _c("div", { staticClass: "box" }, [
               _c("article", { staticClass: "media box__inner" }, [
                 _c("div", { staticClass: "media-center" }, [
-                  _c("figure", { staticClass: "image is-640x480" }, [
+                  _c("figure", { staticClass: "image image-else is-640x480" }, [
                     _c("img", {
                       attrs: { src: "/assets/images/fotos-kajla.png", alt: "" }
                     })

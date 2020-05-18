@@ -19,6 +19,35 @@
             display: none;
         }
     }
+
+    .guide-steps {
+
+        .box {
+            &__inner {
+                background-size: 70%;
+            }
+    
+        }
+        .media-center {
+            height: 270px;
+            .image {
+                img {
+                    width: 90%;
+                    margin: -20px auto;
+                }
+            }
+
+            .image-else {
+                img {
+                    width: 68%;
+                    margin: -10px auto;
+                }
+            }
+        }
+
+    }
+
+    
     
 }
   
