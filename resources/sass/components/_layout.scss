@@ -59,7 +59,7 @@
             background-repeat: no-repeat;
             background-size: contain;
 
-            @include mobile {
+            @include mobile{
                 background-size: 70%;
             }
 

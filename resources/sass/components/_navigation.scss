@@ -1,24 +1,30 @@
-.container {
+.navbar {
+    background-color: transparent;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
 
-    .navbar {
-        background-color: transparent;
-        width: 100%;
-    
-        .navbar-brand {
-            margin-top: 0.5em;
-            img {
-                width: $logo-width;
-                max-height: 100%;
-            }
-        }  
-    
-        .navbar-menu {
-            display: flex;
-            justify-content: space-evenly;
+    @include until($tablet) {
+        display: none;
+    }
+
+    .navbar-brand {
+        margin-top: 0.5em;
+
+        img {
+            width: $logo-width;
+            max-height: 100%;
         }
     }
 
+    .navbar-menu {
+        display: flex;
+        justify-content: space-evenly;
+    }
 }
+
 
 .navbar-link {
     padding: 0;
@@ -28,6 +34,7 @@
 .navbar-start {
     align-items: flex-start;
     margin-right: -6em;
+
     &.navbar-right {
         margin-right: 0;
         margin-left: -6em;
@@ -38,12 +45,12 @@
         font-size: $nav-size;
         color: $white;
         height: auto;
-    
+
         text-shadow: shadow($blue-light, 2px);
-    
+
         padding: 0.625em;
         margin: 0.5em;
-    
+
         img {
             max-height: 100%;
         }
@@ -51,11 +58,12 @@
         &:hover {
             color: $white;
             background-color: transparent;
-            
+
             text-shadow: shadow($orange-dark, 2px);
         }
 
-        navbar-link:hover, .navbar-link.is-active {
+        navbar-link:hover,
+        .navbar-link.is-active {
             backlground: transparent;
             color: $white;
         }
@@ -73,7 +81,14 @@
     margin-top: $shift-1;
 }
 
-a.navbar-item:focus, a.navbar-item:focus-within, a.navbar-item:hover, a.navbar-item.is-active, .navbar-link:focus, .navbar-link:focus-within, .navbar-link:hover, .navbar-link.is-active {
+a.navbar-item:focus,
+a.navbar-item:focus-within,
+a.navbar-item:hover,
+a.navbar-item.is-active,
+.navbar-link:focus,
+.navbar-link:focus-within,
+.navbar-link:hover,
+.navbar-link.is-active {
     backlground: transparent;
     color: $white;
 }

@@ -1,9 +1,11 @@
 <template>
-    <section class="section section-hero separator">
+    <section :class="[
+                'section section-hero separator ', 
+                isHomepage ? 'hero--home' : ''
+                ]">
         <div class="container">
-            <Navigation />
             <div class="hero-body">
-                <h1>
+                <h1 class="">
                     Építsd fel kajlával Magyarország<br>
                     nevezettességeit és nyerj!
                 </h1>
@@ -13,11 +15,17 @@
 </template>
 
 <script>
-import Navigation from './navigation'
     export default {
-        name: 'app',
-        components: {
-            'Navigation': Navigation,
-        }  
+        name: 'hero',
+        data() {
+            return {
+                isHome: false
+            }
+        },
+        computed: {
+            isHomepage() {
+                return this.$route.path === '/';
+            }
+        }
     }
 </script>

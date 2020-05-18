@@ -1,16 +1,19 @@
 //ide csak import
 @import "~bulma/bulma.sass";
-@import "components/base/mixins.scss";
+@import "components/base/mixins";
 
-@import "components/base/typo.scss";
+@import "components/base/typo";
 
-@import "components/buttons.scss";
+@import "components/buttons";
 
-@import "components/form.scss";
+@import "components/form";
 
-@import "components/modal.scss";
-@import "components/yellow-box.scss";
-@import "components/layout.scss";
-@import "components/navigation.scss";
-@import "components/header.scss";
-@import "components/footer.scss";
+@import "components/hero";
+@import "components/modal";
+@import "components/yellow-box";
+@import "components/layout";
+@import "components/navigation";
+@import "components/header";
+@import "components/footer";
+@import "components/jackpot-box";
+@import "components/mobile"

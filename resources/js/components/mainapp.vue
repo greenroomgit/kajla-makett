@@ -1,7 +1,7 @@
 <template>
     <div class="kajla-wrapper">
+        <Navigation />
         <Hero />
-
         <div class="container">
             <router-view></router-view>
         </div>
@@ -13,12 +13,14 @@
 <script>
     import Hero from './hero'
     import Footer from './footer'
+    import Navigation from './navigation'
 
     export default {
         name: 'app',
         components: {
             'Hero': Hero,
-            'Footer': Footer
+            'Footer': Footer,
+            'Navigation': Navigation
         }
     }
 </script>
