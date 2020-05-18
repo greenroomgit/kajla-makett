@@ -1,27 +1,24 @@
 <template>
     <div>
-        <div class="picture-box">
-            <div class="picture-box__inner">
-                <h3 class="title">Makettek letöltése</h3>
+        <div class="kit-list ">
+            <div class="kit-list__inner">
+                <h2 class="title">Letölthető makettek</h2>
 
-                <div class="picture-wrapper">
+                <div class="kit-wrapper">
                     <div class="columns is-multiline">
                         <div v-for="({name, a5, a6, thumbnail}, index) in kits" :key="index"
                             class="column is-one-quarter">
-                            <div class="picture">
-                                <div class="picture__inner">
-                                    <div class="picture-center has-text-centered">
-                                        <img v-bind:src="`storage/${thumbnail}`" alt="">
-                                    </div>
+                            <div class="kit-box">
+                                <div class="kit-box__inner">
+                                    <img v-bind:src="`storage/${thumbnail}`" alt="">
                                 </div>
 
-                                <p>{{ name }}</p>
+                                <p class="kit-box__title">{{ name }}</p>
 
-                                <p>
-                                    <a :href="`storage/${a5}`">A5 méretben</a>
-                                </p>
-                                <p>
-                                    <a :href="`storage/${a6}`">A6 méretben</a>
+
+                                <p class="kit-box__downloads">
+                                    <a  @click="download(`storage/${a5}`)">A5 méretben</a>
+                                    <a @click="download(`storage/${a6}`)">A6 méretben</a>
                                 </p>
 
                             </div>
@@ -30,7 +27,14 @@
                 </div>
             </div>
         </div>
+
+        <br>
+        <br>
+        <br>
+        <div class="columns is-centered">
         <img src="/assets/svg/howto.svg" alt="">
+
+        </div>
 
 
     </div>
@@ -77,6 +81,9 @@
 
             },
 
+      download: function (url) {   
+          window.open(url, "_blank");    
+      }
 
         }
     }

@@ -1,14 +1,20 @@
 <template>
-    <div class="columns">
-        <div class="column is-three-fifths is-offset-one-fifth">
-             <div class="jackpot-box separator">
+    <div class="columns is-centered">
+        <div :class="[
+                'column ', 
+                !isWide ? 'is-four-fifths' : 'wide'
+                ]">
+             <div :class="[
+                'jackpot-box separator', 
+                isWide ?  'wide' : ''
+                ]">
                 <div class="jackpot-box__inner">
-                    <div class="columns">
+                    <div class="columns is-vcentered    ">
                         <div class="column">
-                            <h3 class="title is-3">
+                            <h2 class="title is-2">
                                 Fődíj: <br>
                                 A fődíj a 20 darabos <br>makettszett és a hozzá kapcsolódó Magyarország térkép
-                            </h3>
+                            </h2>
                         </div>
                         <div class="column jackpot-map-item">
                             <div class="jackpot-map">
@@ -22,3 +28,13 @@
         </div>
     </div>
 </template>
+
+<script>
+
+  export default {
+    props: {
+      isWide: Boolean,
+    }
+  }
+
+</script>

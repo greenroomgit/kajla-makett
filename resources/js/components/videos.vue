@@ -14,7 +14,7 @@
                                     <img class="video-thumb" :src="'https://img.youtube.com/vi/' + videos[0].youtube_id + '/mqdefault.jpg'" alt="">
                                 </div>
                             </div>
-                            <p>{{ videos[0].caption }}</p>
+                            <h3>{{ videos[0].caption }}</h3>
                         </a>
                     </div>
                     <div class="column">

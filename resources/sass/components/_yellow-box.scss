@@ -1,14 +1,14 @@
 .yellow-box {
-  border-image: svg('yellow-box-bg.svg') 40 fill / 30px / 0 stretch;
-  -webkit-border-image: svg('yellow-box-bg.svg') 40 fill / 30px / 0 stretch;
-  min-width: 300px;
-  min-width: 300px;
-  padding: 20px;
+  border-image-source: svg('yellow-box-bg.svg');
+    border-image-slice: 38 fill;
+    border-image-width: 34px;
+    border-image-repeat: stretch;
+    padding: 1.5rem;
+
 
   &__inner {
     background: #FCC627;
-      padding: 30px;
-
+    padding: 1rem;
   }
 
   h3 {

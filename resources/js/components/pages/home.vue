@@ -4,8 +4,8 @@
         <div class="separator">
             <div class="columns">
                 <div class="column">
-                    <div class="info-horizonatal has-text-centered">
-                        <div class="info-horizonatal__inner">
+                    <div class="info-horizontal has-text-centered">
+                        <div class="info-horizontal__inner">
                             <p>A feltöltött képeket egy gyors ellenőrzés után publikáljuk. Ha közzé tettük  a képedet, 
                             akkor újabb makett csomaggal lepünk meg. A játék végén pedig egy zsűri fogja kiválasztani 
                             a legjobb képeket, a beküldői pedig a külön díjban részesülnek.</p>
@@ -17,7 +17,7 @@
         <Jackpot />
         <div class="yellow-box separator">
             <div class="yellow-box__inner">
-                <div class="columns">
+                <div class="columns is-vcentered">
                     <div class="column is-half">
                         <h3 class="title is-3">Építsd fel Kajlával Magyarország<br> nevezetességeit és nyerj!</h3>
                     </div>

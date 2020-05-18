@@ -16,8 +16,8 @@
                                      Kérd az ingyenes makett csomagot, amit pár napon belül postán fogsz megkapni. Vagy le is töltheted és kinyomtathatod.
                                 </p>
                                 <div class="box-bottom">
-                                    <button class="button is-primary">Igénylek</button>
-                                    <button class="button is-primary">Letöltök</button>
+                                    <button class="button is-primary" @click.prevent="openKitRequestModal">Igénylek</button>
+                                    <button class="button is-primary" @click.prevent="openPhotoUploadModal">Letöltök</button>
                                 </div>
                             </div>
                         </div>
@@ -57,6 +57,11 @@
                                 <p>
                                     Fényképezd le az így kapott helyszínt, adj neki egy címet, és töltsd fel az oldalon.
                                 </p>
+
+                                                                <div class="box-bottom">
+                                    <button class="button is-primary">Képet küldök be</button>
+                                </div>
+
                             </div>
                         </div>
                     </article>

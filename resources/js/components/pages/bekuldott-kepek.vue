@@ -7,17 +7,8 @@
             </div>
         </div>
 
-        <div class="prize">
-            <div class="prize__inner">
-                <div class="prize__left">
-                    A fődíj a 20 darabos makett-szett és a hozzá kapcsolódó Magyarország térkép
-                </div>
+        <Jackpot isWide="true"/>
 
-                <div class="prize__right">
-                    <img src="/assets/images/terkep_makett_fodij.png" alt="">
-                </div>
-            </div>
-        </div>
     
         <Pictures />
 
@@ -29,11 +20,13 @@
 <script>
 
 import Pictures from '../pictures'
+import Jackpot from '../jackpot'
 
 export default {
     name: 'uploads',
     components: {
-        'Pictures': Pictures
+        'Pictures': Pictures,
+        'Jackpot': Jackpot
     },
     data() {
         return {
