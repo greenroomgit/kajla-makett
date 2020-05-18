@@ -47,7 +47,7 @@
                 <div class="box">
                     <article class="media box__inner">
                         <div class="media-center">
-                            <figure class="image is-640x480">
+                            <figure class="image image-else is-640x480">
                                 <img :src="'/assets/images/fotos-kajla.png'" alt="">
                             </figure>
                         </div>

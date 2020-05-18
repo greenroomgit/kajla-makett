@@ -59,6 +59,10 @@
             background-repeat: no-repeat;
             background-size: contain;
 
+            @include until($mobile){
+                background-size: 70%;
+            }
+
         }
 
         .box-bottom {
@@ -68,6 +72,22 @@
     }
     .media-center {
         height:340px;
+        @include until($mobile) {
+            height: 270px;
+            .image {
+                img {
+                    width: 90%;
+                    margin: -20px auto;
+                }
+            }
+
+            .image-else {
+                img {
+                    width: 68%;
+                    margin: -10px auto;
+                }
+            }
+        }
     }
     .content {
         p {
