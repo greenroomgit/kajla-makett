@@ -31457,7 +31457,7 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("footer", { staticClass: "footer" }, [
+  return _c("footer", { staticClass: "footer has-text-centered-mobile" }, [
     _c(
       "div",
       { staticClass: "container" },
@@ -49947,7 +49947,7 @@ var routes = [{
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-throw new Error("Module build failed (from ./node_modules/css-loader/index.js):\nModuleBuildError: Module build failed (from ./node_modules/sass-loader/dist/cjs.js):\nSassError: Undefined variable: \"$mobile\".\n        on line 62 of resources/sass/components/_layout.scss\n        from line 13 of /Users/jocc/Sites/kajla-makett/resources/sass/app.scss\n>>             @include until($mobile){\n\n   ---------------------------^\n\n    at /Users/jocc/Sites/kajla-makett/node_modules/webpack/lib/NormalModule.js:316:20\n    at /Users/jocc/Sites/kajla-makett/node_modules/loader-runner/lib/LoaderRunner.js:367:11\n    at /Users/jocc/Sites/kajla-makett/node_modules/loader-runner/lib/LoaderRunner.js:233:18\n    at context.callback (/Users/jocc/Sites/kajla-makett/node_modules/loader-runner/lib/LoaderRunner.js:111:13)\n    at Object.callback (/Users/jocc/Sites/kajla-makett/node_modules/sass-loader/dist/index.js:73:7)\n    at Object.done [as callback] (/Users/jocc/Sites/kajla-makett/node_modules/neo-async/async.js:8067:18)\n    at options.error (/Users/jocc/Sites/kajla-makett/node_modules/node-sass/lib/index.js:294:32)");
+// removed by extract-text-webpack-plugin
 
 /***/ }),
 

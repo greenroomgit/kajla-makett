@@ -1,5 +1,5 @@
 .yellow-box {
-  border-image-source: svg('yellow-box-bg.svg');
+    border-image-source: svg('yellow-box-bg.svg');
     border-image-slice: 38 fill;
     border-image-width: 34px;
     border-image-repeat: stretch;
@@ -15,4 +15,14 @@
     color: $white;
     text-shadow: shadow($brown,2px);
   }
+
+  @include mobile {
+    h3 {
+      text-align: center;
+      font-size: 32px;
+    }
+
+    
+  }
+
 }

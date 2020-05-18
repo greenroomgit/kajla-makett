@@ -23,5 +23,20 @@ footer.footer {
             content: ' ';
             border-right: 1px solid $white;
         }
+
+        @include mobile {
+            font-size: 14px;
+            flex-direction: column;
+            p {
+
+                display: block;
+                margin: 25px 0;
+
+            }
+
+            a {
+                margin: 8px 0;
+            }
+        }
     }
 }

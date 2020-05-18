@@ -12374,6 +12374,13 @@ h3 {
   text-shadow: 0px 2px 0px #A7570B;
 }
 
+@media screen and (max-width: 768px) {
+  .yellow-box h3 {
+    text-align: center;
+    font-size: 32px;
+  }
+}
+
 .container {
   max-width: 1266px;
   padding: 2em;
@@ -12437,12 +12444,34 @@ h3 {
   background-size: contain;
 }
 
+@media screen and (max-width: 768px) {
+  .guide-steps .box__inner {
+    background-size: 70%;
+  }
+}
+
 .guide-steps .box .box-bottom {
   margin-top: 2rem;
 }
 
 .guide-steps .media-center {
   height: 340px;
+}
+
+@media screen and (max-width: 768px) {
+  .guide-steps .media-center {
+    height: 270px;
+  }
+
+  .guide-steps .media-center .image img {
+    width: 90%;
+    margin: -20px auto;
+  }
+
+  .guide-steps .media-center .image-else img {
+    width: 68%;
+    margin: -10px auto;
+  }
 }
 
 .guide-steps .content p {
@@ -12494,6 +12523,13 @@ h3 {
   margin-top: 0.5em;
 }
 
+@media screen and (max-width: 768px) {
+  .video-box .video-wrapper .video-item-button h3 {
+    font-size: 18px;
+    font-family: "apokabold", sans-serif;
+  }
+}
+
 .video-box .video-wrapper .video-item img {
   display: block;
 }
@@ -12530,6 +12566,11 @@ h3 {
 .video-box .video-wrapper .video-item .video-thumb {
   width: 100%;
   height: auto;
+  min-width: 100%;
+}
+
+.video-box .video-wrapper .video-item .video-thumb img {
+  min-width: 100%;
 }
 
 .picture-box {
@@ -12688,6 +12729,17 @@ h3 {
   margin: -30% -20% -40% 0;
 }
 
+@media screen and (max-width: 768px) {
+  .jackpot-box h2.title {
+    font-size: 32px;
+    text-align: center;
+  }
+
+  .jackpot-box .jackpot-map-item .jackpot-map {
+    margin: 0% -40% -40% -15%;
+  }
+}
+
 .container .navbar {
   background-color: transparent;
   width: 100%;
@@ -12816,41 +12868,18 @@ footer.footer .container span {
 }
 
 @media screen and (max-width: 768px) {
-  .section-hero {
-    height: 500px;
-    padding-bottom: 0;
-    background-position: top center;
-    background-size: cover;
-    background-repeat: no-repeat;
+  footer.footer .container {
+    font-size: 14px;
+    flex-direction: column;
   }
 
-  .section-hero h1 {
-    text-align: center;
-    line-height: 40px;
-    text-shadow: 0px 4px 0px #2CC0CD;
-    font-size: 32px;
+  footer.footer .container p {
+    display: block;
+    margin: 25px 0;
   }
 
-  .section-hero nav {
-    display: none;
-  }
-
-  .guide-steps .box__inner {
-    background-size: 70%;
-  }
-
-  .guide-steps .media-center {
-    height: 270px;
-  }
-
-  .guide-steps .media-center .image img {
-    width: 90%;
-    margin: -20px auto;
-  }
-
-  .guide-steps .media-center .image-else img {
-    width: 68%;
-    margin: -10px auto;
+  footer.footer .container a {
+    margin: 8px 0;
   }
 }
 

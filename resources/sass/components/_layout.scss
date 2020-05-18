@@ -59,7 +59,7 @@
             background-repeat: no-repeat;
             background-size: contain;
 
-            @include until($mobile){
+            @include mobile {
                 background-size: 70%;
             }
 
@@ -72,7 +72,7 @@
     }
     .media-center {
         height:340px;
-        @include until($mobile) {
+        @include mobile {
             height: 270px;
             .image {
                 img {
@@ -135,17 +135,21 @@
         }
         .video-item-button {
             display: block;
-                        h3 {
-                            color: $blue-body;
-                            line-height: 1.2;
-                            font-size: 2rem;
-                            margin-top: 0.5em;
-                        }
+            h3 {
+                color: $blue-body;
+                line-height: 1.2;
+                font-size: 2rem;
+                margin-top: 0.5em;
+            }
+
+            @include mobile {
+                h3 {
+                    font-size: 18px;
+                    font-family: $font-body;
+                }
+            }
         }
         .video-item {
-            
-
-
             img {
                 display: block;
             }
@@ -182,6 +186,10 @@
             .video-thumb {
                 width: 100%;
                 height: auto;
+                min-width: 100%;
+                img {
+                    min-width: 100%;
+                }
             }
 
         }
@@ -347,4 +355,17 @@
             margin: -30% -20% -40% 0;
         }
     }
+
+    @include mobile {
+        h2.title {
+            font-size: 32px;
+            text-align: center; 
+        }
+        .jackpot-map-item {
+            .jackpot-map {
+                margin: 0% -40% -40% -15%;
+            }
+        }
+    }
+
 }
