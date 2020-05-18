@@ -23,13 +23,14 @@
     }
 
     &.is-secondary {
-        //todo: meg nem nyulik a bg. Kerlek, hogy nezz majd ra.
-        padding-left: 2em;
-        padding-right: 2em;
-        border: none;
+        border-image: url('/assets/images/button-sec-bg.png');
+        border-width: 20px;
+        border-image-slice: 40 fill;
+        border-image-repeat: stretch;
         background: transparent;
-        border-image: svg('button-secondary-bg.svg') 28 fill / 30px / 0 stretch;
-        -webkit-border-image: svg('button-secondary-bg.svg') 28 fill / 30px / 0 stretch;
+        line-height: 1;
+        padding: 0 0.5em;
+        height: auto;
 
         &:hover {
             background-color: transparent;
