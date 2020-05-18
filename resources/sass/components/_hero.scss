@@ -1,0 +1,47 @@
+.section-hero {
+  height: 60vw;
+  padding-bottom: 0;
+  background-image: image("hero.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 30% top ;
+  position: relative;
+
+  &:after {
+    content: '';
+    display: block;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 7vw;
+    background: image("hero-bottom.png") no-repeat 50% top;
+    background-size: cover;
+  }
+
+  h1 {
+    display: none;
+  }
+
+  &.hero--home {
+    background-image: image("main-hero.jpg");
+
+    h1 {
+      margin-top: 12vw;
+      display: block;
+      text-align: center;
+      line-height: 60px;
+      text-shadow: shadow($blue-light, 4px);
+      font-size: 3vw;
+      line-height: 1;
+  
+    }
+  }
+
+  @include from($tablet) {
+    background-position: top center;
+  }
+
+
+
+}

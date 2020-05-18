@@ -295,36 +295,3 @@
     }
 }
 
-.jackpot-box {
-    border-image-source: svg('box-blue-horizontal.svg');
-    border-image-slice: 38 fill;
-    border-image-width: 34px;
-    border-image-repeat: stretch;
-    padding: 1.5rem;
-    margin-top: 5%;
-
-    &__inner {
-        background-color:$box-bg;
-        padding: 16px;
-    }
-
-    h2 {
-        color: $white;
-        text-shadow: shadow($title-shadow,2px);
-    }
-
-    .jackpot-map-item {
-        position: relative;
-
-        .jackpot-map {
-            margin: -30% -40% -50% -15%;
-        }
-    }
-
-    &.wide {
-        margin-top: 10%;
-        .jackpot-map {
-            margin: -30% -20% -40% 0;
-        }
-    }
-}
