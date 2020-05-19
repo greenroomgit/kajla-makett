@@ -21,11 +21,6 @@ const routes = [
         component: Home
     },
     {
-        path: '/jatek',
-        name: 'jatek',
-        component: Home
-    },
-    {
         path: '/bekuldott-kepek',
         name: 'bekuldott-kepek',
         component: BekuldottKepek

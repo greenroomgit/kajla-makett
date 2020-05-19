@@ -13,7 +13,7 @@ class KitRequests extends Model
      */
     protected $table = 'kit_requests';
 
-    protected $fillable = ['name','postal', 'email', 'city', 'address'];
+    protected $fillable = ['name','postal', 'email', 'city', 'address', 'token', 'verified_at', 'sent'];
 
     protected $attributes = array(
     'sent' => false

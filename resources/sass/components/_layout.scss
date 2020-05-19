@@ -1,7 +1,29 @@
+.site-logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+    top: 2rem;
+    width: 30vw;
+
+    @include from($desktop) {
+        width: 10vw;
+        max-width: 200px;
+        min-width: 120px;
+    }
+}
+
+$container-width: 1200px;
 //CONTAINER
 .container {
     max-width: $container-width;
     padding: $size * 4;
+
+    &--main {
+        @include until($desktop) {
+            padding: $size;
+        }
+    }
 }
 
 //SECTION
@@ -43,12 +65,14 @@
         border-image-repeat:  stretch;
         min-width: 300px;
         display: flex;
-        height: 100%;
         padding: 30px;
         box-shadow: none;
         border-radius: 0;
         background-color: transparent;
         position:relative;
+        @include from($tablet) {
+            height: 100%;
+        }
 
 
         &__inner {
@@ -60,7 +84,7 @@
             background-size: contain;
 
             @include mobile{
-                background-size: 70%;
+                background-size: 80%;
             }
 
         }
@@ -71,28 +95,18 @@
         }
     }
     .media-center {
-        height:340px;
-        @include mobile {
-            height: 270px;
-            .image {
-                img {
-                    width: 90%;
-                    margin: -20px auto;
-                }
-            }
-
-            .image-else {
-                img {
-                    width: 68%;
-                    margin: -10px auto;
-                }
-            }
+        @include from($tablet) {
+            margin-bottom: 3rem;
         }
     }
     .content {
         p {
             color: $blue-body;
         }
+    }
+
+    .button {
+        margin-top: 1rem;
     }
 }
 

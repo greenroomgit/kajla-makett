@@ -27,3 +27,4 @@ Route::get('/published-photos', 'PhotoUploadsController@published', []);
 Route::get('/kits', 'KitsController@list', []);
 Route::post('/upload-photo', 'PhotoUploadsController@upload', []);
 Route::post('/kit-request', 'KitRequestController@create', []);
+Route::get('/kit-request/verify-email/{token}', 'KitRequestController@verifyEmail', []);

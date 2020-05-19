@@ -11,7 +11,7 @@
                 <div class="jackpot-box__inner">
                     <div class="columns is-vcentered    ">
                         <div class="column">
-                            <h2 class="title is-2">
+                            <h2 class="title is-size-4 is-size-3-tablet is-size-2-desktop has-text-centered has-text-left-tablet">
                                 Fődíj: <br>
                                 A fődíj a 20 darabos <br>makettszett és a hozzá kapcsolódó Magyarország térkép
                             </h2>

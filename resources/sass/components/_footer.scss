@@ -3,25 +3,41 @@ footer.footer {
     margin-top: 4.500em;
     font-family: $font-footer;
     font-size: 0.813em;
+    padding: 0;
     .container {
         color: $white;
         display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
         justify-content: center;
+        align-items: center;
         max-width: 1266px;
         border-top: 1px solid $white;
         padding-top: 1.500em;
-
+        @include from($tablet) {
+            flex-direction: row;
+        }
         a {
             color: $white;
+            margin-bottom: 1em;
+        }
+
+        p {
+            margin-bottom: 2em;
         }
         p, a {
-            padding: 0 1.875em;
+            @include from($tablet) {
+                margin: 0;
+                padding: 0 1.875em;
+            }
         }
 
         span {
-            display: inline;
-            content: ' ';
-            border-right: 1px solid $white;
+            @include from($tablet) {
+                display: inline;
+                content: ' ';
+                border-right: 1px solid $white;
+            }
         }
     }
 }

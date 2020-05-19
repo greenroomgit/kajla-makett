@@ -1,47 +1,127 @@
 .section-hero {
-  height: 60vw;
-  padding-bottom: 0;
-  background-image: image("hero.png");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: 30% top ;
-  position: relative;
-
-  &:after {
-    content: '';
-    display: block;
-    width: 100%;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    height: 7vw;
-    background: image("hero-bottom.png") no-repeat 50% top;
+    height: 350px;
+    padding-bottom: 0;
+    background-color: #165B33;
+    background-image: image("hero.png");
     background-size: cover;
-  }
+    background-repeat: no-repeat;
+    position: relative;
+    background-size: 110% auto;
+    background-position: 55% bottom;
+    overflow: hidden;
+    .container {
+      height: 100%;
+      position: static;
+    }
 
-  h1 {
-    display: none;
-  }
+    @include from(470px) {
+      background-position: 50% 50%;
+    }
 
-  &.hero--home {
-    background-image: image("main-hero.jpg");
+    @include from($tablet) {
+      max-height: 760px;
+        height: 80vw;
+        background-size: cover;
+    }
+
+
+    &:before {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 160px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: linear-gradient(#165B33 50%, rgba(#165B33, 0));
+
+        @include from($tablet) {
+            height: 30vw;
+            background: linear-gradient(#165B33, rgba(#165B33, 0));
+            height: 70px;
+        }
+
+    }
+
+
+    &:after {
+        content: '';
+        display: block;
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 7vw;
+        background: image("hero-bottom.png") no-repeat 50% top;
+        background-size: cover;
+    }
 
     h1 {
-      margin-top: 12vw;
-      display: block;
-      text-align: center;
-      line-height: 60px;
-      text-shadow: shadow($blue-light, 4px);
-      font-size: 3vw;
-      line-height: 1;
-  
+        display: none;
+    }
+
+    &.hero--home {
+        background-image: image("main-hero.jpg");
+
+        h1 {
+            margin-top: 8vw;
+            display: block;
+            text-align: center;
+            line-height: 60px;
+            text-shadow: shadow($blue-light, 0.1em);
+            line-height: 1;
+            position: relative;
+            z-index: 2;
+            font-size: 5vw;
+
+            @include from($tablet) {
+              font-size: 3vw;
+              margin-top: 12vw;
+            }
+
+            @include from($widescreen) {
+                margin-top: 100px;
+            }
+
+        }
+    }
+
+    &:not(.hero--home) {
+      background-size: cover;
+      max-height: 200px;
+      @include from($tablet) {
+          max-height: 360px;
+      }
+
+      .hero__family {
+        position: absolute;
+        bottom: 0%;
+        width: 35vw;
+        height: 80%;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: bottom center;
+        &--left {
+          left: 4%;
+          background-image: image("anya-fia-kutya.png");
+        }
+        &--right {
+          background-image: image("apa-lánya.png");
+          right: 4%;
+        }
+        @include from($tablet) {
+          bottom: 2%;
+        }
+        @include from($desktop) {
+          bottom: 8%;
+          &--left {
+            left: 0%;
+          }
+          &--right {
+            right: 0%;
+          }
+        }
+      }
     }
   }
 
-  @include from($tablet) {
-    background-position: top center;
-  }
-
-
-
-}

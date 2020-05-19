@@ -2,9 +2,9 @@
     <div>
         <div class="kit-list ">
             <div class="kit-list__inner">
-                <h2 class="title">Letölthető makettek</h2>
 
-                <div class="kit-wrapper">
+                <div class="kit-wrapper picture-box">
+                <h2 class="title title is-size-4 is-size-3-tablet is-size-2-desktop">Letölthető makettek</h2>
                     <div class="columns is-multiline">
                         <div v-for="({name, a5, a6, thumbnail}, index) in kits" :key="index"
                             class="column is-one-quarter">

@@ -10,7 +10,12 @@
                     nevezettességeit és nyerj!
                 </h1>
             </div>
+
+                    <div class="hero__family hero__family--left"></div>
+        <div class="hero__family hero__family--right"></div>
+
         </div>
+
     </section>
 </template>
 

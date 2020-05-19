@@ -1,5 +1,5 @@
 <template>
-    <div class="">
+    <div>
         <GuideSteps />
         <div class="separator">
             <div class="columns">
@@ -17,14 +17,14 @@
         <Jackpot />
         <div class="yellow-box separator">
             <div class="yellow-box__inner">
-                <div class="columns is-vcentered">
-                    <div class="column is-half">
+                <div class="columns is-vcentered ">
+                    <div class="column is-half has-text-centered has-text-left-tablet">
                         <h3 class="title is-3">Építsd fel Kajlával Magyarország<br> nevezetességeit és nyerj!</h3>
                     </div>
-                    <div class="column">
+                    <div class="column has-text-centered">
                         <button class="button is-primary" @click.prevent="openKitRequestModal">Szeretnék makettet</button>
                     </div>
-                    <div class="column">
+                    <div class="column has-text-centered">
                         <button class="button is-primary" @click.prevent="openPhotoUploadModal">Képet küldök be</button>
                     </div>
                 </div>

@@ -26,11 +26,11 @@ class PhotoUploads extends Model
 
         $beautymail = app()->make(\Snowfire\Beautymail\Beautymail::class);
         $beautymail->send('emails.published', [], function ($message) {
-            $email = 'olah.gergely@pixeloid.hu';
+            $email = $this->attributes['email'];
             $message
-            ->from('donotreply@justlaravel.com')
-            ->to($email, 'Howdy buddy!')
-            ->subject('Test Mail!');
+            ->from('donotreply@kajla.hu')
+            ->to($email)
+            ->subject('Publikáltuk a fotót!');
         });
 
         return $this;

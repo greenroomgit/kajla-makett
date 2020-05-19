@@ -1,22 +1,30 @@
-.modal-inner {
-  
+.modal {
 }
 
+.modal-background {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+}
+
+.modal-inner {
+  overflow: auto;
+
+}
 .modal-content {
-  padding: 2rem 1em;
-  margin: 0;
+  margin: 2rem 0;
+  padding: 1rem;
   max-height: unset;
   @media only screen and (min-width: 768px) {
     width: 603px;
     margin: 0 20px;
-    max-height: calc(100vh - 100px);
     overflow: hidden;
   }
 }
 
 .modal-close-button {
   position: absolute;
-  top: 1.25em;
+  top: -0.3em;
   right: 0.25em;
   width: 64px;
   height: 60px;

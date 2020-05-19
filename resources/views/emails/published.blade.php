@@ -1,20 +1,11 @@
-@extends('beautymail::templates.widgets')
+@extends('beautymail::templates.sunny')
 
 @section('content')
 
-	@include('beautymail::templates.widgets.articleStart')
+	@include('beautymail::templates.sunny.contentStart')
 
-		<h4 class="secondary"><strong>Hello World</strong></h4>
-		<p>This is a test</p>
+	<h3>Sikeresen publikáltuk a képét!</h3>
 
-	@include('beautymail::templates.widgets.articleEnd')
-
-
-	@include('beautymail::templates.widgets.newfeatureStart')
-
-		<h4 class="secondary"><strong>Hello World again</strong></h4>
-		<p>This is another test</p>
-
-	@include('beautymail::templates.widgets.newfeatureEnd')
+	@include('beautymail::templates.sunny.contentEnd')
 
 @stop

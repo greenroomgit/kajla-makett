@@ -15,4 +15,27 @@
     color: $white;
     text-shadow: shadow($brown,2px);
   }
+
+  h1 {
+    line-height: 1.2;
+  }
+
+  &--alert {
+
+    max-width: 1000px;
+    margin: 0 auto;
+    .yellow-box__inner {
+      p {
+        color:$brown;
+        margin-top: 1em;
+      }
+    }
+  }
+
+  #makett-fotok & {
+    margin-top: -3rem; 
+    @include from($tablet) {
+      margin-top: -7rem; 
+    }
+  }
 }

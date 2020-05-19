@@ -21,6 +21,8 @@ class CreateKirRequestsTable extends Migration
             $table->string('address');
             $table->integer('postal');
             $table->boolean('sent');
+            $table->datetime('verified_at')->nullable();
+            $table->string('token');
             $table->timestamps();
         });
     }

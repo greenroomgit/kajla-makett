@@ -1,8 +1,12 @@
 <template>
     <div class="kajla-wrapper">
+        <router-link class="site-logo" to="/">
+              <img src="assets/images/kajla-logo.png">
+          </router-link>
+
         <Navigation />
         <Hero />
-        <div class="container">
+        <div class="container container--main">
             <router-view></router-view>
         </div>
 

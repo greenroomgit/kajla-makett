@@ -1,7 +1,11 @@
 .form {
   display: flex;
   flex-wrap: wrap;
-  padding: 4.125rem 4.125rem 1.5rem 4.125rem;
+  padding: 4rem 2rem 1rem;
+  @include from($tablet) {
+    padding: 4rem 4rem 1rem;
+  }
+
         border-image-source: svg('yellow-box-bg.svg');
         border-image-slice: 38 fill;
         border-image-width: 40px;

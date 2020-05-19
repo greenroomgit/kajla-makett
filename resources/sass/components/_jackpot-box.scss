@@ -18,7 +18,10 @@
 
   .jackpot-map-item {
       position: relative;
-      @include from($tablet) {
+      .jackpot-map {
+        margin: 0% -30% -20% -10%;
+    }
+        @include from($tablet) {
           .jackpot-map {
               margin: -30% -40% -50% -15%;
           }
