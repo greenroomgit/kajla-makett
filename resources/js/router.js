@@ -13,6 +13,7 @@ import FelhasznalasiFeltetelek from './components/pages/felhasznalasi-feltetelek
 import AdatkezelesiNyilatkozat from './components/pages/adatkezelesi-nyilatkozat'
 import SutiKezeles from './components/pages/suti-kezeles'
 import Impressum from './components/pages/impresszum'
+import VerifyRequest from './components/pages/verify-request'
 
 const routes = [
     {
@@ -49,6 +50,11 @@ const routes = [
         path: '/impresszum',
         name: 'impresszum',
         component: Impressum
+    },
+    {   
+        path: '/verify-request',
+        name: 'verify-request',
+        component: VerifyRequest
     }
 ]
 

@@ -23,9 +23,10 @@ class KitRequestController extends Controller
 
         $data['token'] = bin2hex(random_bytes(50));
         $kitRequest = KitRequests::create($data);
+        $url = \App::make('url')->to('/verify-request?'.$data['token']);
 
         $beautymail = app()->make(\Snowfire\Beautymail\Beautymail::class);
-        $beautymail->send('emails.published', ['token' => $data['token']], function ($message) use ($kitRequest){
+        $beautymail->send('emails.verify', ['url' => $url], function ($message) use ($kitRequest){
             $message
             ->from('donotreply@kajla.hu')
             ->to($kitRequest->email)
@@ -36,8 +37,9 @@ class KitRequestController extends Controller
         return response($kitRequest->jsonSerialize(), Response::HTTP_OK);
     }
 
-    public function verifyEmail($token)
+    public function verifyEmail(Request $request)
     {
+        $token = $request->input('token');
         $req = KitRequests::where('token', '=', $token)->first();
 
         if ($req) {
@@ -45,7 +47,7 @@ class KitRequestController extends Controller
             $req->verified_at = new \DateTime;
             $req->save();
             $beautymail = app()->make(\Snowfire\Beautymail\Beautymail::class);
-            $beautymail->send('emails.published', ['token' => $token], function ($message) {
+            $beautymail->send('emails.success-request', ['token' => $token], function ($message) use ($req) {
                 $message
                 ->from('donotreply@kajla.hu')
                 ->to($req->email)

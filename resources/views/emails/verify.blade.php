@@ -4,7 +4,9 @@
 
 	@include('emails.kajla.contentStart')
 
-	<h3>Sikeresen publikáltuk a képét!</h3>
+  <h3>Kérjük ellenőrizze az email címét!</h3>
+  
+  {{ $url }}
 
 	@include('emails.kajla.contentEnd')
 
