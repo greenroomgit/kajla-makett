@@ -32,11 +32,10 @@ class KitRequestController extends AdminController
         $grid->column('city', __('City'));
         $grid->column('address', __('Address'));
         $grid->column('postal', __('Postal'));
-        $grid->column('token', __('Token'));
         $grid->column('sent', __('Sent'));
+        $grid->column('verified_at', __('Verified at'));
         $grid->column('created_at', __('Created at'));
         $grid->column('updated_at', __('Updated at'));
-        $grid->column('verified_at', __('Verified at'));
 
         return $grid;
     }

@@ -46,15 +46,17 @@ class KitRequestController extends Controller
 
             $req->verified_at = new \DateTime;
             $req->save();
-            $beautymail = app()->make(\Snowfire\Beautymail\Beautymail::class);
-            $beautymail->send('emails.success-request', ['token' => $token], function ($message) use ($req) {
-                $message
-                ->from('donotreply@kajla.hu')
-                ->to($req->email)
-                ->subject('Köszönjük az igénylést!');
-            });
+            // $beautymail = app()->make(\Snowfire\Beautymail\Beautymail::class);
+            // $beautymail->send('emails.success-request', ['token' => $token], function ($message) use ($req) {
+            //     $message
+            //     ->from('donotreply@kajla.hu')
+            //     ->to($req->email)
+            //     ->subject('Köszönjük az igénylést!');
+            // });            
+            return response()->json([], Response::HTTP_OK);
+
             } else {
-            return response('ERROR', Response::HTTP_OK);
+            return response()->json(['error' => 'Hibás érvényesítő link'], 403);
         }
         dump($req);
         exit;

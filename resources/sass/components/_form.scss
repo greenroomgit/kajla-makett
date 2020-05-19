@@ -62,11 +62,11 @@
     font-size: $font-size;
     border: none;
     background: transparent;
-  border-image-source: url('/assets/images/input-bg.png');
-  border-width: 20px;
-      border-image-slice: 48 fill;
-      border-image-width: 20px;
-      border-image-repeat: stretch;
+    border-image-source: url('/assets/images/input-bg.png');
+    border-width: 20px;
+    border-image-slice: 48 fill;
+    border-image-width: 20px;
+    border-image-repeat: stretch;
 
     &--full-width {
       width: 100%;
@@ -76,10 +76,10 @@
     }
     &:focus {
     border-image-source: url('/assets/images/input-focus-bg.png');
-  border-width: 20px;
-  border-image-slice: 48 fill;
-  border-image-width: 20px;
-  border-image-repeat: stretch;
+    border-width: 20px;
+    border-image-slice: 48 fill;
+    border-image-width: 20px;
+    border-image-repeat: stretch;
 
       outline: none;
     }

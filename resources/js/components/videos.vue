@@ -6,7 +6,7 @@
             <div class="video-wrapper">
                 <div class="columns">
                     <div class="column is-9 first">
-                        <a class="video-item-button" :href="'https://youtube.com/watch?v=' + videos[0].youtube_id ">
+                        <a class="video-item-button" @click="open(`https://youtube.com/watch?v=${videos[0].youtube_id}`)">
                             <div class="video-item">
 
                                 <div class="video-item__inner has-text-centered">
@@ -22,7 +22,7 @@
           
 
                         <a class="video-item-button" v-for="{ id, caption, youtube_id }, index in videos"
-                        v-if="index > '0'" :href="'https://youtube.com/watch?v=' + youtube_id ">
+                        v-if="index > '0'" @click="open(`https://youtube.com/watch?v=${youtube_id}`)">
                             <div class="video-item">
 
                                 <div class="video-item__inner has-text-centered">
@@ -84,6 +84,9 @@ export default {
             console.log(videos.length)
         },
 
+      open: function (url) {   
+          window.open(url, "_blank");    
+      }
 
     }
 }
