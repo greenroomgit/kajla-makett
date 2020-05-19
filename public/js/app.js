@@ -2054,7 +2054,6 @@ var getSteps = function getSteps(callback) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _navigation__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./navigation */ "./resources/js/components/navigation.vue");
 //
 //
 //
@@ -2069,11 +2068,19 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: 'app',
-  components: {
-    'Navigation': _navigation__WEBPACK_IMPORTED_MODULE_0__["default"]
+  name: 'hero',
+  data: function data() {
+    return {
+      isHome: false
+    };
+  },
+  computed: {
+    isHomepage: function isHomepage() {
+      return this.$route.path === '/';
+    }
   }
 });
 
@@ -2481,6 +2488,7 @@ var getKits = function getKits(callback) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _hero__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./hero */ "./resources/js/components/hero.vue");
 /* harmony import */ var _footer__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./footer */ "./resources/js/components/footer.vue");
+/* harmony import */ var _navigation__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./navigation */ "./resources/js/components/navigation.vue");
 //
 //
 //
@@ -2493,13 +2501,15 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'app',
   components: {
     'Hero': _hero__WEBPACK_IMPORTED_MODULE_0__["default"],
-    'Footer': _footer__WEBPACK_IMPORTED_MODULE_1__["default"]
+    'Footer': _footer__WEBPACK_IMPORTED_MODULE_1__["default"],
+    'Navigation': _navigation__WEBPACK_IMPORTED_MODULE_2__["default"]
   }
 });
 
@@ -31457,7 +31467,7 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("footer", { staticClass: "footer" }, [
+  return _c("footer", { staticClass: "footer has-text-centered-mobile" }, [
     _c(
       "div",
       { staticClass: "container" },
@@ -31674,25 +31684,29 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("section", { staticClass: "section section-hero separator" }, [
-    _c(
-      "div",
-      { staticClass: "container" },
-      [_c("Navigation"), _vm._v(" "), _vm._m(0)],
-      1
-    )
-  ])
+  return _c(
+    "section",
+    {
+      class: [
+        "section section-hero separator ",
+        _vm.isHomepage ? "hero--home" : ""
+      ]
+    },
+    [_vm._m(0)]
+  )
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "hero-body" }, [
-      _c("h1", [
-        _vm._v("\n                Építsd fel kajlával Magyarország"),
-        _c("br"),
-        _vm._v("\n                nevezettességeit és nyerj!\n            ")
+    return _c("div", { staticClass: "container" }, [
+      _c("div", { staticClass: "hero-body" }, [
+        _c("h1", {}, [
+          _vm._v("\n                Építsd fel kajlával Magyarország"),
+          _c("br"),
+          _vm._v("\n                nevezettességeit és nyerj!\n            ")
+        ])
       ])
     ])
   }
@@ -32298,6 +32312,8 @@ var render = function() {
     "div",
     { staticClass: "kajla-wrapper" },
     [
+      _c("Navigation"),
+      _vm._v(" "),
       _c("Hero"),
       _vm._v(" "),
       _c("div", { staticClass: "container" }, [_c("router-view")], 1),
@@ -49947,7 +49963,7 @@ var routes = [{
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-throw new Error("Module build failed (from ./node_modules/css-loader/index.js):\nModuleBuildError: Module build failed (from ./node_modules/sass-loader/dist/cjs.js):\nSassError: Undefined variable: \"$mobile\".\n        on line 62 of resources/sass/components/_layout.scss\n        from line 13 of /Users/jocc/Sites/kajla-makett/resources/sass/app.scss\n>>             @include until($mobile){\n\n   ---------------------------^\n\n    at /Users/jocc/Sites/kajla-makett/node_modules/webpack/lib/NormalModule.js:316:20\n    at /Users/jocc/Sites/kajla-makett/node_modules/loader-runner/lib/LoaderRunner.js:367:11\n    at /Users/jocc/Sites/kajla-makett/node_modules/loader-runner/lib/LoaderRunner.js:233:18\n    at context.callback (/Users/jocc/Sites/kajla-makett/node_modules/loader-runner/lib/LoaderRunner.js:111:13)\n    at Object.callback (/Users/jocc/Sites/kajla-makett/node_modules/sass-loader/dist/index.js:73:7)\n    at Object.done [as callback] (/Users/jocc/Sites/kajla-makett/node_modules/neo-async/async.js:8067:18)\n    at options.error (/Users/jocc/Sites/kajla-makett/node_modules/node-sass/lib/index.js:294:32)");
+// removed by extract-text-webpack-plugin
 
 /***/ }),
 

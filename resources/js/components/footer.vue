@@ -1,5 +1,5 @@
 <template>
-    <footer class="footer">
+    <footer class="footer has-text-centered-mobile">
         <div class="container">
             <p>Hol vagy kajla © 2019. Minden jog fenntartva</p>
             <router-link to="/felhasznalasi-feltetelek">Felhasználási feltételek</router-link>
