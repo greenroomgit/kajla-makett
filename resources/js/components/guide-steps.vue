@@ -17,7 +17,8 @@
                                 </p>
                                 <div class="box-bottom">
                                     <button class="button is-primary" @click.prevent="openKitRequestModal">Igénylek</button>
-                                    <button class="button is-primary">Letöltök</button>
+                                                <router-link class="button is-primary" to="/makettek-letoltese">Letöltök</router-link>
+
                                 </div>
                             </div>
                         </div>
