@@ -12,7 +12,7 @@ class KitRequestController extends Controller
     {
         $data = $request->validate([
             'name'     => ['required', 'string'],
-            'email'    => ['required', 'email'],
+            'email'    => ['required', 'email', 'unique:App\KitRequests,email'],
             'city'    => ['required', 'string'],
             'address'    => ['required', 'string'],
             'postal'    => [

@@ -20,6 +20,7 @@ class CreatePhotoUploadsTable extends Migration
             $table->boolean('published');
             $table->string('caption');
             $table->string('picture');
+            $table->string('thumb');
             $table->timestamps();
         });
     }

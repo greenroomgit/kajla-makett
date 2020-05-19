@@ -20,7 +20,7 @@ class AdminUsersTableSeeder extends Seeder
             0 => 
             array (
                 'id' => 1,
-                'username' => 'admin',
+                'username' => 'administrator',
                 'password' => '$2y$10$/7dJcmPR.e7lvi1.YlY3PuSrFPm4tC.bcWZq7vqwXqoUDi/JHYWYK',
                 'name' => 'Administrator',
                 'avatar' => NULL,

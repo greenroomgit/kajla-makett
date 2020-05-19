@@ -11,14 +11,13 @@
 
 
 
-
             <div class="picture-wrapper">
                 <div class="columns is-multiline">
-                    <div v-for="({caption, picture}, imageIndex) in uploads" :key="imageIndex" class="column is-one-quarter">
+                    <div v-for="({caption, picture, thumb}, imageIndex) in uploads" :key="imageIndex" class="column is-one-quarter">
                         <div class="picture" @click="setIndex(imageIndex)">
                             <div class="picture__inner">
                                 <div class="picture-center has-text-centered">
-                                    <img v-bind:src="`storage${picture}`"  alt="">
+                                    <img v-bind:src="`storage${thumb}`"  alt="">
                                 </div>
                             </div>
                         </div>
@@ -81,10 +80,6 @@ export default {
             const items = [];
 
             uploads.map(function(picture){
-                console.log(picture.picture)
-                items.push('storage' + picture.picture )                
-                items.push('storage' + picture.picture )                
-                items.push('storage' + picture.picture )                
                 items.push('storage' + picture.picture )                
             })
 
