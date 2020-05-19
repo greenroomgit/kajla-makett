@@ -33,7 +33,7 @@ class PhotoUploadsController extends Controller
         $thumbnailImage->save();
 
         $wmPath = '/pictures/' . uniqid() . '.' . $file->extension();
-        $watermarked = $file->storePubliclyAs('public', $wmPath);        
+        $watermarked = $file->storePubliclyAs('public', $wmPath);
         $watermarkedImage = Image::make(Storage::disk('local')->path($watermarked));
         $waterMarkUrl = public_path('assets/images/hol_vagy_kajla_logo_szines.png');
         $waterMark = Image::make($waterMarkUrl);
