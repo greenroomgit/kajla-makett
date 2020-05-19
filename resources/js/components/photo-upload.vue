@@ -87,6 +87,7 @@
 </template>
 
 <script>
+  import store from '../store.js';
 
   import axios from 'axios'
   import _ from 'lodash'
@@ -211,7 +212,7 @@
     },
     computed: {
       modalIsVisible() {
-        return this.isOpen
+        return store.photoUploadModalIsVisible
       }
     }
 

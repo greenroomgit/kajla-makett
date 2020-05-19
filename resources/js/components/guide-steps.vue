@@ -17,7 +17,7 @@
                                 </p>
                                 <div class="box-bottom">
                                     <button class="button is-primary" @click.prevent="openKitRequestModal">Igénylek</button>
-                                    <button class="button is-primary" @click.prevent="openPhotoUploadModal">Letöltök</button>
+                                    <button class="button is-primary">Letöltök</button>
                                 </div>
                             </div>
                         </div>
@@ -59,7 +59,7 @@
                                 </p>
 
                                                                 <div class="box-bottom">
-                                    <button class="button is-primary">Képet küldök be</button>
+                                    <button class="button is-primary" @click.prevent="openPhotoUploadModal">Képet küldök be</button>
                                 </div>
 
                             </div>
@@ -95,6 +95,8 @@
 
 
 <script>
+import store from '../store.js';
+
 import axios from 'axios';
 
 const getSteps = (callback) => {
@@ -122,6 +124,14 @@ export default {
             this.setData(err, data);
         });
     },
+    computed: {
+        kitRequestModalIsVisible() {
+            return store.kitRequestModalIsVisible
+        },
+        photoUploadModalIsVisible() {
+            return store.photoUploadModalIsVisible
+        }
+    },
     methods: {
         setData(err, steps) {
             if (err) {
@@ -130,6 +140,12 @@ export default {
                 this.steps = steps;
             }
         },
+        openKitRequestModal() {
+            store.kitRequestModalIsVisible = !store.kitRequestModalIsVisible
+        },
+        openPhotoUploadModal() {
+            store.photoUploadModalIsVisible = !store.photoUploadModalIsVisible
+        }
     }
 }
 </script>

@@ -38,6 +38,8 @@
 </template>
 
 <script>
+    import store from '../../store.js';
+
     import GuideSteps from '../guide-steps';
     import KitRequest from '../kit-request';
     import PhotoUpload from '../photo-upload';
@@ -61,12 +63,20 @@
                 isPhotoUploadModalOpen: false
             }
         },
+        computed: {
+            kitRequestModalIsVisible() {
+                return store.kitRequestModalIsVisible
+            },
+            photoUploadModalIsVisible() {
+                return store.photoUploadModalIsVisible
+            }
+        },
         methods: {
             openKitRequestModal() {
-                this.isKitRequestModalOpen = !this.isKitRequestModalOpen
+                store.kitRequestModalIsVisible = !store.kitRequestModalIsVisible
             },
             openPhotoUploadModal() {
-                this.isPhotoUploadModalOpen = !this.isPhotoUploadModalOpen
+                store.photoUploadModalIsVisible = !store.photoUploadModalIsVisible
             }
         }
     }
