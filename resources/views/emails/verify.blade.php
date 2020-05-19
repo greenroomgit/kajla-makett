@@ -4,11 +4,13 @@
 
 	@include('emails.kajla.contentStart')
 
-<h3>Kedves Igénylő!</h3>
+<p><b>Kedves Játékosunk!</b></p>
+
+<br>
 
 <p>A makett csomag igénylés véglegesítéshez kérjük, kattints a lenti linkre:</p>
 
-  <p>{{ $url }}</p>
+  <p><a href="{{ $url }}">Ellenőrzés itt</a></p>
 
 
 <p>Üdvözlettel: <br>

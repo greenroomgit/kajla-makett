@@ -3,7 +3,9 @@
 @section('content')
 
 	@include('emails.kajla.contentStart')
-	<h3>Sikeres Igénylés!</h3>
+<p><b>Kedves Játékosunk!</b></p>
+
+<br>
 
 	@include('emails.kajla.contentEnd')
 

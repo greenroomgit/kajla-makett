@@ -29,11 +29,9 @@
                         <td class="w640" align="center" width="640">
                             <table class="w640" border="0" cellpadding="0" cellspacing="0" width="640">
                                 <tr class="mobile_only">
-                                    <td class="w40" width="40"></td>
                                     <td class="w560" width="560" valign="top" align="center">
-                                        <img class="mobile_only mobile-logo" border="0" src="{{ App::make('url')->to('/assets/images/mtu_kajla-3d_kihivas_kv_v5.jpg') }}" alt="{{ isset($senderName) ? $senderName : '' }}" width="{{ isset($logo) ? array_key_exists('width', $logo) ? $logo['width'] : '' : '' }}" height="{{ isset($logo) ? array_key_exists('height', $logo) ? $logo['height'] : '' : '' }}" />
+                                        <img class="mobile_only mobile-logo" border="0" src="{{ App::make('url')->to('/assets/images/mtu_kajla-3d_kihivas_kv_v5.jpg') }}" alt="{{ isset($senderName) ? $senderName : '' }}" width="100%" height="{{ isset($logo) ? array_key_exists('height', $logo) ? $logo['height'] : '' : '' }}" />
                                     </td>
-                                    <td class="w40" width="40"></td>
                                 </tr>
                             </table>
                         </td>
@@ -48,17 +46,9 @@
 						<td id="header" class="w640" align="center" width="640">
 							<table class="w640" border="0" cellpadding="0" cellspacing="0" width="640">
 								<tr>
-									<td class="w30" width="30"></td>
 									<td id="logo" width="{{ array_key_exists('width', $logo) ? $logo['width'] : '' }}" valign="top" align="center">
-										<img border="0" src="{{ App::make('url')->to('/assets/images/mtu_kajla-3d_kihivas_kv_v5.jpg') }}" alt="{{ isset($senderName) ? $senderName : ''}}" width="{{ array_key_exists('width', $logo) ? $logo['width'] : '' }}" height="{{ array_key_exists('height', $logo) ? $logo['height'] : '' }}" />
+										<img border="0" src="{{ App::make('url')->to('/assets/images/mtu_kajla-3d_kihivas_kv_v5.jpg') }}" alt="{{ isset($senderName) ? $senderName : ''}}" width="100%" />
 									</td>
-									<td class="w30" width="30"></td>
-								</tr>
-								<tr>
-									<td colspan="3" height="20" class="large_only"></td>
-								</tr>
-								<tr>
-									<td colspan="3" height="20" class="large_only"></td>
 								</tr>
 							</table>
 						</td>
