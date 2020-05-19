@@ -3,10 +3,19 @@
         <div class="picture-box__inner">
             <h3 class="title">Beküldött képek</h3>
 
+    <CoolLightBox 
+      :items="items" 
+      :index="index"
+      @close="index = null">
+    </CoolLightBox>
+
+
+
+
             <div class="picture-wrapper">
                 <div class="columns is-multiline">
-                    <div v-for="({caption, picture}, index) in uploads" :key="index" class="column is-one-quarter">
-                        <div class="picture">
+                    <div v-for="({caption, picture}, imageIndex) in uploads" :key="imageIndex" class="column is-one-quarter">
+                        <div class="picture" @click="setIndex(imageIndex)">
                             <div class="picture__inner">
                                 <div class="picture-center has-text-centered">
                                     <img v-bind:src="`storage${picture}`"  alt="">
@@ -17,20 +26,6 @@
                     </div>
                 </div>
             </div>
-            <div class="modal">
-                <div class="modal-background"></div>
-                    <div class="modal-content">
-                        <swiper class="swiper" :options="swiperOption">
-                            <swiper-slide v-for="({caption, picture}, index) in uploads" :key="index" class="column is-one-quarter">
-                                <img :data-src="`/storage/${picture}`" class="swiper-lazy">
-                                <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
-                            </swiper-slide>
-                            <div class="swiper-pagination" slot="pagination"></div>
-                            <div class="swiper-button-next swiper-button-white" slot="button-next"></div>
-                            <div class="swiper-button-prev swiper-button-white" slot="button-prev"></div>
-                        </swiper>
-                    </div>
-            </div>
         </div>
     </div>
 </template>
@@ -38,9 +33,8 @@
 
 <script>
 import axios from 'axios';
-
-import { Swiper, SwiperSlide, directive } from 'vue-awesome-swiper'
-import 'swiper/css/swiper.css'
+import CoolLightBox from 'vue-cool-lightbox'
+import 'vue-cool-lightbox/dist/vue-cool-lightbox.min.css'
 
 const getUploads = (callback) => {
 
@@ -55,32 +49,20 @@ const getUploads = (callback) => {
 
 export default {
     components: {
-        Swiper,
-        SwiperSlide
+        CoolLightBox
     },
     directives: {
-        swiper: directive
     },
     data() {
         return {
             uploads: null,
+            items: null,
             error: null,
-            swiperOption: {
-                lazy: true,
-                pagination: {
-                    el: '.swiper-pagination',
-                    clickable: true
-                },
-                navigation: {
-                    nextEl: '.swiper-button-next',
-                    prevEl: '.swiper-button-prev'
-                }
-            }
+            index: null,
         };
     },
     mounted () {
         getUploads((err, data) => {
-            console.log(data)
             this.setData(err, data);
         });
     },
@@ -90,9 +72,29 @@ export default {
                 this.error = err.toString();
             } else {
                 this.uploads = uploads;
+                this.populateSwiper(uploads)
             }
 
         },
+
+        populateSwiper(uploads) {
+            const items = [];
+
+            uploads.map(function(picture){
+                console.log(picture.picture)
+                items.push('storage' + picture.picture )                
+                items.push('storage' + picture.picture )                
+                items.push('storage' + picture.picture )                
+                items.push('storage' + picture.picture )                
+            })
+
+            this.items = items
+        },
+
+        setIndex(index) {
+            this.index = index
+        }
+
 
 
     }
