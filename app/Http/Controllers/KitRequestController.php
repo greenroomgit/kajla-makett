@@ -23,7 +23,7 @@ class KitRequestController extends Controller
 
         $data['token'] = bin2hex(random_bytes(50));
         $kitRequest = KitRequests::create($data);
-        $url = \App::make('url')->to('/verify-request?'.$data['token']);
+        $url = \App::make('url')->to('/verify-request?token='.$data['token']);
 
         $beautymail = app()->make(\Snowfire\Beautymail\Beautymail::class);
         $beautymail->send('emails.verify', ['url' => $url], function ($message) use ($kitRequest){
