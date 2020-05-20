@@ -13,13 +13,19 @@ class PhotoUploadsController extends Controller
 {
     public function upload(Request $request)
     {
-        $data = $request->validate([
-            'picture'   => ['required', 'image'],
+        $rules = [
+            'picture'   => ['required', 'image', 'max:2048'],
             'name'     => ['required', 'string'],
             'caption'     => ['required', 'string'],
             'email'    => ['required', 'email'],
             'terms'    => ['required'],
-        ]);
+        ];
+
+        $customMessages = [
+            "picture.max" => "A maximális megengedett képméret: 2MB."
+        ];
+
+        $data =  $this->validate($request, $rules, $customMessages);
 
         $file = $request->file('picture');
         
