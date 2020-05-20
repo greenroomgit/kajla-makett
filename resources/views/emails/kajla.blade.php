@@ -30,7 +30,7 @@
                             <table class="w640" border="0" cellpadding="0" cellspacing="0" width="640">
                                 <tr class="mobile_only">
                                     <td class="w560" width="560" valign="top" align="center">
-                                        <img class="mobile_only mobile-logo" border="0" src="{{ App::make('url')->to('/assets/images/mtu_kajla-3d_kihivas_kv_v5.jpg') }}" alt="{{ isset($senderName) ? $senderName : '' }}" width="100%" height="{{ isset($logo) ? array_key_exists('height', $logo) ? $logo['height'] : '' : '' }}" />
+                                        <img class="mobile_only mobile-logo" border="0" src="{{ $message->embed(app_path() . '/../public/assets/images/mtu_kajla-3d_kihivas_kv_v5.jpg') }}" alt="{{ isset($senderName) ? $senderName : '' }}" width="100%" height="{{ isset($logo) ? array_key_exists('height', $logo) ? $logo['height'] : '' : '' }}" />
                                     </td>
                                 </tr>
                             </table>
@@ -47,7 +47,7 @@
 							<table class="w640" border="0" cellpadding="0" cellspacing="0" width="640">
 								<tr>
 									<td id="logo" width="{{ array_key_exists('width', $logo) ? $logo['width'] : '' }}" valign="top" align="center">
-										<img border="0" src="{{ App::make('url')->to('/assets/images/mtu_kajla-3d_kihivas_kv_v5.jpg') }}" alt="{{ isset($senderName) ? $senderName : ''}}" width="100%" />
+										<img border="0" src="{{ $message->embed(app_path() . '/../public/assets/images/mtu_kajla-3d_kihivas_kv_v5.jpg') }}" alt="{{ isset($senderName) ? $senderName : '' }}" width="100%" height="{{ isset($logo) ? array_key_exists('height', $logo) ? $logo['height'] : '' : '' }}">
 									</td>
 								</tr>
 							</table>

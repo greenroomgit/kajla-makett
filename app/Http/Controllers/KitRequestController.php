@@ -10,7 +10,7 @@ class KitRequestController extends Controller
 {
     public function create(Request $request)
     {
-        $data = $request->validate([
+        $rules = [
             'name'     => ['required', 'string'],
             'email'    => ['required', 'email', 'unique:App\KitRequests,email'],
             'city'    => ['required', 'string'],
@@ -19,14 +19,21 @@ class KitRequestController extends Controller
               'required',
               'postal_code:HU',
             ],
-        ]);
+        ];
+
+        $customMessages = [
+            "email.unique" => "Ezzel az e-mail címmel már igényeltél makett csomagot."
+        ];
+
+        $data =  $this->validate($request, $rules, $customMessages);
+
 
         $data['token'] = bin2hex(random_bytes(50));
         $kitRequest = KitRequests::create($data);
         $url = \App::make('url')->to('/verify-request?token='.$data['token']);
 
         $beautymail = app()->make(\Snowfire\Beautymail\Beautymail::class);
-        $beautymail->send('emails.verify', ['url' => $url], function ($message) use ($kitRequest){
+        $beautymail->send('emails.verify', ['url' => $url], function ($message) use ($kitRequest) {
             $message
             ->from('donotreply@kajla.hu')
             ->to($kitRequest->email)
@@ -43,7 +50,6 @@ class KitRequestController extends Controller
         $req = KitRequests::where('token', '=', $token)->first();
 
         if ($req) {
-
             $req->verified_at = new \DateTime;
             $req->save();
             // $beautymail = app()->make(\Snowfire\Beautymail\Beautymail::class);
@@ -52,15 +58,12 @@ class KitRequestController extends Controller
             //     ->from('donotreply@kajla.hu')
             //     ->to($req->email)
             //     ->subject('Köszönjük az igénylést!');
-            // });            
+            // });
             return response()->json([], Response::HTTP_OK);
-
-            } else {
+        } else {
             return response()->json(['error' => 'Hibás érvényesítő link'], 403);
         }
         dump($req);
         exit;
-
-        
     }
 }

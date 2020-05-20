@@ -13,7 +13,7 @@
 
             <div class="picture-wrapper">
                 <div class="columns is-multiline">
-                    <div v-for="({caption, picture, thumb}, imageIndex) in uploads" :key="imageIndex" class="column is-one-quarter">
+                    <div v-for="({caption, picture, thumb, name}, imageIndex) in uploads" :key="imageIndex" class="column is-one-quarter">
                         <div class="picture" @click="setIndex(imageIndex)">
                             <div class="picture__inner">
                                 <div class="picture-center has-text-centered">
@@ -21,7 +21,7 @@
                                 </div>
                             </div>
                         </div>
-                        <p>{{ caption }}</p>    
+                        <p>{{ name }}</p>    
                     </div>
                 </div>
             </div>
