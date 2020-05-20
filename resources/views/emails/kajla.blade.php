@@ -19,18 +19,12 @@
 					<tr class="large_only">
 						<td class="w640" height="20" width="640"></td>
 					</tr>
-					<tr class="mobile_only">
-						<td class="w640" height="10" width="640"></td>
-					</tr>
-					<tr class="mobile_only">
-						<td class="w640" height="10" width="640"></td>
-					</tr>
                     <tr class="mobile_only">
                         <td class="w640" align="center" width="640">
                             <table class="w640" border="0" cellpadding="0" cellspacing="0" width="640">
                                 <tr class="mobile_only">
                                     <td class="w560" width="560" valign="top" align="center">
-                                        <img class="mobile_only mobile-logo" border="0" src="{{ $message->embed(app_path() . '/../public/assets/images/mtu_kajla-3d_kihivas_kv_v5.jpg') }}" alt="{{ isset($senderName) ? $senderName : '' }}" width="100%" height="{{ isset($logo) ? array_key_exists('height', $logo) ? $logo['height'] : '' : '' }}" />
+                                        <img class="mobile_only " border="0" src="{{ $message->embed(app_path() . '/../public/assets/images/mtu_kajla-3d_kihivas_kv_v5.jpg') }}" alt="{{ isset($senderName) ? $senderName : '' }}" width="560" style="width: 100%;max-width: 560px;height: auto;" />
                                     </td>
                                 </tr>
                             </table>
@@ -40,14 +34,11 @@
 						<td class="w640"  height="20" width="640"></td>
 					</tr>
 					<tr>
-						<td class="w640" width="640" colspan="3" height="20"></td>
-					</tr>
-					<tr>
 						<td id="header" class="w640" align="center" width="640">
 							<table class="w640" border="0" cellpadding="0" cellspacing="0" width="640">
 								<tr>
 									<td id="logo" width="{{ array_key_exists('width', $logo) ? $logo['width'] : '' }}" valign="top" align="center">
-										<img border="0" src="{{ $message->embed(app_path() . '/../public/assets/images/mtu_kajla-3d_kihivas_kv_v5.jpg') }}" alt="{{ isset($senderName) ? $senderName : '' }}" width="100%" height="{{ isset($logo) ? array_key_exists('height', $logo) ? $logo['height'] : '' : '' }}">
+										<img border="0" src="{{ $message->embed(app_path() . '/../public/assets/images/mtu_kajla-3d_kihivas_kv_v5.jpg') }}" alt="{{ isset($senderName) ? $senderName : '' }}" width="640" style="width: 100%;max-width: 640px;height: auto;">
 									</td>
 								</tr>
 							</table>
