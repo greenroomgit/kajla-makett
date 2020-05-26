@@ -102,7 +102,7 @@
         formData: {
           name: null,
           email: null,
-          terms: true,
+          terms: false,
           caption: null,
         },
         picture: null,
