@@ -16,12 +16,12 @@
                     <div v-for="({caption, picture, thumb, name}, imageIndex) in uploads" :key="imageIndex" class="column is-one-quarter">
                         <div class="picture" @click="setIndex(imageIndex)">
                             <div class="picture__inner">
-                                <div class="picture-center has-text-centered">
+                                <div class=" has-text-centered">
                                     <img v-bind:src="`storage${thumb}`"  alt="">
                                 </div>
                             </div>
                         </div>
-                        <p>{{ name }}</p>    
+                        <p>{{ caption }}</p>    
                     </div>
                 </div>
             </div>

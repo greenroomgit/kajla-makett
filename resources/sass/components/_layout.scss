@@ -70,6 +70,7 @@ $container-width: 1200px;
         border-radius: 0;
         background-color: transparent;
         position:relative;
+                transition: all 0.3s ease-in-out;
         @include from($tablet) {
             height: 100%;
         }
@@ -78,11 +79,23 @@ $container-width: 1200px;
         &__inner {
             background-color:$box-bg;
             padding: 0;
-            background-image: svg('step-circle-bg.svg');
-            background-position: top center;
-            background-repeat: no-repeat;
-            background-size: contain;
-
+            &:after {
+                background-image: svg('step-circle-bg.svg');
+                background-position: top center;
+                background-repeat: no-repeat;
+                background-size: contain;
+                transition: all 0.3s ease-in-out;
+                width: 80%;
+                padding-bottom: 100%;
+                content: "";
+                z-index: 0;
+                display: block;
+                position: absolute;
+                left: 50%;
+                top: 5%;
+                transform: translateX(-50%);
+                z-index: 1;
+            } 
             @include mobile{
                 background-size: 80%;
             }
@@ -95,6 +108,9 @@ $container-width: 1200px;
         }
     }
     .media-center {
+        position: relative;
+        z-index: 2;
+                transition: all 0.3s ease-in-out;
         @include from($tablet) {
             margin-bottom: 3rem;
         }
@@ -107,6 +123,16 @@ $container-width: 1200px;
 
     .button {
         margin-top: 1rem;
+    }
+
+    .box:hover .box__inner:after {
+        transform: translateX(-50%) scale(0.95);
+    }
+    .box:hover .media-center {
+        transform: scale(1.1);
+    }
+    .box:hover {
+        transform: translateY(-5px);
     }
 }
 
@@ -233,25 +259,28 @@ $container-width: 1200px;
         border-image-width: 30px;
         border-image-repeat:stretch;
         padding: 12px;
+        cursor: pointer;
+
         &__inner {
             overflow: hidden;
             position: relative;
             background-color: $video-bg;
             height: 170px;
-            .picture-center {
+            img {
                 width: 100%;
-                //display: flex;
-                //justify-content: center;
+                height: 100%;
+                object-fit: cover;
+                // //justify-content: center;
                 position: absolute;
-                //left: 0;
-                //top: 0;
-                //margin-left: -500px;
-                img {
-                    min-width: 160%;
-                    height: auto;
-                    display: block;
-                    margin: 0 auto;
-                }
+                left: 0;
+                top: 0;
+                // //margin-left: -500px;
+                // img {
+                //     min-width: 160%;
+                //     height: auto;
+                //     display: block;
+                //     margin: 0 auto;
+                // }
 
             }
             
@@ -276,7 +305,7 @@ $container-width: 1200px;
   border-image-source: url('/assets/images/kit-bg.png');
     border-image-slice: 38 fill;
     border-image-width: 14px;
-    border-image-repeat: stretch;
+    border-image-repeat: round;
     padding: 0.3rem;
     font-size: 1rem;
             display: flex;

@@ -78,7 +78,7 @@
       <div v-if="upload" class="modal-success yellow-box">
         <div class="yellow-box__inner">
           <img class="modal-success-icon" :src="'/assets/svg/success-icon.svg'" alt="">
-          <div class="modal-success-header">Az igénylésed megkaptuk, köszönjük!</div>
+          <div class="modal-success-header">A megadott e-mail címre küldtünk egy megerősítő e-mailt. <br>Kérünk, az igénylés véglegesítéséhez kattints a levélben lévő linkre!</div>
         </div>
       </div>
     </div>

@@ -64,16 +64,16 @@ $navbar-box-shadow-size: 0;
 
 
     a.navbar-item {
+        transition: all 0.2s ease-in-out;
         font-family: $font-header;
         font-size: $nav-size;
         color: $white;
         height: auto;
-
         text-shadow: shadow($blue-light, 2px);
-
         padding: 0.625em;
         margin: 0.5em;
-        &.router-link-exact-active {
+        &.router-link-exact-active, 
+        &.router-link-exact-active:hover, {
             color: $yellow;
             text-shadow: shadow($orange-dark, 2px);
         }
@@ -84,8 +84,8 @@ $navbar-box-shadow-size: 0;
         &:hover {
             color: $white;
             background-color: transparent;
-
-            text-shadow: shadow($blue-body, 2px);
+            text-shadow: shadow(darken($blue-light, 10%), 1px);
+            transform: translateY(1px);
         }
 
         &:focus {

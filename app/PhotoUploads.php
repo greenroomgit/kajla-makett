@@ -28,7 +28,7 @@ class PhotoUploads extends Model
         $beautymail->send('emails.published', [], function ($message) {
             $email = $this->attributes['email'];
             $message
-            ->from('donotreply@kajla.hu', 'Kajla Makett')
+            ->from('makett@kajla.hu', 'Kajla Makett')
             ->to($email)
             ->subject('Publikáltuk a fotót!');
         });

@@ -1,7 +1,9 @@
 <template>
     <div id="felhasznalasi-feltetelek" class="has-text-centered">
         <h1>{{ title }}</h1>
-<br id="3">
+<br>
+<br>
+<br>
             <router-link class="button is-primary" to="/">Tovább a nyitóoldalra</router-link>
 
     </div>
@@ -14,7 +16,7 @@ import axios from 'axios';
 export default {
       data() {
         return {
-            title: 'Köszönjük az igénylését!',
+            title: 'Sikeres igénylés. Várhatóan 7 munkanapon belül eljuttatjuk Neked a csomagot a Magyar Posta Zrt. segítségével.',
         };
     },
 

@@ -10,7 +10,7 @@
 
 <p>A makett csomag igénylés véglegesítéshez kérjük, kattints a lenti linkre:</p>
 
-  <p><a href="{{ $url }}">Ellenőrzés itt</a></p>
+  <p><a href="{{ $url }}">Makett csomag igénylés</a></p>
 
 
 <p>Üdvözlettel: <br>

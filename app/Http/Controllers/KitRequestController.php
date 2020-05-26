@@ -35,9 +35,9 @@ class KitRequestController extends Controller
         $beautymail = app()->make(\Snowfire\Beautymail\Beautymail::class);
         $beautymail->send('emails.verify', ['url' => $url], function ($message) use ($kitRequest) {
             $message
-            ->from('donotreply@kajla.hu', 'Kajla Makett')
+            ->from('makett@kajla.hu', 'Kajla Makett')
             ->to($kitRequest->email)
-            ->subject('Ellenőrzés');
+            ->subject('Igénylés véglegesítése');
         });
 
 

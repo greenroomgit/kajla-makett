@@ -42,8 +42,8 @@
             <input v-model="formData.terms" type="checkbox" class="form__checkbox" name="terms" value="1">
             <span class="form__checkmark"></span>
           </label>
-          <div class="form__input-error" v-if="errors.terms">{{errors.terms}}</div>
         </div>
+          <div class="form__input-error" v-if="errors.terms">{{errors.terms}}</div>
 
         <div class="form__input-container form__input-container--full-width form__input-container--horizontal-centered form__input-container--last-centered">
           <div class="col-md-6">
@@ -102,7 +102,7 @@
         formData: {
           name: null,
           email: null,
-          terms: true,
+          terms: false,
           caption: null,
         },
         picture: null,
@@ -181,7 +181,7 @@
         this.formData = {
           name: null,
           email: null,
-          terms: true,
+          terms: false,
           caption: null,
         }
         this.picture = null,
