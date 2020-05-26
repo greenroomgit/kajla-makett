@@ -86,3 +86,19 @@ h3 {
 .card p {
     font-family: $font-body;
 }
+
+.rich-text {
+    color: $white;
+    p {
+        margin-top: 0.5em;
+    }
+
+
+    h1,h2,h3 {
+        color: $white;
+    }
+
+    a {
+        text-decoration: underline;
+    }
+}

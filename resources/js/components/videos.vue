@@ -13,7 +13,7 @@
 
             <div class="video-wrapper">
                 <div class="columns">
-                    <div class="column is-9 first">
+                    <div class="column is-9 first" v-if="videos[0]">
                         <a class="video-item-button" @click="setIndex(0)">
                             <div class="video-item">
 

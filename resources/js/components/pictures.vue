@@ -1,27 +1,24 @@
 <template>
-   <div class="picture-box">
+    <div class="picture-box">
         <div class="picture-box__inner">
             <h3 class="title">Beküldött képek</h3>
-
-    <CoolLightBox 
-      :items="items" 
-      :index="index"
-      @close="index = null">
-    </CoolLightBox>
-
-
-
+    
+            <CoolLightBox :items="items" :index="index" @close="index = null">
+            </CoolLightBox>
+    
+    
+    
             <div class="picture-wrapper">
                 <div class="columns is-multiline">
                     <div v-for="({caption, picture, thumb, name}, imageIndex) in uploads" :key="imageIndex" class="column is-one-quarter">
                         <div class="picture" @click="setIndex(imageIndex)">
                             <div class="picture__inner">
                                 <div class=" has-text-centered">
-                                    <img v-bind:src="`storage${thumb}`"  alt="">
+                                    <img v-bind:src="`storage${thumb}`" alt="">
                                 </div>
                             </div>
                         </div>
-                        <p>{{ caption }}</p>    
+                        <p>{{ caption }}</p>
                     </div>
                 </div>
             </div>
@@ -38,7 +35,7 @@ import 'vue-cool-lightbox/dist/vue-cool-lightbox.min.css'
 const getUploads = (callback) => {
 
     axios
-        .get('/api/published-photos', {  })
+        .get('/api/published-photos', {})
         .then(response => {
             callback(null, response.data);
         }).catch(error => {
@@ -50,8 +47,7 @@ export default {
     components: {
         CoolLightBox
     },
-    directives: {
-    },
+    directives: {},
     data() {
         return {
             uploads: null,
@@ -60,7 +56,7 @@ export default {
             index: null,
         };
     },
-    mounted () {
+    mounted() {
         getUploads((err, data) => {
             this.setData(err, data);
         });
@@ -79,8 +75,8 @@ export default {
         populateLightbox(uploads) {
             const items = [];
 
-            uploads.map(function(picture){
-                items.push('storage' + picture.picture )                
+            uploads.map(function(picture) {
+                items.push('storage' + picture.picture)
             })
 
             this.items = items

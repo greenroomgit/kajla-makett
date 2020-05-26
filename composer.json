@@ -18,7 +18,8 @@
         "laravel/framework": "^7.0",
         "laravel/tinker": "^2.0",
         "orangehill/iseed": "^2.6",
-        "snowfire/beautymail": "dev-master"
+        "snowfire/beautymail": "dev-master",
+        "spatie/laravel-server-side-rendering": "^1.4"
     },
     "require-dev": {
         "facade/ignition": "^2.0",

@@ -443,3 +443,17 @@ $container-width: 1200px;
     }
 
 }
+
+.Cookie {
+    background: $blue-body;
+    color: $white;
+
+    a {
+        color: $white;
+        text-decoration: underline;
+    }
+    .Cookie__button {
+        @extend .button;
+        @extend .is-primary;
+    }
+}

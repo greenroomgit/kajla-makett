@@ -6,9 +6,8 @@
                 <div class="column">
                     <div class="info-horizontal has-text-centered">
                         <div class="info-horizontal__inner">
-                            <p>A feltöltött képeket egy gyors ellenőrzés után publikáljuk. Ha közzé tettük  a képedet, 
-                            akkor újabb makett csomaggal lepünk meg. A játék végén pedig egy zsűri fogja kiválasztani 
-                            a legjobb képeket, a beküldői pedig a külön díjban részesülnek.</p>
+                            <p>A feltöltött képeket egy gyors ellenőrzés után publikáljuk. Ha közzé tettük a képedet, akkor újabb makett csomaggal lepünk meg. A játék végén pedig egy zsűri fogja kiválasztani a legjobb képeket, a beküldői pedig a külön díjban
+                                részesülnek.</p>
                         </div>
                     </div>
                 </div>
@@ -30,55 +29,69 @@
         </div>
         <Videos />
         <Pictures />
-        <KitRequest :is-open="isKitRequestModalOpen" v-on:onClose="openKitRequestModal"/>
-        <PhotoUpload :is-open="isPhotoUploadModalOpen" v-on:onClose="openPhotoUploadModal"/>
+        <KitRequest :is-open="isKitRequestModalOpen" v-on:onClose="openKitRequestModal" />
+        <PhotoUpload :is-open="isPhotoUploadModalOpen" v-on:onClose="openPhotoUploadModal" />
     </div>
 </template>
 
 <script>
-    import store from '../../store.js';
+import store from '../../store.js';
 
-    import GuideSteps from '../guide-steps';
-    import KitRequest from '../kit-request';
-    import PhotoUpload from '../photo-upload';
-    import Videos from '../videos'
-    import Pictures from '../pictures'
-    import Jackpot from '../jackpot'
+import GuideSteps from '../guide-steps';
+import KitRequest from '../kit-request';
+import PhotoUpload from '../photo-upload';
+import Videos from '../videos'
+import Pictures from '../pictures'
+import Jackpot from '../jackpot'
 
-    export default {
-        name: 'homepage',
-        components: {
-            'GuideSteps': GuideSteps,
-            'KitRequest': KitRequest,
-            'PhotoUpload': PhotoUpload,
-            'Videos': Videos,
-            'Pictures': Pictures,
-            'Jackpot': Jackpot
-        },
-        data() {
-            return {
-                isKitRequestModalOpen: false,
-                isPhotoUploadModalOpen: false
-            }
-        },
-        computed: {
-            kitRequestModalIsVisible() {
-                return store.kitRequestModalIsVisible
-            },
-            photoUploadModalIsVisible() {
-                return store.photoUploadModalIsVisible
-            }
-        },
-        methods: {
-            openKitRequestModal() {
-                store.kitRequestModalIsVisible = !store.kitRequestModalIsVisible
-            },
-            openPhotoUploadModal() {
-                store.photoUploadModalIsVisible = !store.photoUploadModalIsVisible
-            }
+export default {
+    name: 'homepage',
+    components: {
+        'GuideSteps': GuideSteps,
+        'KitRequest': KitRequest,
+        'PhotoUpload': PhotoUpload,
+        'Videos': Videos,
+        'Pictures': Pictures,
+        'Jackpot': Jackpot
+    },
+    data() {
+        return {
+            isKitRequestModalOpen: false,
+            isPhotoUploadModalOpen: false
         }
+    },
+    computed: {
+        kitRequestModalIsVisible() {
+            return store.kitRequestModalIsVisible
+        },
+        photoUploadModalIsVisible() {
+            return store.photoUploadModalIsVisible
+        }
+    },
+    methods: {
+        openKitRequestModal() {
+            store.kitRequestModalIsVisible = !store.kitRequestModalIsVisible
+        },
+        openPhotoUploadModal() {
+            store.photoUploadModalIsVisible = !store.photoUploadModalIsVisible
+        }
+    },
+
+    head() {
+        return {
+            meta: [{
+                'og:title': 'this.item.title',
+                'og:description': 'this.item.type'
+            }]
+        }
+    },
+    metaInfo: {
+      // if no subcomponents specify a metaInfo.title, this title will be used
+      // all titles will be injected into this template
+      title: 'Játék'
     }
 
+}
 </script>
 
 

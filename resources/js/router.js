@@ -1,10 +1,11 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+import Meta from 'vue-meta'
 Vue.use(Router)
+Vue.use(Meta)
 
 //nav
 import Home from './components/pages/home'
-import Jatek from './components/pages/jatek'
 import BekuldottKepek from './components/pages/bekuldott-kepek'
 import MakettekLetoltese from './components/pages/makettek-letoltese'
 
