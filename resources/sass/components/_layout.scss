@@ -156,6 +156,34 @@ $container-width: 1200px;
     padding: 30px;
     //height: 704px;
 
+
+    .scroll-area {
+        @include from($tablet) {
+        position: relative;
+        margin: auto;
+        height: 480px;
+        padding-right: 1rem;
+        }
+
+        .ps__rail-y {
+            background: #41A3AB;
+            border-radius: 10px;
+            width: 10px;
+            background-size: contain;
+        }
+
+        .ps__thumb-y {
+            width: 10px;
+            right: 0;
+            background: #187B7D;
+        }
+         .ps__rail-y:hover>.ps__thumb-y {
+             width: 10px;
+            background: #187B7D;
+             right: 0;
+         }
+    }
+
     .title {
         color: $white;
         text-shadow: shadow($title-box-shadow, 2px);

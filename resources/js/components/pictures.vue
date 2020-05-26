@@ -55,7 +55,7 @@ export default {
     data() {
         return {
             uploads: null,
-            items: null,
+            items: [],
             error: null,
             index: null,
         };
@@ -71,12 +71,12 @@ export default {
                 this.error = err.toString();
             } else {
                 this.uploads = uploads;
-                this.populateSwiper(uploads)
+                this.populateLightbox(uploads)
             }
 
         },
 
-        populateSwiper(uploads) {
+        populateLightbox(uploads) {
             const items = [];
 
             uploads.map(function(picture){

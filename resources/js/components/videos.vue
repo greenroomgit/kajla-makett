@@ -1,12 +1,20 @@
 <template>
     <div class="video-box separator" v-if="videos">
+
+    <CoolLightBox 
+      :items="items" 
+      :index="index"
+      @close="index = null">
+    </CoolLightBox>
+
+
         <div class="video-box__inner">
             <h3 class="title">Kajla makett mesék</h3>
 
             <div class="video-wrapper">
                 <div class="columns">
                     <div class="column is-9 first">
-                        <a class="video-item-button" @click="open(`https://youtube.com/watch?v=${videos[0].youtube_id}`)">
+                        <a class="video-item-button" @click="setIndex(0)">
                             <div class="video-item">
 
                                 <div class="video-item__inner has-text-centered">
@@ -18,11 +26,14 @@
                         </a>
                     </div>
                     <div class="column">
+                        
+                        <vue-custom-scrollbar class="scroll-area"  :settings="scrollSettings">
+
 
           
 
-                        <a class="video-item-button" v-for="{ id, caption, youtube_id }, index in videos"
-                        v-if="index > '0'" @click="open(`https://youtube.com/watch?v=${youtube_id}`)">
+                        <a class="video-item-button" v-for="{ id, caption, youtube_id }, i in videos"
+                        v-if="i > '0'" @click="setIndex(i)">
                             <div class="video-item">
 
                                 <div class="video-item__inner has-text-centered">
@@ -36,6 +47,7 @@
                             </div>
                             <p>{{ caption }}</p>
                         </a>
+                        </vue-custom-scrollbar>
                     </div>
                 </div>
             </div>
@@ -47,6 +59,9 @@
 
 <script>
 import axios from 'axios';
+import vueCustomScrollbar from 'vue-custom-scrollbar'
+import CoolLightBox from 'vue-cool-lightbox'
+import 'vue-cool-lightbox/dist/vue-cool-lightbox.min.css'
 
 const getVideos = (callback) => {
 
@@ -60,11 +75,20 @@ const getVideos = (callback) => {
 };
 
 export default {
+    components: {
+        vueCustomScrollbar,
+        CoolLightBox
+    },
     data() {
         return {
-            videos: null,
+            videos: [],
+            items: [],
             meta: null,
             error: null,
+            index: null,
+            scrollSettings: {
+                maxScrollbarLength: 60
+            }
         };
     },
     mounted () {
@@ -79,15 +103,38 @@ export default {
                 this.error = err.toString();
             } else {
                 this.videos = videos;
+                this.populateLightbox(videos)
+
             }
 
-            console.log(videos.length)
         },
 
-      open: function (url) {   
-          window.open(url, "_blank");    
-      }
+        populateLightbox(videos) {
+            const items = [];
+
+            videos.map(function(video){
+                items.push({
+                   src: "https://www.youtube.com/watch?v=" + video.youtube_id,
+                   title: video.caption,
+                })                
+            })
+
+            this.items = items
+        },
+
+
+        open: function (url) {   
+            window.open(url, "_blank");    
+        },
+
+        setIndex(index) {
+            this.index = index
+        }
 
     }
 }
 </script>
+
+
+<style >
+</style>
