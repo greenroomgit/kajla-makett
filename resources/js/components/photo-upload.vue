@@ -37,13 +37,13 @@
             <input v-model="formData.caption" id="modalImageTitleInput" type="text" class="form__input form__input--full-width form__input--long-bg" name="caption" required autocomplete autofocus>
           </div>
         </div>
-        <div class="form__input-container form__input-container--full-width form__input-container--desktop-only">
+        <div class="form__input-container form__input-container--full-width ">
           <label class="form__label form__label--checkbox">Megismertem, és elfogadom a jatékszabályzatot és az adatkezelési tájékoztatót
             <input v-model="formData.terms" type="checkbox" class="form__checkbox" name="terms" value="1">
             <span class="form__checkmark"></span>
           </label>
-        </div>
           <div class="form__input-error" v-if="errors.terms">{{errors.terms}}</div>
+        </div>
 
         <div class="form__input-container form__input-container--full-width form__input-container--horizontal-centered form__input-container--last-centered">
           <div class="col-md-6">
@@ -102,7 +102,7 @@
         formData: {
           name: null,
           email: null,
-          terms: false,
+          terms: true,
           caption: null,
         },
         picture: null,
@@ -181,7 +181,7 @@
         this.formData = {
           name: null,
           email: null,
-          terms: false,
+          terms: true,
           caption: null,
         }
         this.picture = null,
