@@ -373,6 +373,9 @@ $container-width: 1200px;
     border-image-repeat: stretch;
     padding: 1.5rem;
     margin-top: 5%;
+            @include mobile {
+                overflow: hidden;
+            }
 
     &__inner {
         background-color:$box-bg;
