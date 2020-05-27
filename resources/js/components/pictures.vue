@@ -22,6 +22,9 @@
                     </div>
                 </div>
             </div>
+            <div class=" has-text-centered">
+                <a v-bind:class="[isFinished ? 'finish' : 'load-more', 'button', 'is-primary']" @click='getUploads()' v-cloak>{{ buttonText }}</a>
+            </div>
         </div>
     </div>
 </template>
@@ -32,16 +35,7 @@ import axios from 'axios';
 import CoolLightBox from 'vue-cool-lightbox'
 import 'vue-cool-lightbox/dist/vue-cool-lightbox.min.css'
 
-const getUploads = (callback) => {
 
-    axios
-        .get('/api/published-photos', {})
-        .then(response => {
-            callback(null, response.data);
-        }).catch(error => {
-            callback(error, error.response.data);
-        });
-};
 
 export default {
     components: {
@@ -50,24 +44,71 @@ export default {
     directives: {},
     data() {
         return {
-            uploads: null,
+            uploads: [],
             items: [],
             error: null,
             index: null,
+            isFinished: false,
+            row: 0, // Record selction position
+            rowperpage: 2, // Number of records fetch at a time
+            buttonText: 'További képek',
+
         };
     },
     mounted() {
-        getUploads((err, data) => {
-            this.setData(err, data);
-        });
+        this.getUploads();
     },
     methods: {
+
+        getUploads(callback) {
+
+            axios
+                .get('/api/published-photos', {
+                    params: {
+                        'row': this.row,
+                        'rowperpage': this.rowperpage
+                    }
+                })
+                .then(response => {
+                    this.setData(null, response.data);
+                }).catch(error => {
+                    this.setData(error, error.response.data);
+                });
+
+        },
+
+
         setData(err, uploads) {
+
             if (err) {
                 this.error = err.toString();
             } else {
-                this.uploads = uploads;
-                this.populateLightbox(uploads)
+
+                if (uploads != '') {
+
+                    // Update rowperpage
+                    this.row += this.rowperpage;
+
+                    var len = this.uploads.length;
+                    if (len > 0) {
+                        this.buttonText = "Betöltés ...";
+                        this.buttonText = "További képek";
+
+                        // Loop on data and push in posts
+                        for (let i = 0; i < uploads.length; i++) {
+                            console.log(this.uploads)
+                            this.uploads.push(uploads[i]);
+                        }
+                    } else {
+                        this.uploads = uploads;
+                    }
+
+                } else {
+                    this.buttonText = "Nincs több kép";
+                    this.isFinished = true;
+                }
+
+               this.populateLightbox(this.uploads)
             }
 
         },

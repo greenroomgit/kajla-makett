@@ -60,6 +60,8 @@ class PhotoUploadsController extends Controller
     }
     public function published(Request $request)
     {
-        return response(PhotoUploads::where('published', '=', 1)->orderBy('created_at', 'DESC')->get(['id', 'caption', 'picture', 'thumb', 'name'])->jsonSerialize(), Response::HTTP_OK);
+        $row = $request->input('row');
+        $rowperpage = $request->input('rowperpage');
+        return response(PhotoUploads::where('published', '=', 1)->skip($rowperpage * $row)->take($rowperpage)->orderBy('created_at', 'DESC')->get(['id', 'caption', 'picture', 'thumb', 'name'])->jsonSerialize(), Response::HTTP_OK);
     }
 }

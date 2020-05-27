@@ -27,10 +27,14 @@
         &:hover {
             background-color: transparent;
             border-image: url('/assets/images/button-hover-bg.png');
-            border-image-slice: 40 fill;
+            border-image-slice: 38 fill;
             border-image-width: 14px;
             border-image-repeat: stretch;
-            transform: scale(1.02);
+            padding: 8px 20px;
+
+        @include from($tablet) {
+            padding: 5px 30px;
+        }
 
         }
     }

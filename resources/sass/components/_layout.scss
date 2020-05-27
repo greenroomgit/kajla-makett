@@ -199,7 +199,8 @@ $container-width: 1200px;
             color: $blue-body;
         }
         p {
-            padding: $size *2 0;
+            padding: $size  0;
+            line-height: 1.2;
         }
         .video-item-button {
             display: block;
