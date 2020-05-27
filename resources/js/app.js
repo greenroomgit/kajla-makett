@@ -1,9 +1,10 @@
-window.Vue = require('vue')
-import router from './router'
+import Vue from 'vue';
+import router from './router';
+import App from './components/mainapp';
 
-Vue.component('mainapp', require('./components/mainapp.vue').default)
+export default new Vue({
 
-const app = new Vue({
-    el: '#app',
-    router
-})
+    router,
+
+    render: h => h(App),
+});
