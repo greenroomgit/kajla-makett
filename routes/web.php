@@ -17,6 +17,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::any('{slug}', function(){
-	return view('welcome');
+Route::any('{slug}', function () {
+    return view('welcome');
 });
+
+Route::get('photo/{id}', 'PhotoUploadsController@single', [])->name('photo.show');

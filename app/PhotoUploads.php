@@ -25,7 +25,7 @@ class PhotoUploads extends Model
         $this->attributes['published'] = true;
 
         $beautymail = app()->make(\Snowfire\Beautymail\Beautymail::class);
-        $beautymail->send('emails.published', [], function ($message) {
+        $beautymail->send('emails.published', ['id' => $this['id']], function ($message) {
             $email = $this->attributes['email'];
             $message
             ->from('makett@kajla.hu', 'Kajla Makett')

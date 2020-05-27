@@ -64,4 +64,8 @@ class PhotoUploadsController extends Controller
         $rowperpage = $request->input('rowperpage');
         return response(PhotoUploads::where('published', '=', 1)->skip($rowperpage * $row)->take($rowperpage)->orderBy('created_at', 'DESC')->get(['id', 'caption', 'picture', 'thumb', 'name'])->jsonSerialize(), Response::HTTP_OK);
     }
+    public function single($id)
+    {
+        return view('photo', ['image' => PhotoUploads::where(['id' => $id], ['published' => 1])->firstOrFail()]);
+    }
 }
