@@ -10,6 +10,12 @@
  * Licensed under MIT
  */
 
+/*!
+ * vue-cookie-law v1.13.3
+ * (c) 2020 Jakub Juszczak <jakub@posteo.de>
+ * 
+ */
+
 /**
  * @license
  * Lodash <https://lodash.com/>
