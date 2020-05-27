@@ -32,7 +32,7 @@
     }
   }
 
-  #makett-fotok & {
+  #makett-fotok > & {
     margin-top: -3rem; 
     @include from($tablet) {
       margin-top: -7rem; 

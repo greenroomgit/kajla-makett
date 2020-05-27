@@ -100,6 +100,11 @@
       @include from($tablet) {
           max-height: 360px;
       }
+      @include mobile {
+    &:before {
+      display: none;
+    }
+      }
 
       .hero__family {
         position: absolute;
