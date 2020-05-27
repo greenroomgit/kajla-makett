@@ -150,6 +150,11 @@
 
 }
 
+input, select {
+      -webkit-appearance: none !important;
+      -moz-appearance: none !important;
+      appearance: none !important;
+}
 
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
