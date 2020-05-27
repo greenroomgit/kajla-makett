@@ -69,13 +69,32 @@ $navbar-box-shadow-size: 0;
         font-size: $nav-size;
         color: $white;
         height: auto;
-        text-shadow: shadow($blue-light, 2px);
+        text-shadow: shadow(#97BFC1, 3px);
         padding: 0.625em;
         margin: 0.5em;
         &.router-link-exact-active, 
         &.router-link-exact-active:hover, {
-            color: $yellow;
-            text-shadow: shadow($orange-dark, 2px);
+            color: $white;
+        text-shadow: shadow(#97BFC1, 3px);
+
+                    @include from($desktop) {
+                        display: flex;
+                        justify-content: space-evenly;
+                        background: transparent;
+
+                                    &:after {
+                                        position: absolute;
+                                        content: '';
+                                        width: 100%;
+                                        height: 3px;
+                                        background: #97BFC1;
+                                        bottom: 0;
+                                        left: 0;
+                                        transform: rotate(2deg);
+                                    }
+
+                    }
+
         }
         img {
             max-height: 100%;
@@ -106,13 +125,13 @@ $navbar-box-shadow-size: 0;
 .navbar-start {
     flex: 50% 0 0;
     justify-content: flex-end;
-    margin-right: 7vw;
+    padding-right: 7vw;
 }
 
 .navbar-end {
     flex: 50% 0 0;
     justify-content: flex-start;
-    margin-left: 7vw;
+    padding-left: 7vw;
 }
 
 .navbar-menu {

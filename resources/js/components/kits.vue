@@ -31,8 +31,19 @@
         <br>
         <br>
         <br>
-        <div class="columns is-centered">
-        <img src="/assets/svg/howto.svg" alt="">
+        <div class="">
+
+            <div class="yellow-box kit-guide">
+                <div class="yellow-box__inner">
+                    <h3 class="title is-size-4 is-size-1-tablet">
+                        Így tudod összeállítani a maketteket
+                    </h3>
+
+                    <p>Miután kinyomtattad a makettet, akkor a fekete segítségével vágd ki, majd a piros vonal mentén hajtogasd össze.</p>
+        <img src="/assets/images/makett-plain.png" alt="">
+
+                </div>
+            </div>
 
         </div>
 

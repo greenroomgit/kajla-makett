@@ -1,7 +1,7 @@
 .section-hero {
     height: 350px;
     padding-bottom: 0;
-    background-color: #165B33;
+    background-color: #EBE9EE;
     background-image: image("hero.jpg");
     background-size: cover;
     background-repeat: no-repeat;
@@ -14,7 +14,7 @@
       position: static;
     }
 
-    @include from(470px) {
+    @include from(800px) {
       background-position: 50% 50%;
     }
 
@@ -33,12 +33,11 @@
         position: absolute;
         top: 0;
         left: 0;
-        background: linear-gradient(#165B33 50%, rgba(#165B33, 0));
+        background: linear-gradient(#B3CDD0 50%, rgba(#B3CDD0, 0));
 
         @include from($tablet) {
-            height: 30vw;
-            background: linear-gradient(#165B33, rgba(#165B33, 0));
-            height: 70px;
+            background: linear-gradient(#B3CDD0, rgba(#B3CDD0, 0));
+            height: 100px;
         }
 
     }
@@ -62,13 +61,22 @@
 
     &.hero--home {
         background-image: image("main-hero.jpg");
+            @include mobile {
+              height: 100vw;
+            }
+
+                        @include from($tablet) {
+                            // background-size: 140% auto;
+                        }
+
 
         h1 {
-            margin-top: 8vw;
+          color: #97BFC1;
+            margin-top: 10vw;
             display: block;
             text-align: center;
             line-height: 60px;
-            text-shadow: shadow($blue-light, 0.1em);
+            text-shadow: shadow(#C8EAEE, 0.1em);
             line-height: 1;
             position: relative;
             z-index: 2;

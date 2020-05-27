@@ -42,4 +42,23 @@
   .button {
     margin: 0.3em 0.1em;
   }
+
+  &.kit-guide {
+          p {
+              color: $brown;
+              margin-top: 1em;
+              font-size: 18px;
+          }
+
+          img {
+            margin-top: 3rem;
+          }
+          .yellow-box__inner {
+            padding: 0;
+                @include from($tablet) {
+            padding: 1rem;
+                }
+
+          }
+  }
 }
