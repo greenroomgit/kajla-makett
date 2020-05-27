@@ -29,7 +29,11 @@ class PhotoUploadsController extends AdminController
         $grid = new Grid(new PhotoUploads());
 
         $grid->column('id', __('Id'));
-        $grid->column('picture', __('Picture'))->image();
+        $grid->column('thumb', __('Picture'))->image()->modal(null, function ($model) {
+            return '<img src="/storage/'  . $model['picture'] . '" width="100%"/>';
+        });
+
+
         $grid->column('name', __('Name'));
         $grid->column('caption', __('Caption'));
         $grid->column('email', __('Email'));
