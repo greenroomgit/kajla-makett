@@ -70,7 +70,7 @@ const getVideos = (callback) => {
         .then(response => {
             callback(null, response.data);
         }).catch(error => {
-            callback(error, error.response.data);
+            callback(error);
         });
 };
 
@@ -104,9 +104,10 @@ export default {
             } else {
                 this.videos = videos;
                 this.populateLightbox(videos)
-
             }
-
+            setTimeout(function () {
+                document.querySelectorAll('.scroll-area')[0].scrollTop = 1;
+            }, 100)
         },
 
         populateLightbox(videos) {

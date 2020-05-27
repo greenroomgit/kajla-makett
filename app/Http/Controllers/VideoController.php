@@ -10,6 +10,6 @@ class VideoController extends Controller
 {
     public function index()
     {
-        return response(Videos::orderBy('created_at', 'DESC')->take(4)->get()->jsonSerialize(), Response::HTTP_OK);
+        return response(Videos::orderBy('created_at', 'DESC')->get()->jsonSerialize(), Response::HTTP_OK);
     }
 }

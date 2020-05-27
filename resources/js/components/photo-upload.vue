@@ -62,7 +62,7 @@
     
                     <div class="form__input-container form__input-container--full-width form__input-container--horizontal-centered form__input-container--bottom-offset">
                         <div class="col-md-6 offset-md-4 column">
-                            <button @click.prevent="submit" type="submit" class="btn button is-secondary upload">
+                            <button @click.prevent="submit" type="submit" class="btn button is-secondary upload" :disabled="isLoading">
                       Feltöltés
                     </button>
                         </div>
@@ -105,6 +105,7 @@ export default {
             showForm: true,
             upload: null,
             errors: {},
+            isLoading: false,
         }
     },
     methods: {
@@ -116,7 +117,7 @@ export default {
             if (isFromOk) {
                 let formData = new FormData()
                 formData.append('picture', this.picture)
-
+                this.isLoading = true;
                 _.each(this.formData, (value, key) => {
                     formData.append(key, value)
                 })
@@ -127,6 +128,7 @@ export default {
                 }).then(response => {
                     this.showForm = false
                     this.upload = response.data.data
+                    this.isLoading = false;
                 }).catch(err => {
                     if (err.response.status === 422) {
                         this.errors = {}
@@ -136,6 +138,7 @@ export default {
                         }
 
                     }
+                        this.isLoading = false;
                 });
             } else {
                 return;
