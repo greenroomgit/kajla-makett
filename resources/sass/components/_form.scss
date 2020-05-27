@@ -162,4 +162,5 @@ select:-webkit-autofill:hover,
 select:-webkit-autofill:focus {
     transition: background-color 5000s ease-in-out 0s;
     color: rgba(255, 255, 255, 1) !important;
+    box-shadow: none !important;
 }
