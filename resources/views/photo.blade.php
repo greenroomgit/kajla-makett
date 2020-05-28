@@ -67,7 +67,7 @@
                                         </div>
                                     </div>
                                     <p>{{ $image['caption'] }}</p>
-                        <div class=" has-text-centered"><a class="load-more button is-primary" href="/">Tovább</a></div>
+                        <div class=" has-text-centered"><a class="load-more button is-primary" href="/">Tovább a főoldalra</a></div>
                     </div>
                 </div>
             </div>
