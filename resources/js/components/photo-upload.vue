@@ -50,7 +50,8 @@
                                 <!-- MOST IMPORTANT - SEE "ref" AND "@change" PROPERTIES -->
                                 <input type="file" class="custom-file-input form__input--hidden" id="customFile" ref="file" @change="handleFileObject()">
                                 <label class="form__input-button-container custom-file-label text-left" for="customFile">
-                        <img class="form__input-button" src="/assets/svg/button-primary-picture.svg"/>
+                                                <span class="button is-primary form__input-button">Kép kiválasztása</span>
+
                         <div class="form__image-preview-container" v-if="picture">
                           <img :src="pictureUrl" class="form__image-preview">
                         </div>
