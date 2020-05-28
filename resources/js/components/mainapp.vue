@@ -10,12 +10,12 @@
         <div class="container container--main">
             <router-view></router-view>
         </div>
-    
+        <Cookie :is-open="isCookieModalOpen" v-on:onClose="openCookieModal"/>
         <Footer />
         <cookie-law buttonText="Elfogadom">
             <div slot="message">
                 Ez a honlap sütiket használ. A sütik elfogadásával kényelmesebbé teheti a böngészést. A honlap további használatával hozzájárulását adja a sütik használatához.
-                <router-link to="/suti-kezeles">További információ</router-link>
+                <a @click.prevent="openCookieModal">További információ</a>
             </div>
     
         </cookie-law>
@@ -24,9 +24,11 @@
 </template>
 
 <script>
+import store from '../store'
 import Hero from './hero'
 import Footer from './footer'
 import Navigation from './navigation'
+import Cookie from './cookie'
 import CookieLaw from 'vue-cookie-law'
 
 export default {
@@ -35,8 +37,21 @@ export default {
         'Hero': Hero,
         'Footer': Footer,
         'Navigation': Navigation,
-        "CookieLaw": CookieLaw
+        "CookieLaw": CookieLaw,
+        "Cookie": Cookie
     },
+    data() {
+        return {
+            isCookieModalOpen: false,
+        }
+    },
+
+    methods: {
+        openCookieModal() {
+            store.CookieModalIsVisible = !store.CookieModalIsVisible
+        }
+    },
+
     metaInfo: {
       // if no subcomponents specify a metaInfo.title, this title will be used
       // all titles will be injected into this template

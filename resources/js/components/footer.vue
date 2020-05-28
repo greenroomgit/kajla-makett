@@ -6,9 +6,29 @@
             <span></span>
             <router-link to="/adatkezelesi-nyilatkozat">Adatkezelési nyilatkozat </router-link>
             <span></span>
-            <router-link to="/suti-kezeles">Süti kezelés</router-link>
+            <a @click.prevent="openCookieModal">Süti kezelés</a>
             <span></span>
             <router-link to="/impresszum">Impresszum</router-link>
         </div>
     </footer>
 </template>
+
+<script>
+import store from '../store'
+
+export default {
+    data() {
+        return {
+            isCookieModalOpen: false,
+        }
+    },
+
+    methods: {
+        openCookieModal() {
+            store.CookieModalIsVisible = !store.CookieModalIsVisible
+        }
+    },
+
+
+}
+</script>
