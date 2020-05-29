@@ -9,6 +9,9 @@
                     Építsd fel kajlával Magyarország<br>
                     nevezettességeit és nyerj!
                 </h1>
+                <p>
+                    <span>Játék érvényessége:</span> <span>2020.06.10 – 2020.07.10</span>
+                </p>
             </div>
 
                     <div class="hero__family hero__family--left"></div>

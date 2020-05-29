@@ -9,17 +9,18 @@
     background-size: 110% auto;
     background-position: 55% bottom;
     overflow: hidden;
+
     .container {
-      height: 100%;
-      position: static;
+        height: 100%;
+        position: static;
     }
 
     @include from(800px) {
-      background-position: 50% 50%;
+        background-position: 50% 50%;
     }
 
     @include from($tablet) {
-      max-height: 760px;
+        max-height: 760px;
         height: 80vw;
         background-size: cover;
     }
@@ -61,30 +62,31 @@
 
     &.hero--home {
         background-image: image("main-hero.jpg");
-            @include mobile {
-              height: 100vw;
-            }
 
-                        @include from($tablet) {
-                            // background-size: 140% auto;
-                        }
+        @include mobile {
+            height: 100vw;
+        }
 
+        @include from($tablet) {
+            // background-size: 140% auto;
+        }
+
+            color: #97BFC1;
+            text-shadow: shadow(#C8EAEE, 0.1em);
 
         h1 {
-          color: #97BFC1;
             margin-top: 10vw;
             display: block;
             text-align: center;
             line-height: 60px;
-            text-shadow: shadow(#C8EAEE, 0.1em);
             line-height: 1;
             position: relative;
             z-index: 2;
             font-size: 5vw;
 
             @include from($tablet) {
-              font-size: 3vw;
-              margin-top: 12vw;
+                font-size: 3vw;
+                margin-top: 12vw;
             }
 
             @include from($widescreen) {
@@ -92,49 +94,75 @@
             }
 
         }
+
+        p {
+            font-family: $font-header;
+            font-weight: normal;
+            text-align: center;
+                font-size: 4vw;
+            margin-top: 1em;
+                        text-shadow: shadow(#C8EAEE, 0.12em);
+
+                @include from($tablet) {
+                font-size: 2.2vw;
+            }
+
+            @include mobile {
+                span {
+                    display: block;
+                }
+            }
+        }
     }
 
     &:not(.hero--home) {
-      background-size: cover;
-      max-height: 200px;
-      @include from($tablet) {
-          max-height: 360px;
-      }
-      @include mobile {
-    &:before {
-      display: none;
-    }
-      }
+        background-size: cover;
+        max-height: 200px;
 
-      .hero__family {
-        position: absolute;
-        bottom: 0%;
-        width: 35vw;
-        height: 80%;
-        background-size: contain;
-        background-repeat: no-repeat;
-        background-position: bottom center;
-        &--left {
-          left: 4%;
-          background-image: image("anya-fia-kutya.png");
-        }
-        &--right {
-          background-image: image("apa-lánya.png");
-          right: 4%;
-        }
         @include from($tablet) {
-          bottom: 2%;
+            max-height: 360px;
         }
-        @include from($desktop) {
-          bottom: 8%;
-          &--left {
-            left: 0%;
-          }
-          &--right {
-            right: 0%;
-          }
-        }
-      }
-    }
-  }
 
+        @include mobile {
+            &:before {
+                display: none;
+            }
+        }
+
+        .hero__family {
+            position: absolute;
+            bottom: 0%;
+            width: 35vw;
+            height: 80%;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: bottom center;
+
+            &--left {
+                left: 4%;
+                background-image: image("anya-fia-kutya.png");
+            }
+
+            &--right {
+                background-image: image("apa-lánya.png");
+                right: 4%;
+            }
+
+            @include from($tablet) {
+                bottom: 2%;
+            }
+
+            @include from($desktop) {
+                bottom: 8%;
+
+                &--left {
+                    left: 0%;
+                }
+
+                &--right {
+                    right: 0%;
+                }
+            }
+        }
+    }
+}
