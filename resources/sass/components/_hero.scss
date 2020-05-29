@@ -71,11 +71,10 @@
             // background-size: 140% auto;
         }
 
-            color: #97BFC1;
-            text-shadow: shadow(#C8EAEE, 0.1em);
 
         h1 {
             color: #97BFC1;
+            text-shadow: shadow(#C8EAEE, 0.1em);
             margin-top: 10vw;
             display: block;
             text-align: center;
@@ -100,11 +99,12 @@
             font-family: $font-header;
             font-weight: normal;
             text-align: center;
-                font-size: 4vw;
+            font-size: 4vw;
             margin-top: 1em;
-                        text-shadow: shadow(#C8EAEE, 0.12em);
+            color: #97BFC1;
+            text-shadow: shadow(#C8EAEE, 0.12em);
 
-                @include from($tablet) {
+            @include from($tablet) {
                 font-size: 2.2vw;
             }
 
