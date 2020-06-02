@@ -30,10 +30,11 @@
         content: '';
         display: block;
         width: 100%;
-        height: 160px;
+        height: 110px;
         position: absolute;
         top: 0;
         left: 0;
+        opacity: 0.6;
         background: linear-gradient(#B3CDD0 50%, rgba(#B3CDD0, 0));
 
         @include from($tablet) {
@@ -90,7 +91,10 @@
             }
 
             @include from($widescreen) {
-                margin-top: 100px;
+                margin-top: 80px;
+            }
+            @include from(1500px) {
+                font-size: 52px;
             }
 
         }
@@ -100,18 +104,30 @@
             font-weight: normal;
             text-align: center;
             font-size: 4vw;
-            margin-top: 1em;
+            margin-top: 0.3em;
             color: #97BFC1;
             text-shadow: shadow(#C8EAEE, 0.12em);
+            line-height: 1.2;
 
             @include from($tablet) {
                 font-size: 2.2vw;
             }
 
+            @include from($widescreen) {
+                font-size: 31px;
+            }
+
+
             @include mobile {
                 span {
                     display: block;
                 }
+            }
+        }
+
+        .hero-body {
+            @include mobile {
+                padding: 2em 0;
             }
         }
     }
@@ -123,7 +139,9 @@
         @include from($tablet) {
             max-height: 360px;
         }
-
+        p {
+            display: none;
+        }
         @include mobile {
             &:before {
                 display: none;
