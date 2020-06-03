@@ -1,5 +1,5 @@
 .jackpot-box {
-  border-image-source: svg('box-blue-horizontal.svg');
+  border-image-source: svg('box-blue-horizontal2.svg');
   border-image-slice: 38 fill;
   border-image-width: 34px;
   border-image-repeat: stretch;
@@ -7,13 +7,13 @@
   margin-top: 5%;
 
   &__inner {
-      background-color:$box-bg;
+      background-color:#187a7d;
       padding: 16px;
   }
 
   h2 {
       color: $white;
-      text-shadow: shadow($title-shadow,2px);
+      text-shadow: shadow(lighten(#187a7d, 20%), 3px);
   }
 
   .jackpot-map-item {

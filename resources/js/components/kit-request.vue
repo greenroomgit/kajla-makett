@@ -60,7 +60,14 @@
                             <div class="form__input-error" v-if="errors.address">{{errors.address}}</div>
                         </div>
                     </div>
-    
+                        <div class="form__input-container form__input-container--full-width ">
+                        <label class="form__label form__label--checkbox">Megismertem, és elfogadom a jatékszabályzatot és az adatkezelési tájékoztatót
+                    <input v-model="formData.terms" type="checkbox" class="form__checkbox" name="terms" value="1">
+                    <span class="form__checkmark"></span>
+                  </label>
+                        <div class="form__input-error" v-if="errors.terms">{{errors.terms}}</div>
+                    </div>
+
                     <div v-if="errors.length > 0" class="form__error-container">
                         <div v-for="(error, index) in errors" :key="index" class="form__error alert alert-danger">{{ error }}</div>
                     </div>
@@ -103,6 +110,7 @@ export default {
                 email: null,
                 postal: null,
                 city: null,
+                terms: false,
                 address: null,
             },
             showForm: true,
@@ -176,6 +184,10 @@ export default {
             if (!this.formData.address) {
                 this.errors.address = 'Kötelezően kitöltendő';
             }
+            if (!this.formData.terms) {
+                this.errors.terms = 'Nem fogadtad el a feltételeket';
+            }
+
 
             if (Object.keys(this.errors).length === 0) {
                 return true;
@@ -190,6 +202,7 @@ export default {
                 email: null,
                 postal: null,
                 city: null,
+                terms: null,
                 address: null,
             }
             this.showForm = true,

@@ -50,7 +50,7 @@ export default {
             index: null,
             isFinished: false,
             row: 0, // Record selction position
-            rowperpage: 2, // Number of records fetch at a time
+            rowperpage: 36, // Number of records fetch at a time
             buttonText: 'További képek',
 
         };

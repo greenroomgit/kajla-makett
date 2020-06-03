@@ -179,7 +179,7 @@ export default {
             this.formData = {
                 name: null,
                 email: null,
-                terms: true,
+                terms: null,
                 caption: null,
             }
             this.picture = null,

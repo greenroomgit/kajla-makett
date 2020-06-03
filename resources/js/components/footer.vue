@@ -1,14 +1,12 @@
 <template>
     <footer class="footer has-text-centered-mobile">
         <div class="container">
-            <p>Hol vagy kajla © {{ new Date().getFullYear() }} Minden jog fenntartva</p>
-            <router-link to="/felhasznalasi-feltetelek">Felhasználási feltételek</router-link>
-            <span></span>
-            <router-link to="/adatkezelesi-nyilatkozat">Adatkezelési nyilatkozat </router-link>
+            <p>Hol vagy Kajla © {{ new Date().getFullYear() }} Minden jog fenntartva</p>
+            <a @click="download(`docs/kajla-makett-mese-jatekszabalyzat.pdf`)">Játékszabályzat és adatkezelési nyilatkozat </a>
             <span></span>
             <a @click.prevent="openCookieModal">Süti kezelés</a>
             <span></span>
-            <router-link to="/impresszum">Impresszum</router-link>
+            <a @click="download(`https://www.kajla.hu`)">Kajla.hu </a>
         </div>
     </footer>
 </template>
@@ -26,7 +24,11 @@ export default {
     methods: {
         openCookieModal() {
             store.CookieModalIsVisible = !store.CookieModalIsVisible
+        },
+        download: function (url) {   
+          window.open(url, "_blank");    
         }
+
     },
 
 

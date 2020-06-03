@@ -61,5 +61,9 @@ const routes = [
 
 export default new Router({
     mode: 'history',
-    routes
+    routes,
+    scrollBehavior(to, from, savedPosition) {
+        return { x: 0, y: 0 }
+    }
+
 })

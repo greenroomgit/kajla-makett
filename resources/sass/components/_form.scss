@@ -3,7 +3,7 @@
   flex-wrap: wrap;
   padding: 4rem 2rem 1rem;
   @include from($tablet) {
-    padding: 4rem 3rem 1rem;
+    padding: 4rem 3rem 3rem;
   }
 
         border-image-source: svg('yellow-box-bg.svg');
@@ -30,13 +30,13 @@
       text-align: center;
     }
     &--last-centered {
-      margin: 1rem auto 4rem auto;
+      margin: 1rem auto 1rem auto;
     }
     &--bottom-offset {
       position: absolute;
       left: 0;
       right: 0;
-      bottom: -1em;
+      bottom: -1.5em;
     }
     &--no-bottom-margin {
       margin-bottom: 0;
@@ -51,7 +51,7 @@
   &__separator {
     display: none;
     height: 4px;
-    margin: 1rem 0 2rem 0;
+    margin: 1rem 0 1rem 0;
     @media only screen and (min-width: 768px) {
       display: block;
     }
