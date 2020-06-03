@@ -16,7 +16,7 @@
                                      Kérd az ingyenes makett csomagot, amit pár napon belül postán fogsz megkapni. Vagy le is töltheted és kinyomtathatod.
                                 </p>
                                 <div class="box-bottom">
-                                    <button class="button is-primary" @click.prevent="openKitRequestModal">Igénylek</button>
+                                    <button class="button is-primary" @click.prevent="openKitRequestModal">Postán kérem</button>
                                                 <router-link class="button is-primary" to="/makettek-letoltese">Letöltöm</router-link>
 
                                 </div>

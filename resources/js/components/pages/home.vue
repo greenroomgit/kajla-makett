@@ -22,7 +22,7 @@
                     </div>
                     <div class="column is-half has-text-centered">
                         <button class="button is-primary" @click.prevent="openPhotoUploadModal">Képet küldök be</button>
-                        <button class="button is-primary" @click.prevent="openKitRequestModal">Postán kérem</button>
+                        <button class="button is-primary" @click.prevent="openKitRequestModal">Szeretnék makettet</button>
                     </div>
                 </div>
             </div>

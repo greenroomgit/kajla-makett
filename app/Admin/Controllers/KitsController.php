@@ -65,9 +65,9 @@ class KitsController extends AdminController
         $form = new Form(new Kits());
 
         $form->text('name', __('Name'));
-        $form->image('thumbnail', __('Thumbnail'))->uniqueName();
-        $form->file('a6', __('A6'))->uniqueName();
-        $form->file('a5', __('A5'))->uniqueName();
+        $form->image('thumbnail', __('Thumbnail'));
+        $form->file('a6', __('A6'));
+        $form->file('a5', __('A5'));
 
         return $form;
     }
