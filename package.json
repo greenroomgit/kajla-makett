@@ -23,6 +23,7 @@
         "bulma": "^0.8.2",
         "node-sass": "^4.14.1",
         "vue": "^2.6.11",
+        "vue-analytics": "^5.22.1",
         "vue-cookie-law": "^1.13.3",
         "vue-cool-lightbox": "^2.2.2",
         "vue-custom-scrollbar": "^1.2.0",

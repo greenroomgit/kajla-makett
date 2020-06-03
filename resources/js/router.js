@@ -1,8 +1,8 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Meta from 'vue-meta'
-Vue.use(Router)
-Vue.use(Meta)
+import VueAnalytics from 'vue-analytics'
+
 
 //nav
 import Home from './components/pages/home'
@@ -59,7 +59,10 @@ const routes = [
     }
 ]
 
-export default new Router({
+Vue.use(Router);
+Vue.use(Meta);
+
+const router = new Router({
     mode: 'history',
     routes,
     scrollBehavior(to, from, savedPosition) {
@@ -67,3 +70,11 @@ export default new Router({
     }
 
 })
+
+Vue.use(VueAnalytics, {
+    id: "UA-91540169-21",
+    router: router,
+});
+
+
+export default router;
