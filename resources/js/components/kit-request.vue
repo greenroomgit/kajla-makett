@@ -61,7 +61,7 @@
                         </div>
                     </div>
                         <div class="form__input-container form__input-container--full-width ">
-                        <label class="form__label form__label--checkbox">Megismertem, és elfogadom a jatékszabályzatot és az adatkezelési tájékoztatót
+                        <label class="form__label form__label--checkbox">Megismertem, és elfogadom a <a @click.self.prevent="download(`docs/kajla-makett-mese-jatekszabalyzat.pdf`)">jatékszabályzatot és az adatkezelési tájékoztatót</a>
                     <input v-model="formData.terms" type="checkbox" class="form__checkbox" name="terms" value="1">
                     <span class="form__checkmark"></span>
                   </label>
@@ -224,7 +224,11 @@ export default {
         closeModal() {
             this.resetForm()
             this.$emit('onClose')
+        },
+        download: function (url) {   
+          window.open(url, "_blank");    
         }
+
     },
     computed: {
         modalIsVisible() {
