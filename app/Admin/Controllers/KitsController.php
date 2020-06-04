@@ -49,6 +49,8 @@ class KitsController extends AdminController
         $show->field('name', __('Name'));
         $show->field('a6', __('A6'));
         $show->field('a5', __('A5'));
+        $form->field('a1', __('A1'));
+        $form->field('a2', __('A2'));
         $show->field('created_at', __('Created at'));
         $show->field('updated_at', __('Updated at'));
 
@@ -66,8 +68,10 @@ class KitsController extends AdminController
 
         $form->text('name', __('Name'));
         $form->image('thumbnail', __('Thumbnail'));
-        $form->file('a6', __('A6'));
+        $form->file('a1', __('A1'));
+        $form->file('a2', __('A2'));
         $form->file('a5', __('A5'));
+        $form->file('a6', __('A6'));
 
         return $form;
     }

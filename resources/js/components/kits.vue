@@ -6,7 +6,7 @@
                 <div class="kit-wrapper picture-box">
                 <h2 class="title title is-size-4 is-size-3-tablet is-size-2-desktop">Letölthető makettek</h2>
                     <div class="columns is-multiline">
-                        <div v-for="({name, a5, a6, thumbnail}, index) in kits" :key="index"
+                        <div v-for="({name, a5, a6, a1, a2, thumbnail}, index) in kits" :key="index"
                             class="column is-one-quarter">
                             <div class="kit-box">
                                 <div class="kit-box__inner">
@@ -17,8 +17,10 @@
 
 
                                 <p class="kit-box__downloads">
-                                    <a  @click="download(`storage/${a5}`)">A5 méretben</a>
-                                    <a @click="download(`storage/${a6}`)">A6 méretben</a>
+                                    <a v-if="a6" @click="download(`storage/${a6}`)">A6 méretben</a>
+                                    <a v-if="a5" @click="download(`storage/${a5}`)">A5 méretben</a>
+                                    <a v-if="a2" @click="download(`storage/${a2}`)">A2 méretben</a>
+                                    <a v-if="a1" @click="download(`storage/${a1}`)">A1 méretben</a>
                                 </p>
 
                             </div>

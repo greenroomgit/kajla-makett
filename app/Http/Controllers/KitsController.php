@@ -15,6 +15,8 @@ class KitsController extends Controller
           'name',
           'thumbnail',
           'a5',
+          'a2',
+          'a1',
           'a6'])->jsonSerialize(), Response::HTTP_OK);
     }
 }
