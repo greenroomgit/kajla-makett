@@ -7,7 +7,7 @@
             <div class="hero-body">
                 <h1 class="">
                     Építsd fel kajlával Magyarország<br>
-                    nevezettességeit és nyerj!
+                    nevezettességeit, és nyerj!
                 </h1>
                 <p>
                     <span>Játék érvényessége:</span> <span>2020.06.10 – 2020.07.10</span>

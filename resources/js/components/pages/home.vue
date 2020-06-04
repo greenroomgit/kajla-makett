@@ -6,7 +6,7 @@
                 <div class="column">
                     <div class="info-horizontal has-text-centered">
                         <div class="info-horizontal__inner">
-                            <p>A feltöltött képeket egy gyors ellenőrzés után publikáljuk. Ha közzé tettük a képedet, akkor újabb makett csomaggal lepünk meg. A játék végén pedig egy zsűri fogja kiválasztani a legjobb képeket, a beküldői pedig a külön díjban
+                            <p>A feltöltött képeket egy gyors ellenőrzés után publikáljuk. Ha közzétettük a képedet, akkor újabb makett csomaggal lepünk meg. A játék végén pedig egy zsűri fogja kiválasztani a legjobb képeket, a beküldői pedig a külön díjban
                                 részesülnek.</p>
                         </div>
                     </div>
@@ -18,7 +18,7 @@
             <div class="yellow-box__inner">
                 <div class="columns is-vcentered ">
                     <div class="column is-half has-text-centered has-text-left-tablet">
-                        <h3 class="title is-4 is-size-3-tablet">Építsd fel Kajlával Magyarország<br> nevezetességeit és nyerj!</h3>
+                        <h3 class="title is-4 is-size-3-tablet">Építsd fel Kajlával Magyarország<br> nevezetességeit, és nyerj!</h3>
                     </div>
                     <div class="column is-half has-text-centered">
                         <button class="button is-primary" @click.prevent="openPhotoUploadModal">Képet küldök be</button>

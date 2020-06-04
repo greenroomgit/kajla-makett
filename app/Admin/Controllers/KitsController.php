@@ -68,10 +68,10 @@ class KitsController extends AdminController
 
         $form->text('name', __('Name'));
         $form->image('thumbnail', __('Thumbnail'));
-        $form->file('a1', __('A1'));
-        $form->file('a2', __('A2'));
-        $form->file('a5', __('A5'));
-        $form->file('a6', __('A6'));
+        $form->file('a1', __('A1'), ['showRemove' => true])->removable();
+        $form->file('a2', __('A2'), ['showRemove' => true])->removable();
+        $form->file('a5', __('A5'), ['showRemove' => true])->removable();
+        $form->file('a6', __('A6'), ['showRemove' => true])->removable();
 
         return $form;
     }
