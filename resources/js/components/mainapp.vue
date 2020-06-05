@@ -46,6 +46,13 @@ export default {
         }
     },
 
+    created() {
+      window.addEventListener('load', function(event) {
+            window.scroll(0, 0)
+        })
+    },
+
+
     methods: {
         openCookieModal() {
             store.CookieModalIsVisible = !store.CookieModalIsVisible

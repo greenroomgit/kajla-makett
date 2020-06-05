@@ -41,7 +41,7 @@
                         Így tudod összeállítani a maketteket
                     </h3>
 
-                    <p>Miután kinyomtattad a makettet, a fekete folytonos vonal mentén vágd ki, majd a szaggatott vonal mentén hajtogasd össze őket</p>
+                    <p>Miután kinyomtattad a makettet, a fekete folytonos vonal mentén vágd ki, majd a szaggatott vonal mentén hajtogasd össze őket.</p>
         <img src="/assets/images/makett-plain.png" alt="">
 
                 </div>
