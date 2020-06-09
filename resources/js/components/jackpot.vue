@@ -11,8 +11,8 @@
                 <div class="jackpot-box__inner">
                     <div class="columns is-vcentered    ">
                         <div class="column">
-                            <h2 class="title is-size-4 is-size-3-tablet is-size-2-desktop has-text-centered has-text-left-tablet">
-                                A fődíj egy 20 darabos makettszett és a hozzá kapcsolódó Magyarország térkép
+                            <h2 class="title is-size-3 is-size-4-tablet is-size-3-desktop has-text-centered has-text-left-tablet">
+                                A fődíj Magyarország térképe, melyen elhelyezheted a 20 darabos makett csomag minden nevezetességét/csodáját.
                             </h2>
                         </div>
                         <div class="column jackpot-map-item">

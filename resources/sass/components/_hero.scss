@@ -85,16 +85,24 @@
             z-index: 2;
             font-size: 5vw;
 
+            b {
+                color: $red;
+            text-shadow: shadow(rgba($red, 0.3), 0.1em);
+                font-size: 1.5em;
+                display: block;
+                margin-bottom: 0.1em;
+            }
+
             @include from($tablet) {
                 font-size: 3vw;
-                margin-top: 12vw;
+                margin-top: 10vw;
             }
 
             @include from($widescreen) {
-                margin-top: 80px;
+                margin-top: 50px;
             }
             @include from(1500px) {
-                font-size: 52px;
+                font-size: 46px;
             }
 
         }

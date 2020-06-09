@@ -65,7 +65,7 @@ $container-width: 1200px;
         border-image-repeat:  stretch;
         min-width: 300px;
         display: flex;
-        padding: 30px;
+        padding: 25px;
         box-shadow: none;
         border-radius: 0;
         background-color: transparent;
@@ -423,6 +423,11 @@ $container-width: 1200px;
     h2 {
         color: $white;
         text-shadow: shadow($title-shadow,2px);
+                    @include tablet {
+                       padding-right: 1em;
+                       word-break: normal;
+                    }
+
     }
 
     .jackpot-map-item {
