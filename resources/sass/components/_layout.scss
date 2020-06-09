@@ -393,6 +393,13 @@ $container-width: 1200px;
                         background-size: contain;
             }
 
+            &.icon-3d::before {
+                 background-image: url("/assets/images/button-360.png");
+                                 width: 1.8em;
+                                 height: 1.8em;
+
+            }
+
         }
     }
 }

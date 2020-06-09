@@ -72,6 +72,7 @@ class KitsController extends AdminController
         $form->file('a2', __('A2'), ['showRemove' => true])->removable();
         $form->file('a5', __('A5'), ['showRemove' => true])->removable();
         $form->file('a6', __('A6'), ['showRemove' => true])->removable();
+        $form->url('iframe', __('Imajize iFrame URL'));
 
         return $form;
     }
