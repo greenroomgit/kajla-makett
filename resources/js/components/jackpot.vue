@@ -12,7 +12,7 @@
                     <div class="columns is-vcentered    ">
                         <div class="column">
                             <h2 class="title is-size-3 is-size-4-tablet is-size-3-desktop has-text-centered has-text-left-tablet">
-                                A fődíj Magyarország térképe, melyen elhelyezheted a 20 darabos makett csomag minden nevezetességét/csodáját.
+                                A fődíj Magyarország térképe, melyen elhelyezheted a 20 darabos makett csomag minden nevezetességét.
                             </h2>
                         </div>
                         <div class="column jackpot-map-item">
