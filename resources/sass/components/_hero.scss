@@ -76,7 +76,7 @@
         h1 {
             color: #97BFC1;
             text-shadow: shadow(#C8EAEE, 0.1em);
-            margin-top: 10vw;
+            margin-top: 5vw;
             display: block;
             text-align: center;
             line-height: 60px;
@@ -87,22 +87,25 @@
 
             b {
                 color: $red;
-            text-shadow: shadow(rgba($red, 0.3), 0.1em);
+                text-shadow: shadow(rgba($red, 0.3), 0.1em);
                 font-size: 1.5em;
                 display: block;
                 margin-bottom: 0.1em;
             }
+            @include from(400px) {
+                margin-top: 8vw;
+            }
 
             @include from($tablet) {
                 font-size: 3vw;
-                margin-top: 10vw;
+                margin-top: 6vw;
             }
 
             @include from($widescreen) {
-                margin-top: 50px;
+                font-size: 46px;
+                margin-top: 30px;
             }
             @include from(1500px) {
-                font-size: 46px;
             }
 
         }

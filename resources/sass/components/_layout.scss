@@ -3,13 +3,21 @@
     left: 50%;
     transform: translateX(-50%);
     z-index: 30;
-    top: 2rem;
-    width: 30vw;
-
+    top: 1rem;
     @include from($desktop) {
-        width: 10vw;
+    }
+
+    img {
+        width: 30vw;
         max-width: 200px;
-        min-width: 120px;
+
+        @include from($desktop) {
+            width: 140px;
+        }
+
+        @include from($widescreen) {
+        }
+
     }
 }
 
