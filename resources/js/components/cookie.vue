@@ -10,7 +10,7 @@
                   <div class="yellow-box__inner">
                         <div id="suti-kezeles" class="rich-text">
         <h1 class="title">Sütik (cookie) kezelése</h1>
-        <p>Más hasonló kereskedelmi weboldalakhoz hasonlóan a www.kajla.hu weboldal is használja azon szokásos technológiát, amelyet sütinek (cookie) hívnak, valamint web szerver log fájlokat, annak érdekében, hogy információt szerezzen be arról, hogy a felhasználók
+        <p>Más hasonló kereskedelmi weboldalakhoz hasonlóan a makett.kajla.hu weboldal is használja azon szokásos technológiát, amelyet sütinek (cookie) hívnak, valamint web szerver log fájlokat, annak érdekében, hogy információt szerezzen be arról, hogy a felhasználók
             hogyan használják a Weboldalt. A sütik és a web szerver log fájlok használata lehetővé teszi a Weboldal üzemeltetője számára, hogy a Weboldal látogatottságát ellenőrizze és a Weboldal tartalmát az Ön személyes igényeihez igazítsa.</p>
         <p>A süti egy kisméretű információcsomag (fájl), amely gyakran egy anonimizált egyedi azonosítót hordoz. Amikor meglátogat egy weboldalt, a weboldal a számítógépének az engedélyét kéri, hogy ezt a fájlt az Ön számítógépe merevlemezének egy olyan részén
             tárolja, amely kifejezetten a sütik tárolására szolgál. Minden egyes weboldal amelyet meglátogat tud sütit küldeni a számítógépére, amennyiben az Ön által használt böngésző beállítása ezt engedélyezi. Az Ön adatainak védelme érdekében azonban

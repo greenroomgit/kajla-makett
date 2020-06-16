@@ -78,7 +78,16 @@ const router = new Router({
 
 Vue.use(VueAnalytics, {
     id: "UA-91540169-21",
+    set: [
+        { field: 'anonymizeIp', value: true }
+    ],
     router: router,
+    // debug: {
+    //     enabled: true, // default value
+    //     trace: true, // default value
+    //     sendHitTask: true // default value
+    // }
+
 });
 
 
