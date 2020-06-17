@@ -4,7 +4,7 @@
             <div id="navbarBasicExample" class="navbar-menu">
     
                 <div class="navbar-start navbar-left">
-                    <router-link class="navbar-item" to="/">Játék</router-link>
+                    <router-link class="navbar-item" to="/">Nyitóoldal</router-link>
                     <router-link class="navbar-item" to="/bekuldott-kepek">Beküldött képek</router-link>
                 </div>
     
