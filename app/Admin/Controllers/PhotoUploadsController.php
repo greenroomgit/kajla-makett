@@ -81,6 +81,9 @@ class PhotoUploadsController extends AdminController
 
         $form->text('name', __('Name'));
         $form->text('email', __('Email'));
+        $form->text('city', __('City'));
+        $form->text('address', __('Address'));
+        $form->number('postal', __('Postal'));
         $form->text('caption', __('Caption'));
         $form->switch('published', __('Published'));
 

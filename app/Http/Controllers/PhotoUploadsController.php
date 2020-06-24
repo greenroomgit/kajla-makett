@@ -19,6 +19,12 @@ class PhotoUploadsController extends Controller
             'caption'     => ['required', 'string'],
             'email'    => ['required', 'email'],
             'terms'    => ['required'],
+            'city'    => ['required', 'string'],
+            'address'    => ['required', 'string'],
+            'postal'    => [
+              'required',
+              'postal_code:HU',
+            ],
         ];
 
         $customMessages = [
@@ -48,7 +54,7 @@ class PhotoUploadsController extends Controller
         });
         $watermarkedImage->insert($waterMark, 'bottom-right', 5, 5);
         $watermarkedImage->save();
-
+        
 
         $data['picture'] = $wmPath;
         $data['thumb'] = $thumbPath;

@@ -28,6 +28,39 @@
                             <div class="form__input-error" v-if="errors.email">{{errors.email}}</div>
                         </div>
                     </div>
+
+    
+                    <div :class="errors.postal ? 'form__input-container form__input-container--no-bottom-margin' : 'form__input-container'">
+                        <label for="modalpostalInput" class="form__label col-md-4 col-form-label text-md-right">Irányítószám</label>
+    
+                        <div class="col-md-6">
+                            <!-- NOTICE v-model="formData.name" - THAT'S HOW IT GETS ATTACHED TO THE FIELD -->
+                            <input v-model="formData.postal" id="modalpostalInput" type="text" class="form__input" name="postal" required autocomplete autofocus>
+                            <div class="form__input-error" v-if="errors.postal">{{errors.postal}}</div>
+                        </div>
+                    </div>
+    
+                    <div :class="errors.city ? 'form__input-container form__input-container--no-bottom-margin' : 'form__input-container'">
+                        <label for="modalCityInput" class="form__label col-md-4 col-form-label text-md-right">Település</label>
+    
+                        <div class="col-md-6">
+                            <!-- NOTICE v-model="formData.name" - THAT'S HOW IT GETS ATTACHED TO THE FIELD -->
+                            <input v-model="formData.city" id="modalCityInput" type="text" class="form__input" name="city" required autocomplete autofocus>
+                            <div class="form__input-error" v-if="errors.city">{{errors.city}}</div>
+                        </div>
+                    </div>
+    
+                    <div class="form__input-container form__input-container--last-centered">
+                        <label for="modaladdressInput" class="form__label col-md-4 col-form-label text-md-right">Utca, házszám</label>
+    
+                        <div class="col-md-6">
+                            <!-- NOTICE v-model="formData.name" - THAT'S HOW IT GETS ATTACHED TO THE FIELD -->
+                            <input v-model="formData.address" id="modaladdressInput" type="text" class="form__input" name="address" required autocomplete autofocus>
+                            <div class="form__input-error" v-if="errors.address">{{errors.address}}</div>
+                        </div>
+                    </div>
+                                                            <img :src="'/assets/svg/separator.svg'" class="form__separator">
+
                     <div class="form__input-container form__input-container--full-width">
                         <label for="modalImageTitleInput" class="form__label col-md-4 col-form-label text-md-right">Kép címe</label>
     
@@ -100,6 +133,9 @@ export default {
                 email: null,
                 terms: false,
                 caption: null,
+                postal: null,
+                city: null,
+                address: null,
             },
             picture: null,
             pictureUrl: null,
@@ -168,6 +204,20 @@ export default {
                 this.errors.terms = 'Nem fogadtad el a feltételeket';
             }
 
+            if (!this.formData.postal) {
+                this.errors.postal = 'Kötelezően kitöltendő';
+            }
+            if (this.formData.postal && !this.postcodeIsValid(this.formData.postal)) {
+                this.errors.postal = 'Nem megfelelő irányítószám';
+            }
+            if (!this.formData.city) {
+                this.errors.city = 'Kötelezően kitöltendő';
+            }
+            if (!this.formData.address) {
+                this.errors.address = 'Kötelezően kitöltendő';
+            }
+
+
             if (Object.keys(this.errors).length === 0) {
                 return true;
             } else {
@@ -179,7 +229,10 @@ export default {
             this.formData = {
                 name: null,
                 email: null,
+                postal: null,
+                city: null,
                 terms: null,
+                address: null,
                 caption: null,
             }
             this.picture = null,
@@ -197,6 +250,10 @@ export default {
         pictureFormatIsValid(picture) {
             const pictureFormatRegex = /\.(jpe?g|png|gif|bmp)$/i;
             return pictureFormatRegex.test(picture.name)
+        },
+        postcodeIsValid(postcode) {
+            const postcodeRegex = /^[0-9]{4}?$/;
+            return postcodeRegex.test(postcode);
         },
 
         handleFileObject() {

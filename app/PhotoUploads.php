@@ -13,7 +13,7 @@ class PhotoUploads extends Model
      */
     protected $table = 'photo_uploads';
 
-    protected $fillable = ['picture', 'name', 'thumb', 'caption', 'email'];
+    protected $fillable = ['picture', 'name', 'thumb', 'caption', 'email', 'city', 'postal', 'address'];
 
     protected $attributes = array(
     'published' => false
