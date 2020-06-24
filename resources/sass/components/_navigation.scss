@@ -67,15 +67,15 @@ $navbar-box-shadow-size: 0;
         transition: all 0.2s ease-in-out;
         font-family: $font-header;
         font-size: $nav-size;
-        color: $white;
         height: auto;
-        text-shadow: shadow(#97BFC1, 3px);
         padding: 0.625em;
         margin: 0.5em;
+        color: #657C7E;
+        text-shadow: shadow(#91C4CA, 2px);
         &.router-link-exact-active, 
         &.router-link-exact-active:hover, {
-            color: $white;
-        text-shadow: shadow(#97BFC1, 3px);
+        color: #657C7E;
+        text-shadow: shadow(#91C4CA, 1px);
 
                     @include from($desktop) {
                         display: flex;
@@ -101,9 +101,9 @@ $navbar-box-shadow-size: 0;
         }
 
         &:hover {
-            color: $white;
             background-color: transparent;
-            text-shadow: shadow(darken($blue-light, 10%), 1px);
+        color: #657C7E;
+        text-shadow: shadow(#91C4CA, 1px);
             transform: translateY(1px);
         }
 
