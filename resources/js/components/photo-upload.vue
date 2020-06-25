@@ -7,7 +7,7 @@
                 <!-- FORM WITH v-if WILL BE SHOWN BUT THEN HIDDEN AFTER SUCCESS SUBMIT -->
                 <form v-if="showForm" class="form">
                     <div class="form__description">
-                        A kép feltöltéséhez kérlek add meg a neved, e-mail címed és feltöltött kép címét
+                        Képfeltöltéshez add meg az alábbi adatokat
                     </div>
                     <div :class="errors.name ? 'form__input-container form__input-container--no-bottom-margin' : 'form__input-container'">
                         <label for="modalNameInput" class="form__label col-md-4 col-form-label text-md-right">Név</label>
