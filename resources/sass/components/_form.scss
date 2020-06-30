@@ -1,7 +1,7 @@
 .form {
   display: flex;
   flex-wrap: wrap;
-  padding: 4rem 2rem 1rem;
+  padding: 4rem 2rem 3rem;
   @include from($tablet) {
     padding: 4rem 3rem 3rem;
   }
@@ -38,7 +38,7 @@
       position: absolute;
       left: 0;
       right: 0;
-      bottom: -1.5em;
+      bottom: 0;
     }
     &--no-bottom-margin {
       margin-bottom: 0;
