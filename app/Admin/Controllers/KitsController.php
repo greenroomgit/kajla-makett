@@ -49,6 +49,7 @@ class KitsController extends AdminController
         $show->field('name', __('Name'));
         $show->field('a6', __('A6'));
         $show->field('a5', __('A5'));
+        $show->field('a4', __('A4'));
         $form->field('a1', __('A1'));
         $form->field('a2', __('A2'));
         $show->field('created_at', __('Created at'));
@@ -70,6 +71,7 @@ class KitsController extends AdminController
         $form->image('thumbnail', __('Thumbnail'));
         $form->file('a1', __('A1'), ['showRemove' => true])->removable();
         $form->file('a2', __('A2'), ['showRemove' => true])->removable();
+        $form->file('a4', __('A4'), ['showRemove' => true])->removable();
         $form->file('a5', __('A5'), ['showRemove' => true])->removable();
         $form->file('a6', __('A6'), ['showRemove' => true])->removable();
         $form->url('iframe', __('Imajize iFrame URL'));

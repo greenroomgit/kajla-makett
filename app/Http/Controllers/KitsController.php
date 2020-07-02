@@ -18,6 +18,7 @@ class KitsController extends Controller
           'a2',
           'a1',
           'a6',
+          'a4',
           'iframe'])->jsonSerialize(), Response::HTTP_OK);
     }
 }
