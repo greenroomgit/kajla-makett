@@ -87,7 +87,7 @@ export default {
                 if (uploads != '') {
 
                     // Update rowperpage
-                    this.row += this.rowperpage;
+                    this.row += 1;
 
                     var len = this.uploads.length;
                     if (len > 0) {
@@ -96,7 +96,6 @@ export default {
 
                         // Loop on data and push in posts
                         for (let i = 0; i < uploads.length; i++) {
-                            console.log(this.uploads)
                             this.uploads.push(uploads[i]);
                         }
                     } else {
