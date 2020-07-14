@@ -11,7 +11,7 @@
                     nevezettességeit, és nyerj!
                 </h1>
                 <p>
-                    <span>Játék időtartama:</span> <span>2020.06.16 – 2020.07.15</span>
+                    <span>Játék időtartama:</span> <span>2020.06.16 – 2020.08.20.</span>
                 </p>
             </div>
 
