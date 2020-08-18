@@ -11,7 +11,7 @@
                     nevezettességeit, és nyerj!
                 </h1>
                 <p>
-                    <span>Játék időtartama:</span> <span>2020.06.16 – 2020.08.20.</span>
+                    <span>A játékot meghosszabbítottuk</span> <span>2020. szeptember 30-ig!</span>
                 </p>
             </div>
 

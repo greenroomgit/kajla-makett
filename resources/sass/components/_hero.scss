@@ -102,7 +102,7 @@
             }
 
             @include from($widescreen) {
-                font-size: 46px;
+                font-size: 38px;
                 margin-top: 30px;
             }
             @include from(1500px) {
@@ -114,25 +114,29 @@
             font-family: $font-header;
             font-weight: normal;
             text-align: center;
-            font-size: 4vw;
+            font-size: 3.6vw;
             margin-top: 0.3em;
             color: #97BFC1;
             text-shadow: shadow(#C8EAEE, 0.12em);
-            line-height: 1.2;
+            line-height: 1.1;
+            span {
+                display: block;
+                color: $red;
+                text-shadow: shadow(rgba($red, 0.3), 0.1em);
+    
+            }
 
             @include from($tablet) {
-                font-size: 2.2vw;
+                font-size: 2vw;
+                
             }
 
             @include from($widescreen) {
-                font-size: 31px;
+                font-size: 28px;
             }
 
 
             @include mobile {
-                span {
-                    display: block;
-                }
             }
         }
 
