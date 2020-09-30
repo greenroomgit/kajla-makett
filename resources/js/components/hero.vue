@@ -1,6 +1,6 @@
 <template>
     <section :class="[
-                'section section-hero separator ',
+                'section section-hero separator ', 
                 isHomepage ? 'hero--home' : ''
                 ]">
         <div class="container">
@@ -8,8 +8,11 @@
                 <h1 class="">
                     <b>Alkoss csodát!</b>
                     Építsd fel kajlával Magyarország<br>
-                    nevezettességeit!
+                    nevezettességeit, és nyerj!
                 </h1>
+                <p>
+                    <span>A játékot meghosszabbítottuk</span> <span>2020. szeptember 30-ig!</span>
+                </p>
             </div>
 
                     <div class="hero__family hero__family--left"></div>
