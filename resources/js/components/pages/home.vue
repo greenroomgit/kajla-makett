@@ -1,7 +1,6 @@
 <template>
     <div>
-<!--        <GuideSteps />-->
-<!--
+        <GuideSteps />
         <div class="separator">
             <div class="columns">
                 <div class="column">
@@ -14,15 +13,15 @@
             </div>
         </div>
         <Jackpot />
--->
         <div class="yellow-box separator">
             <div class="yellow-box__inner">
                 <div class="columns is-vcentered ">
                     <div class="column is-half has-text-centered has-text-left-tablet">
-                        <h3 class="title is-4 is-size-3-tablet">Töltsd le bármikor a Kajla maketteket, és építsd fel a kedvenc nevezetességedet!</h3>
+                        <h3 class="title is-4 is-size-3-tablet">Építsd fel Kajlával Magyarország<br> nevezetességeit, és nyerj!</h3>
                     </div>
                     <div class="column is-half has-text-centered">
-                        <router-link class="button is-primary" to="/makettek-letoltese">Kajla makett letöltés</router-link>
+                        <button class="button is-primary" @click.prevent="openPhotoUploadModal">Képet küldök be</button>
+                        <button class="button is-primary" @click.prevent="openKitRequestModal">Szeretnék makettet</button>
                     </div>
                 </div>
             </div>
