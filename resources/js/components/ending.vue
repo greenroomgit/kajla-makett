@@ -11,7 +11,7 @@
                         <div class="rich-text">
                             <p>A Kajla Makett pályázat lezárult, köszönjük, hogy ilyen sokan velünk játszottatok!</p>
 
-                            <p>A zsűri most összeül, és kiválasztja a legszebb képeket, majd a nyertes alkotókkal felvesszük a kapcsolatot a fődíj kézbesítésével kapcsolatban!</p>
+                            <p>A zsűri most összeül, és kiválasztja a legszebb képeket, majd a nyertes alkotókkal felvesszük a kapcsolatot!</p>
 
                             <p>Ne felejtsétek, Kajla egyész évben vár Titeket, böngésszétek a kajla.hu-t. Látogassatok el a Kajla körökre, és gyűjtsétek a Kajla karikákat!</p>    </div>
 
