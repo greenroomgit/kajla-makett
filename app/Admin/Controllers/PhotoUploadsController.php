@@ -37,6 +37,7 @@ class PhotoUploadsController extends AdminController
         $grid->column('name', __('Name'));
         $grid->column('caption', __('Caption'));
         $grid->column('email', __('Email'));
+        $grid->column('is_winner', __('Winner'));
         $grid->column('published', __('Published'));
         $grid->column('created_at', __('Created at'));
         $grid->column('updated_at', __('Updated at'));
@@ -85,6 +86,7 @@ class PhotoUploadsController extends AdminController
         $form->text('address', __('Address'));
         $form->number('postal', __('Postal'));
         $form->text('caption', __('Caption'));
+        $form->switch('is_winner', __('Winner'));
         $form->switch('published', __('Published'));
 
         return $form;

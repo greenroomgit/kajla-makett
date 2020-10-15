@@ -2,16 +2,17 @@
     <div class="picture-box">
         <div class="picture-box__inner">
             <h3 class="title">Beküldött képek</h3>
-    
+
             <CoolLightBox :items="items" :index="index" @close="index = null">
             </CoolLightBox>
-    
-    
-    
+
+
+
             <div class="picture-wrapper">
                 <div class="columns is-multiline">
-                    <div v-for="({caption, picture, thumb, name}, imageIndex) in uploads" :key="imageIndex" class="column is-one-quarter">
+                    <div v-for="({caption, picture, thumb, name, is_winner}, imageIndex) in uploads" :key="imageIndex" class="column is-one-quarter">
                         <div class="picture" @click="setIndex(imageIndex)">
+                            <img v-if="is_winner" src="/assets/images/winner-badge.png" alt="winner badge" class="winner-badge">
                             <div class="picture__inner">
                                 <div class=" has-text-centered">
                                     <img v-bind:src="`storage${thumb}`" alt="">

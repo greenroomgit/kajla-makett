@@ -103,7 +103,7 @@ $container-width: 1200px;
                 top: 5%;
                 transform: translateX(-50%);
                 z-index: 1;
-            } 
+            }
             @include mobile{
                 background-size: 80%;
             }
@@ -112,7 +112,7 @@ $container-width: 1200px;
 
         .box-bottom {
             margin-top: 2rem;
-            
+
         }
     }
     .media-center {
@@ -149,9 +149,9 @@ $container-width: 1200px;
         border-image-width: 20px;
         border-image-repeat: stretch;
     padding: 2rem 2rem;
-    
+
     &__inner {
-    
+
     }
 }
 
@@ -299,6 +299,15 @@ $container-width: 1200px;
         border-image-repeat:stretch;
         padding: 12px;
         cursor: pointer;
+        position: relative;
+
+        .winner-badge {
+            position: absolute;
+            top: -.5rem;
+            right: -.5rem;
+            width: 4rem;
+            z-index: 4;
+        }
 
         &__inner {
             overflow: hidden;
@@ -322,7 +331,7 @@ $container-width: 1200px;
                 // }
 
             }
-            
+
         }
     }
 
@@ -456,7 +465,7 @@ $container-width: 1200px;
     @include mobile {
         h2.title {
             font-size: 32px;
-            text-align: center; 
+            text-align: center;
         }
         .jackpot-map-item {
             .jackpot-map {

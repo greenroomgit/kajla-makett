@@ -9,13 +9,26 @@
                 <div class="yellow-box">
                   <div class="yellow-box__inner">
                         <div class="rich-text">
-                            <p>A Kajla Makett pályázat lezárult, köszönjük, hogy ilyen sokan velünk játszottatok!</p>
+                            <p>
+                                Elérkezett a várva várt pillanat. A Kajla Makett pályázat zsűrije kiválasztotta a nyertes képeket.
+                            </p>
+                            <p>
+                                <b>                                    Szeretettel gratulálunk az alkotóknak!
+                                </b>
 
-                            <p>A zsűri most összeül, és kiválasztja a legszebb képeket, majd a nyertes alkotókkal felvesszük a kapcsolatot!</p>
+                            </p>
+                            <p>
+                                Hamarosan megküldjük számotokra a nyereményeket. Tudjuk, hogy a megszerzett élmény a legszebb ajándékotok, mégis szeretnénk mi is megörvendeztetni benneteket.
+                            </p>
+                            <p>
+                                A zsűri tagjai a művészet, a reklámszakma, a pedagógia, és a gyermekpszichológia területéről érkeztek. Minden pályázat gyönyörű volt, így a döntés sok fejtörést okozott nekik. Végül abban maradtak, hogy a legszebbnek ítélt 43 pályamunka mellett mindenki, akinek a képe felkerült oldalunkra, kapjon meglepetés ajándékot. Hamarosan tehát ezek az ajándékok is megérkeznek hozzátok. Addig is tekintsétek meg a legszebb 43 pályamunkát a Beküldött képek sorának elején.
+                                <br />
+                                <br />
+                                Mindenkinek jó böngészést kívánunk! Ne feledjétek, Kajla egész évben vár benneteket, hogy megismerjétek hazánk csodás kincseit.
+                            </p>
+                        </div>
 
-                            <p>Ne felejtsétek, Kajla egyész évben vár Titeket, böngésszétek a kajla.hu-t. Látogassatok el a Kajla körökre, és gyűjtsétek a Kajla karikákat!</p>    </div>
-
-                  </div>
+                        </div>
                 </div>
 
             </div>

@@ -34,7 +34,7 @@ class PhotoUploadsController extends Controller
         $data =  $this->validate($request, $rules, $customMessages);
 
         $file = $request->file('picture');
-        
+
         $thumbPath = '/pictures/' . uniqid() . '.' . $file->extension();
         $thumbnail = $file->storePubliclyAs('public', $thumbPath);
         $thumbnailImage = Image::make(Storage::disk('local')->path($thumbnail));
@@ -54,7 +54,7 @@ class PhotoUploadsController extends Controller
         });
         $watermarkedImage->insert($waterMark, 'bottom-right', 5, 5);
         $watermarkedImage->save();
-        
+
 
         $data['picture'] = $wmPath;
         $data['thumb'] = $thumbPath;
@@ -68,7 +68,14 @@ class PhotoUploadsController extends Controller
     {
         $row = $request->input('row');
         $rowperpage = $request->input('rowperpage');
-        return response(PhotoUploads::where('published', '=', 1)->skip($rowperpage * $row)->take($rowperpage)->orderBy('created_at', 'DESC')->get(['id', 'caption', 'picture', 'thumb', 'name'])->jsonSerialize(), Response::HTTP_OK);
+        return response(
+            PhotoUploads::where('published', '=', 1)
+                ->skip($rowperpage * $row)
+                ->take($rowperpage)
+                ->orderBy('is_winner', 'DESC')
+                ->orderBy('created_at', 'DESC')
+                ->get(['id', 'caption', 'picture', 'thumb', 'name', 'is_winner'])
+                ->jsonSerialize(), Response::HTTP_OK);
     }
     public function single($id)
     {
