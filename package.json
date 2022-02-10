@@ -21,7 +21,7 @@
     },
     "dependencies": {
         "bulma": "^0.8.2",
-        "node-sass": "^4.14.1",
+        "node-sass": "^7.0.0",
         "vue": "^2.6.11",
         "vue-analytics": "^5.22.1",
         "vue-cookie-law": "^1.13.3",
